@@ -3,6 +3,7 @@ title: "Quick Guide Teams Webinar - Registration and Flow"
 date: 2021-06-08
 tags: [Teams, Webinar Meeting]
 excerpt: "Teams Webinar"
+categories: [Teams]
 ---
 
 ## Introduction

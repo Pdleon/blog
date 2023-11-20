@@ -3,6 +3,7 @@ title: "Teams Device Monitoring and Alerting Offline Status"
 date: 2021-06-23
 tags: [Teams, Device, Monitor, Alert]
 excerpt: "Teams Device Monitoring and Alerting rule when going offline and alerting a channel or webhook"
+categories: [Teams, Devices]
 ---
 
 ## Initial Thoughts

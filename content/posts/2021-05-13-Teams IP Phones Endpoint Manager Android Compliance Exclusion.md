@@ -3,6 +3,7 @@ title: "Microsoft Teams IP Phones Endpoint Manager Android Complaince Exclusion"
 date: 2021-05-13
 tags: [Teams, IP Phones, Intune]
 excerpt: "Teams IP Phones Endpoint Manager Android Complaince Exclusion "
+categories: [Teams, Devices]
 ---
 
 ## Issue
