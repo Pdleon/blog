@@ -3,6 +3,7 @@ title: "Teams Telephony - Block Inbound Number"
 date: 2021-07-28
 tags: [Teams, Telephony, SBC]
 excerpt: "Teams Telephony - Block Inbound Number"
+categories: Teams, Voice
 ---
 
 ## Request

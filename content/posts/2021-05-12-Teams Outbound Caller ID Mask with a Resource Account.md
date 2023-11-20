@@ -3,6 +3,7 @@ title: "Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Re
 date: 2021-05-12
 tags: [Teams Policy, PSTN]
 excerpt: "Teams PSTN Outbound Caller ID Mask Policy"
+categories: Teams, Voice
 ---
 
 ## Request
