@@ -2,7 +2,7 @@
 title: "Teams SIP Gateway - Enable and Provision Polycom VVX 500"
 date: 2021-12-07
 tags: [Teams, Telephony,Phones,Polycom]
-categories: [Teams, Voice]
+categories: [Teams, Voice, Devices]
 ---
 
 ## Introduction
