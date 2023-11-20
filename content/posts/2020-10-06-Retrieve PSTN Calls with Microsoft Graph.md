@@ -3,7 +3,7 @@ title: "Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph"
 date: 2020-10-06
 tags: [Teams, MS Graph]
 excerpt: "Connect to Microsoft Graph and use Powershell to retrieve PSTN and Direct Routing Call Records"
-categories: Teams, Voice
+categories: [Teams, Voice]
 ---
 
 > This post is an exercise and all credit goes to this blog - script on Github by  [leeford-Get-TeamsPSTNCallRecords](https://github.com/leeford/Get-TeamsPSTNCallRecords)
