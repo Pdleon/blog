@@ -33,7 +33,7 @@
   [params.header]
     # desktop header mode ["fixed", "normal", "auto"]
 
-    desktopMode = "fixed"
+    desktopMode = "auto"
     # mobile header mode ["fixed", "normal", "auto"]
 
     mobileMode = "auto"
@@ -45,7 +45,7 @@
       logo = ""
       # title name
 
-      name = "Pdleon Blog"
+      name = "David Ponce de Leon"
       # you can add extra information before the name (HTML format is supported), such as icons
 
       pre = ""
@@ -113,7 +113,7 @@
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
 
-    title = "Pdleon Blog"
+    title = "UC Blog"
     # whether to omit favicon resource links
 
     noFavicon = false
@@ -172,16 +172,16 @@
       enable = true
       # Gravatar Email for preferred avatar in home page
 
-      gravatarEmail = ""
+      gravatarEmail = "uc@pdleon.com"
       # URL of avatar shown in home page
 
-      avatarURL = ""
+      avatarURL = "https://gravatar.com/ucb8a7f28f2572f"
       # title shown in home page (HTML format is supported)
 
-      title = ""
+      title = "UC Blog"
       # subtitle shown in home page
 
-      subtitle = "Pdleon Blog"
+      subtitle = ""
       # whether to use typeit animation for subtitle
 
       typeit = true
@@ -202,7 +202,7 @@
 
   [params.social]
     GitHub = ""
-    Linkedin = ""
+    Linkedin = "david-poncedeleon"
     Twitter = "@DpdLeon"
     Instagram = ""
     Facebook = ""
