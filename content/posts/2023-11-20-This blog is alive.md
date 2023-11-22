@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the Future"
+title: "This blog is alive"
 date: 2023-11-20
 tags: 
 categories:
