@@ -5,6 +5,6 @@ tags: [Teams, Monitor, Alert]
 categories: [Teams]
 ---
 
-## Introduction
+## Draft
 
 A few things have changed since I wrote on Teams rules to monitor devices.

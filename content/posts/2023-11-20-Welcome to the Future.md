@@ -2,7 +2,8 @@
 title: "Welcome to the Future"
 date: 2023-11-20
 tags: 
-categories: 
+categories:
+toc: false
 ---
 
 
