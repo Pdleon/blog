@@ -1,8 +1,8 @@
 ---
-title: "Teams Call Quality Real Time Alerting"
+title: "Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses"
 date: 2023-11-21
-tags: [Teams, Monitor, Alert]
-categories: [Teams]
+tags: [Teams, Monitor, Alert, MTR]
+categories: [Teams, MTR]
 ---
 
 ## Introduction
@@ -40,6 +40,10 @@ Focusing in the Audio rule only:
 
 ![](images/TAC_AlertRules_04.png)
 
+
+Alerts would look like this in your teams client
+
+![](images/TAC_AlertRules_05.png)
 
 ---
 For detailed technical documentation on how to set up and activate it, follow the official Microsoft documentation
