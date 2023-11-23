@@ -21,45 +21,33 @@ This service is limited to accounts assigned with a premium license or MTR Pro L
 
 ![](images/TAC_AlertRules_03.png)
 
----
-
 ## Setup & Activation
 
 Configure either an individual alert or all the premium alerts:
-
 - TAC > Notifications & Alerts > Rules
 
 ![](images/TAC_AlertRules_01.png)
 
-
 Focusing in the Audio rule only:
-
 - Configure all conditions, paremeters and values accordingly
 
-
 ![](images/TAC_AlertRules_02.png)
- 
 
-- Add users with a premium license or all your resource accounts assigned with the MTR Pro License
+ - Add users with a premium license or all your resource accounts assigned with the MTR Pro License
 - Leave defaults for the channel alerts in a newly created Teams or specify an existing team channel for notifications
 - Activate the alarm
 
-
 ![](images/TAC_AlertRules_04.png)
-
 
 Alerts would look like this in your teams client
 
 ![](images/TAC_AlertRules_05.png)
-
----
 
 For detailed technical documentation on how to set up and activate it, follow the official Microsoft documentation
 
 - [Microsoft Learn - Real-time Telemetry Alerts](https://learn.microsoft.com/en-us/microsoftteams/alerts/teams-admin-alerts)
 
 ---
-
 ## Conclusions
 
 ### Considerations

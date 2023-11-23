@@ -1,5 +1,3 @@
-# theme.toml template for a Hugo theme
-
 name = "LoveIt"
 license = "MIT"
 licenselink = "https://github.com/dillonzq/LoveIt/blob/master/LICENSE"
@@ -35,5 +33,3 @@ min_version = "0.62.0"
   name = "Fastbyte01"
   homepage = "https://www.fsb01.com/"
   repo = "https://github.com/Fastbyte01/KeepIt"
-
-
