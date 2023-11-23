@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Monitor - Tag - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/tags/monitor/</link>
+        <description>Monitor - Tag - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/monitor/" rel="self" type="application/rss+xml" /><item>
+    <title>Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses</title>
+    <link>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</link>
+    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</guid>
+    <description><![CDATA[Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
+Audio quality for in-progress meetings Video quality for in-progress meetings Screen sharing quality for in-progress meetings This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations.]]></description>
+</item>
+<item>
+    <title>Teams Device Monitoring and Alerting Offline Status</title>
+    <link>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</link>
+    <pubDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</guid>
+    <description><![CDATA[Initial Thoughts This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.
+A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.
+Configuration Validate permissions to create a Team/Channel]]></description>
+</item>
+</channel>
+</rss>

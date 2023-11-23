@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>IVR - Category - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/categories/ivr/</link>
+        <description>IVR - Category - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Mar 2017 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/categories/ivr/" rel="self" type="application/rss+xml" /><item>
+    <title>Auto Attendant Toll Fraud Call</title>
+    <link>https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/</link>
+    <pubDate>Fri, 17 Mar 2017 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/</guid>
+    <description><![CDATA[Problem Customer received an email from SIP provider advising of a possible fraud occurrence. [Source Number] has alarmed for a growing volume of calls to [+1264xxxxxxx], please verify that destination number is authorized for business.
+Troubleshooting Search for the source number to identify the user/object assigned to that number. Rely on the user activity report under Skype monitoring reports to retrieve more information on the number[s] called. We can see that there is a large volume of calls (275) to this number located in Anguilla which the business has no need to interact with.]]></description>
+</item>
+</channel>
+</rss>

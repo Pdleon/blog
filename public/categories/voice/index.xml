@@ -1,0 +1,67 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Voice - Category - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/categories/voice/</link>
+        <description>Voice - Category - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/categories/voice/" rel="self" type="application/rss+xml" /><item>
+    <title>Teams SIP Gateway - Enable and Provision Polycom VVX 500</title>
+    <link>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</link>
+    <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</guid>
+    <description><![CDATA[Introduction When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.
+The official Microsoft documentation for all the pre-requisites and supported devices can be found here:
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts.]]></description>
+</item>
+<item>
+    <title>Teams Telephony - Block Inbound Number</title>
+    <link>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</link>
+    <pubDate>Wed, 28 Jul 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</guid>
+    <description><![CDATA[Request To block an inbound (External PSTN) number.
+Pre-requisites If applicable
+Administrator access to the SBC Tenant Teams Administrator Procedure Audiocodes SBC IP to IP Routing The two key settings to determine is the Source Username Pattern ( number to be blocked ) and the destination type and set the destination addressit to 0.0.0.0
+Classification This option we have an actual action type to deny this number. Probably the one that will terminate the call faster without going first through all the routing and manipulation rules.]]></description>
+</item>
+<item>
+    <title>Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )</title>
+    <link>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</link>
+    <pubDate>Wed, 12 May 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</guid>
+    <description><![CDATA[Request To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.
+Procedure We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:
+Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case Assign the proper license to the Resource Account Assign desired number to the Resource Account through powershell only Set-CsOnlineApplicationInstance -Identity ResourceAccountAA@domain.]]></description>
+</item>
+<item>
+    <title>Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate</title>
+    <link>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</link>
+    <pubDate>Thu, 08 Oct 2020 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</guid>
+    <description><![CDATA[Introduction After my final thoughts on my article PSTN call records with Microsoft Graph I wanted to move this data to Microsoft Lists with Power Automate
+The benefits are quite a few as expressed before :
+More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.
+This process allows to run as a scheduled task or even as an Azure function.]]></description>
+</item>
+<item>
+    <title>Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph</title>
+    <link>https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</link>
+    <pubDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</guid>
+    <description><![CDATA[This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable]]></description>
+</item>
+<item>
+    <title>Auto Attendant Toll Fraud Call</title>
+    <link>https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/</link>
+    <pubDate>Fri, 17 Mar 2017 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/</guid>
+    <description><![CDATA[Problem Customer received an email from SIP provider advising of a possible fraud occurrence. [Source Number] has alarmed for a growing volume of calls to [+1264xxxxxxx], please verify that destination number is authorized for business.
+Troubleshooting Search for the source number to identify the user/object assigned to that number. Rely on the user activity report under Skype monitoring reports to retrieve more information on the number[s] called. We can see that there is a large volume of calls (275) to this number located in Anguilla which the business has no need to interact with.]]></description>
+</item>
+</channel>
+</rss>

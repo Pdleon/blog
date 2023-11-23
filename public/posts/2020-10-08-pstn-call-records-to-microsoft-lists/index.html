@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate" />
+<meta property="og:description" content="Introduction After my final thoughts on my article PSTN call records with Microsoft Graph I wanted to move this data to Microsoft Lists with Power Automate
+The benefits are quite a few as expressed before :
+More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.
+This process allows to run as a scheduled task or even as an Azure function." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-08T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate"/>
+<meta name="twitter:description" content="Introduction After my final thoughts on my article PSTN call records with Microsoft Graph I wanted to move this data to Microsoft Lists with Power Automate
+The benefits are quite a few as expressed before :
+More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.
+This process allows to run as a scheduled task or even as an Azure function."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-08-pstn-call-records-to-microsoft-lists\/"
+        },"genre": "posts","keywords": "Teams, Power Automate","wordcount":  590 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-08-pstn-call-records-to-microsoft-lists\/","datePublished": "2020-10-08T00:00:00+00:00","dateModified": "2020-10-08T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-08">2020-10-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;590 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#the-goal">The goal</a></li>
+        <li><a href="#microsoft-lists-prerequisites">Microsoft Lists Prerequisites</a></li>
+        <li><a href="#power-automate-summary">Power Automate Summary</a></li>
+        <li><a href="#power-automate-flow">Power Automate Flow</a></li>
+        <li><a href="#microsoft-lists">Microsoft Lists</a></li>
+        <li><a href="#microsoft-teams-integration">Microsoft Teams Integration</a></li>
+        <li><a href="#final-thoughts">Final Thoughts</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>After my final thoughts on my article  <a href="https://pdleon.github.io/Retrieve-PSTN-Calls-with-Microsoft-Graph/" target="_blank" rel="noopener noreffer">PSTN call records with Microsoft Graph</a>
+ I wanted to move this data to Microsoft Lists with Power Automate</p>
+<p>The benefits are quite a few as expressed before :</p>
+<ul>
+<li>
+<p>More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.</p>
+</li>
+<li>
+<p>This process allows to run as a scheduled task or even as an Azure function. For now this is to demonstrate the process but we have to be mindful and aware not to have any confidential or secret information in clear text. This is out of scope for this article.</p>
+</li>
+<li>
+<p>Archives and Records Management ( &gt; than 1 year)</p>
+</li>
+<li>
+<p>Teams&rsquo; offline access to this data</p>
+</li>
+<li>
+<p>Microsoft Lists functionality and integration with flow and power automate</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/GoalDashboard.png"
+        data-srcset="/blog/images/GoalDashboard.png, /blog/images/GoalDashboard.png 1.5x, /blog/images/GoalDashboard.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/GoalDashboard.png"
+        title="/blog/images/GoalDashboard.png" width="1873" height="929" /></p>
+<h3 id="the-goal">The goal</h3>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/GoalDiagram.png"
+        data-srcset="/blog/images/GoalDiagram.png, /blog/images/GoalDiagram.png 1.5x, /blog/images/GoalDiagram.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/GoalDiagram.png"
+        title="/blog/images/GoalDiagram.png" width="1155" height="147" /></p>
+<blockquote>
+<p>Ideally, Microsoft teams&rsquo; portal would offer this seamless interoperability but as of today, it&rsquo;s not possible so here is my workaround to this goal</p>
+</blockquote>
+<ul>
+<li>Back to the previous article, the output generates an offline file in either json or csv format. My preference is to work with a json file.</li>
+<li>Add  a few lines to the Powershell script at the end to automatically send an email to an account in O365 to leverage Power Automate</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$creds</span><span class="p">=</span> <span class="nb">import-Clixml</span> <span class="n">-Path</span> <span class="s2">&#34;Yourpath\file.txt&#34;</span> <span class="c">## --&gt; Prior to adding this line, I exported my credentials to an offline file</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$mailparameters</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">From</span> <span class="p">=</span><span class="s1">&#39;username@yourdomain&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">smtpserver</span> <span class="p">=</span> <span class="s2">&#34;smtp.office365.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">subject</span> <span class="p">=</span> <span class="s2">&#34;Your Custom Subject&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">credential</span> <span class="p">=</span> <span class="nv">$creds</span>
+</span></span><span class="line"><span class="cl"><span class="n">body</span><span class="p">=</span> <span class="s1">&#39;Your email body&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Port</span> <span class="p">=</span> <span class="mf">587</span>
+</span></span><span class="line"><span class="cl"><span class="n">UseSsl</span> <span class="p">=</span> <span class="vm">$true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">get-childitem</span> <span class="s2">&#34;Your Saved local folder\jsonfile.json&#34;</span> <span class="p">|</span> <span class="nb">Send-MailMessage</span> <span class="nv">@mailparameters</span> <span class="n">-to</span> <span class="nv">$EmailTo</span> <span class="c">## -&gt; $Emailto variable or hard coded email address</span>
+</span></span></code></pre></div><p>This part should take care of scheduling or running a script on demand, retrieving the records and automatically sending an email.</p>
+<h3 id="microsoft-lists-prerequisites">Microsoft Lists Prerequisites</h3>
+<ul>
+<li><strong>Option 1:</strong> Create a new blank list and enter all the column fields manually from the json or csv file ( all as single line of text type)</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/CreateNewList.png"
+        data-srcset="/blog/images/CreateNewList.png, /blog/images/CreateNewList.png 1.5x, /blog/images/CreateNewList.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/CreateNewList.png"
+        title="/blog/images/CreateNewList.png" width="985" height="338" /></p>
+<ul>
+<li>
+<p>Open the csv file in excel, delete all the data except the headers and save as excel .xlsx format. Open the file and format the headers as table. It should look similar to this</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/ExcelFileFormat.png"
+        data-srcset="/blog/images/ExcelFileFormat.png, /blog/images/ExcelFileFormat.png 1.5x, /blog/images/ExcelFileFormat.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/ExcelFileFormat.png"
+        title="/blog/images/ExcelFileFormat.png" width="1211" height="290" /></p>
+</li>
+<li>
+<p><strong>Option 2:</strong> Create a list from Excel ( prior step ) and follow the import wizard steps. For simplicity, all my fields will be of the type <em>single line of text</em></p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/CreateListfromExcelImport.png"
+        data-srcset="/blog/images/CreateListfromExcelImport.png, /blog/images/CreateListfromExcelImport.png 1.5x, /blog/images/CreateListfromExcelImport.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/CreateListfromExcelImport.png"
+        title="/blog/images/CreateListfromExcelImport.png" width="981" height="362" /></p>
+<h3 id="power-automate-summary">Power Automate Summary</h3>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA-FlowSummary.png"
+        data-srcset="/blog/images/PA-FlowSummary.png, /blog/images/PA-FlowSummary.png 1.5x, /blog/images/PA-FlowSummary.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA-FlowSummary.png"
+        title="/blog/images/PA-FlowSummary.png" width="793" height="414" /></p>
+<h3 id="power-automate-flow">Power Automate Flow</h3>
+<blockquote>
+<p>Adapt this to your own needs</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA-Inbox.png"
+        data-srcset="/blog/images/PA-Inbox.png, /blog/images/PA-Inbox.png 1.5x, /blog/images/PA-Inbox.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA-Inbox.png"
+        title="/blog/images/PA-Inbox.png" width="598" height="493" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA-InitializeVariable.png"
+        data-srcset="/blog/images/PA-InitializeVariable.png, /blog/images/PA-InitializeVariable.png 1.5x, /blog/images/PA-InitializeVariable.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA-InitializeVariable.png"
+        title="/blog/images/PA-InitializeVariable.png" width="599" height="211" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA3-SetVariablewithContent.png"
+        data-srcset="/blog/images/PA3-SetVariablewithContent.png, /blog/images/PA3-SetVariablewithContent.png 1.5x, /blog/images/PA3-SetVariablewithContent.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA3-SetVariablewithContent.png"
+        title="/blog/images/PA3-SetVariablewithContent.png" width="633" height="385" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA4-ParseJson.png"
+        data-srcset="/blog/images/PA4-ParseJson.png, /blog/images/PA4-ParseJson.png 1.5x, /blog/images/PA4-ParseJson.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA4-ParseJson.png"
+        title="/blog/images/PA4-ParseJson.png" width="607" height="373" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PA5-CreateListItem.png"
+        data-srcset="/blog/images/PA5-CreateListItem.png, /blog/images/PA5-CreateListItem.png 1.5x, /blog/images/PA5-CreateListItem.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PA5-CreateListItem.png"
+        title="/blog/images/PA5-CreateListItem.png" width="630" height="558" /></p>
+<h3 id="microsoft-lists">Microsoft Lists</h3>
+<blockquote>
+<p>Our final result after running this flow would look like this</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/MSListResult.png"
+        data-srcset="/blog/images/MSListResult.png, /blog/images/MSListResult.png 1.5x, /blog/images/MSListResult.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/MSListResult.png"
+        title="/blog/images/MSListResult.png" width="1656" height="495" /></p>
+<h3 id="microsoft-teams-integration">Microsoft Teams Integration</h3>
+<ul>
+<li>
+<p>Very simple process to add this list as a tab in any of the channels that have permission to access the list and you are done.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsListAddTab.png"
+        data-srcset="/blog/images/TeamsListAddTab.png, /blog/images/TeamsListAddTab.png 1.5x, /blog/images/TeamsListAddTab.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsListAddTab.png"
+        title="/blog/images/TeamsListAddTab.png" width="1222" height="609" /></p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsTab.png"
+        data-srcset="/blog/images/TeamsTab.png, /blog/images/TeamsTab.png 1.5x, /blog/images/TeamsTab.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsTab.png"
+        title="/blog/images/TeamsTab.png" width="1817" height="824" /></p>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<ul>
+<li>This solution may or may not be worth your time and effort but definitely could be handy when integrating all the Microsoft ecosystem and tools available today part of an automated process so why not ?</li>
+<li>The cadence to run and gather this data is up to you, so careful planning and testing has to be done with the dates within the script in order not to duplicate data</li>
+<li>This is not a real time solution or substitute to any third party tool, use it as is and adapt it to your needs</li>
+<li>You can either work directly in the lists portal and manipulate this data, template and integrate it with flows and power automate to receive alarms, etc.</li>
+<li>PowerBi next from here ? Possibly on the next article.</li>
+<li>I hope this is useful to someone out there . Enjoy!</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-10-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" data-title="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate" data-via="@DpdLeon" data-hashtags="Teams,Power Automate"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/power-automate/">Power Automate</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" class="prev" rel="prev" title="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph</a>
+            <a href="/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" class="next" rel="next" title="Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )">Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

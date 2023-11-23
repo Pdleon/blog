@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Poly Lens - Getting Started - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Poly Lens - Getting Started" />
+<meta property="og:description" content="Introduction Managing phones through Teams Admin Center has been challenging at times especially when staying up to date with firmware and application updates. Part of the challenge is that the phones at time do not register correctly, do not reflect immediate changes, do not appear in the dashboard at times, and fail to update when pushing the update. These challenges can be prevented or minimized by having correct compliance policies, accurate configuration and solid network connectivity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-19T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Poly Lens - Getting Started"/>
+<meta name="twitter:description" content="Introduction Managing phones through Teams Admin Center has been challenging at times especially when staying up to date with firmware and application updates. Part of the challenge is that the phones at time do not register correctly, do not reflect immediate changes, do not appear in the dashboard at times, and fail to update when pushing the update. These challenges can be prevented or minimized by having correct compliance policies, accurate configuration and solid network connectivity."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Poly Lens - Getting Started",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2021-08-19-poly-lens\/"
+        },"genre": "posts","keywords": "Teams, Telephony, Phones, Polycom","wordcount":  744 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2021-08-19-poly-lens\/","datePublished": "2021-08-19T00:00:00+00:00","dateModified": "2021-08-19T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Poly Lens - Getting Started</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/devices/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Devices</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-08-19">2021-08-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;744 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#considerations-and-risks">Considerations and risks</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>Managing phones through Teams Admin Center has been challenging at times especially when staying up to date with firmware and application updates. Part of the challenge is that the phones at time do not register correctly, do not reflect immediate changes, do not appear in the dashboard at times, and fail to update when pushing the update. These challenges can be prevented or minimized by having correct compliance policies, accurate configuration and solid network connectivity. If these phones are part of a zero trust network, then we have to deal with conditional access, account multifactor authentication and other multiple compliance policies.</p>
+<p>Welcome Poly Lens as an alternative free dashboard to manage these phones remotely or as inventory tool for Polycom devices only.</p>
+<p>Please read the following documentation if applicable based on supported devices, network pre-requisites and company compliance.</p>
+<p><a href="https://info.lens.poly.com/docs/before-you-begin" target="_blank" rel="noopener noreffer">https://info.lens.poly.com/docs/before-you-begin</a>
+</p>
+<p>Getting started was extremely simple, register for an account and start setting up your cloud instance.</p>
+<ul>
+<li>Configure General Settings, setup your Account Name.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens01_GeneralSettings.png"
+        data-srcset="/blog/images/PolyLens01_GeneralSettings.png, /blog/images/PolyLens01_GeneralSettings.png 1.5x, /blog/images/PolyLens01_GeneralSettings.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens01_GeneralSettings.png"
+        title="/blog/images/PolyLens01_GeneralSettings.png" width="1053" height="405" /></p>
+<ul>
+<li>Add account members and give them a specific role ( Admin, Device Manager , Guest).</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens02_AccountMembers.png"
+        data-srcset="/blog/images/PolyLens02_AccountMembers.png, /blog/images/PolyLens02_AccountMembers.png 1.5x, /blog/images/PolyLens02_AccountMembers.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens02_AccountMembers.png"
+        title="/blog/images/PolyLens02_AccountMembers.png" width="1041" height="615" /></p>
+<ul>
+<li>Device provisioning server is generated automatically, copy the URL, create a username and a password.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens03_DeviceProvisioning.png"
+        data-srcset="/blog/images/PolyLens03_DeviceProvisioning.png, /blog/images/PolyLens03_DeviceProvisioning.png 1.5x, /blog/images/PolyLens03_DeviceProvisioning.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens03_DeviceProvisioning.png"
+        title="/blog/images/PolyLens03_DeviceProvisioning.png" width="1080" height="643" /></p>
+<ul>
+<li>
+<p>Registering a single phone is extremely simple:</p>
+<ul>
+<li>Login to the web interface.</li>
+<li>Go to the provisioning server section and enter the server, username and password generated in the previous step.</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens03a_DeviceProvisioning.png"
+        data-srcset="/blog/images/PolyLens03a_DeviceProvisioning.png, /blog/images/PolyLens03a_DeviceProvisioning.png 1.5x, /blog/images/PolyLens03a_DeviceProvisioning.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens03a_DeviceProvisioning.png"
+        title="/blog/images/PolyLens03a_DeviceProvisioning.png" width="1258" height="589" /></p>
+<ul>
+<li>Once one or multiple devices are registered, we can see in the home page the number of devices registered, along with actions and insights.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens05_Home.png"
+        data-srcset="/blog/images/PolyLens05_Home.png, /blog/images/PolyLens05_Home.png 1.5x, /blog/images/PolyLens05_Home.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens05_Home.png"
+        title="/blog/images/PolyLens05_Home.png" width="1092" height="795" /></p>
+<ul>
+<li>Home dashboard gives more details about the phones, sites and rooms.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens04_DashboardDetails.png"
+        data-srcset="/blog/images/PolyLens04_DashboardDetails.png, /blog/images/PolyLens04_DashboardDetails.png 1.5x, /blog/images/PolyLens04_DashboardDetails.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens04_DashboardDetails.png"
+        title="/blog/images/PolyLens04_DashboardDetails.png" width="1084" height="447" /></p>
+<ul>
+<li>Inventory under management displays more details about each device with the ability to filter and search.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens06_ManageInventory.png"
+        data-srcset="/blog/images/PolyLens06_ManageInventory.png, /blog/images/PolyLens06_ManageInventory.png 1.5x, /blog/images/PolyLens06_ManageInventory.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens06_ManageInventory.png"
+        title="/blog/images/PolyLens06_ManageInventory.png" width="1405" height="549" /></p>
+<ul>
+<li>Actions will indicate whether the phone is offline, requires an update or is unassigned.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens07_ManageActions.png"
+        data-srcset="/blog/images/PolyLens07_ManageActions.png, /blog/images/PolyLens07_ManageActions.png 1.5x, /blog/images/PolyLens07_ManageActions.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens07_ManageActions.png"
+        title="/blog/images/PolyLens07_ManageActions.png" width="1027" height="605" /></p>
+<ul>
+<li>Policies will allow you to create features and settings per site or model. It allows to import features from a csv file. Check Poly&rsquo;s documentation for specific settings and values.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens08_ManagePolicies.png"
+        data-srcset="/blog/images/PolyLens08_ManagePolicies.png, /blog/images/PolyLens08_ManagePolicies.png 1.5x, /blog/images/PolyLens08_ManagePolicies.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens08_ManagePolicies.png"
+        title="/blog/images/PolyLens08_ManagePolicies.png" width="982" height="643" /></p>
+<ul>
+<li>Site policy in this case has my CCX 500 with the latest firmware from Poly set to auto update. Warning: This will always be ahead of the current approved firmware in the Teams Ip Phone panel.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens09_PhoneSitePolicy.png"
+        data-srcset="/blog/images/PolyLens09_PhoneSitePolicy.png, /blog/images/PolyLens09_PhoneSitePolicy.png 1.5x, /blog/images/PolyLens09_PhoneSitePolicy.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens09_PhoneSitePolicy.png"
+        title="/blog/images/PolyLens09_PhoneSitePolicy.png" width="1296" height="771" /></p>
+<ul>
+<li>Overview of my configured site and room.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens10_ManageSiteHomePolicy.png"
+        data-srcset="/blog/images/PolyLens10_ManageSiteHomePolicy.png, /blog/images/PolyLens10_ManageSiteHomePolicy.png 1.5x, /blog/images/PolyLens10_ManageSiteHomePolicy.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens10_ManageSiteHomePolicy.png"
+        title="/blog/images/PolyLens10_ManageSiteHomePolicy.png" width="990" height="528" /></p>
+<h2 id="considerations-and-risks">Considerations and risks</h2>
+<p>Notice the firmware version which based on my Poly cloud site policy, auto updates my phone to the latest firmware version but TAC shows that the phone has an update which if approved either manually or deferred by 30, 90 or as soon as available then it will downgrade the firmware and then on the next reboot, Poly cloud will auto update to the latest entering a loop of firmware upgrade-downgrade.</p>
+<p>Quick solution is to disable auto update and match the current approved TAC firmware version but this is a risk due to human error if the phone is not assigned the correct policy.</p>
+<p>If for any reason, test, troubleshoot or address an issue with the phone is always suggested to try a different or the latest firmware version, then the recommended action would be to manually set that phone in the TAC to a manual schedule update in the long term future so that the device does not enter a loop of firmware mismatch.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens11_TACFirmwareUpdate.png"
+        data-srcset="/blog/images/PolyLens11_TACFirmwareUpdate.png, /blog/images/PolyLens11_TACFirmwareUpdate.png 1.5x, /blog/images/PolyLens11_TACFirmwareUpdate.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens11_TACFirmwareUpdate.png"
+        title="/blog/images/PolyLens11_TACFirmwareUpdate.png" width="812" height="712" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png"
+        data-srcset="/blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png, /blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png 1.5x, /blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png"
+        title="/blog/images/PolyLens13_PolyLensAutoUpdateDisabled.png" width="1175" height="826" /></p>
+<ul>
+<li>An example of why Poly Lens is not a full replacement for phone management at least for Poly devices is due to other type of software updates like all the other Teams apps that run on that device unless I&rsquo;m unaware of a way to grab these udpates and pushing them through policy. For now, I think we still depend on both panels to manage updates.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens12_TACTeamsAppUpdate.png"
+        data-srcset="/blog/images/PolyLens12_TACTeamsAppUpdate.png, /blog/images/PolyLens12_TACTeamsAppUpdate.png 1.5x, /blog/images/PolyLens12_TACTeamsAppUpdate.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens12_TACTeamsAppUpdate.png"
+        title="/blog/images/PolyLens12_TACTeamsAppUpdate.png" width="760" height="442" /></p>
+<ul>
+<li>Poly Lens will collect metrics into your activities and this could be a security concern for specific companies. Validate with your compliance officer or team before implementing this solution or reach out to Poly for any questions.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/PolyLens14_Insights.png"
+        data-srcset="/blog/images/PolyLens14_Insights.png, /blog/images/PolyLens14_Insights.png 1.5x, /blog/images/PolyLens14_Insights.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/PolyLens14_Insights.png"
+        title="/blog/images/PolyLens14_Insights.png" width="1158" height="520" /></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Poly Lens is definitely an alternative solution worth exploring to aid on specific tasks like provisioning and auto updating of new phones via DHCP or single phones via manual registration, as an inventory tool or as a remote management solution for specific settings and features that TAC does not address.</p>
+<p>Always research, design, implement, test and troubleshoot before implementing anything in production.</p>
+<p>There are premium features for specific devices not applicable to my case but Poly&rsquo;s documentation is excellent to outline these features.
+I&rsquo;m still exploring scenarios in which Teams IP Phones panel and Poly lens can coexist but definitely is a careful design and implementation to avoid further issues.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-08-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" data-title="Poly Lens - Getting Started" data-via="@DpdLeon" data-hashtags="Teams,Telephony,Phones,Polycom"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/telephony/">Telephony</a>,&nbsp;<a href="/blog/tags/phones/">Phones</a>,&nbsp;<a href="/blog/tags/polycom/">Polycom</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2021-07-28-block-inbound-number/" class="prev" rel="prev" title="Teams Telephony - Block Inbound Number"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Teams Telephony - Block Inbound Number</a>
+            <a href="/blog/posts/2021-12-07-sip-gateway/" class="next" rel="next" title="Teams SIP Gateway - Enable and Provision Polycom VVX 500">Teams SIP Gateway - Enable and Provision Polycom VVX 500<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

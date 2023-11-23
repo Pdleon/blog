@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Intune - Tag - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/tags/intune/</link>
+        <description>Intune - Tag - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 May 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/intune/" rel="self" type="application/rss+xml" /><item>
+    <title>Microsoft Teams IP Phones Endpoint Manager Android Complaince Exclusion</title>
+    <link>https://pdleon.github.io/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</link>
+    <pubDate>Thu, 13 May 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</guid>
+    <description><![CDATA[Issue Recently encountered an issue where IP Phones (Polycom CCX) were unable to register to Azure AD and would not appear in the Microsoft Teams Admin Center list of IP Phone devices. Most times this should not be an issue except if the company has Intune enabled and endpoint manager resctricting devices from registering due to compliance policies.
+Solution I knew there were some recommendations to exclude these phones from any device compliance as it could create more harm than good and not gaining a full set of features for these devices since all software and firmware can be pushed through the teams admin center.]]></description>
+</item>
+</channel>
+</rss>

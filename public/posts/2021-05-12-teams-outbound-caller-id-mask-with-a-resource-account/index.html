@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID ) - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )" />
+<meta property="og:description" content="Request To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.
+Procedure We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:
+Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case Assign the proper license to the Resource Account Assign desired number to the Resource Account through powershell only Set-CsOnlineApplicationInstance -Identity ResourceAccountAA@domain." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-12T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )"/>
+<meta name="twitter:description" content="Request To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.
+Procedure We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:
+Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case Assign the proper license to the Resource Account Assign desired number to the Resource Account through powershell only Set-CsOnlineApplicationInstance -Identity ResourceAccountAA@domain."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account\/"
+        },"genre": "posts","keywords": "Teams Policy, PSTN","wordcount":  519 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account\/","datePublished": "2021-05-12T00:00:00+00:00","dateModified": "2021-05-12T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-05-12">2021-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;519 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#request">Request</a></li>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#assignment">Assignment</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="request">Request</h2>
+<p>To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.</p>
+<h2 id="procedure">Procedure</h2>
+<p>We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:</p>
+<ul>
+<li>Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case</li>
+<li>Assign the proper license to the Resource Account</li>
+<li>Assign desired number to the Resource Account through powershell only</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-CsOnlineApplicationInstance</span> <span class="n">-Identity</span> <span class="n">ResourceAccountAA</span><span class="nv">@domain</span><span class="p">.</span><span class="py">com</span> <span class="n">-OnpremPhoneNumber</span> <span class="p">+</span><span class="n">1XXXXXXXXXX</span>
+</span></span></code></pre></div><hr>
+<p>Now that we have covered how the AutoAttendant gets the desired main office number, we can start creating a new policy for masking every outbound call.</p>
+<ul>
+<li>Obtain Object ID of the AA Resource Account covered previously</li>
+<li>Create a new calling line identity policy and substitute with the Resource Account objectid</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$Id</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-CsOnlineApplicationInstance</span> <span class="n">-Identity</span> <span class="n">ResourceAccountAA</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span><span class="p">).</span><span class="py">objectid</span>
+</span></span><span class="line"><span class="cl"><span class="nb">New-CsCallingLineIdentity</span> <span class="n">-Identity</span> <span class="s2">&#34;OfficeCallerID&#34;</span> <span class="n">-CallingIDSubstitute</span> <span class="n">Resource</span> <span class="n">-EnableUserOverride</span> <span class="vm">$false</span> <span class="n">-ResourceAccount</span> <span class="nv">$Id</span> <span class="n">-companyname</span> <span class="s2">&#34;Company Name&#34;</span>
+</span></span></code></pre></div><h2 id="assignment">Assignment</h2>
+<p>We have a couple of options to do this :</p>
+<ul>
+<li>Option 1: Direct assignment to a user through powershell or in the Teams Admin Center - Users ; then editing the policies and assigning the new policy</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/CallerIDPolicyDirect.png"
+        data-srcset="/blog/images/CallerIDPolicyDirect.png, /blog/images/CallerIDPolicyDirect.png 1.5x, /blog/images/CallerIDPolicyDirect.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/CallerIDPolicyDirect.png"
+        title="/blog/images/CallerIDPolicyDirect.png" width="1009" height="943" /></p>
+<ul>
+<li>
+<p>Option 2: Since the request is for users to have a different outbound number based on location tied to a different AutoAttendant (Repeat all the steps above to create another AA on a different location) we are going to assign policies to a security group that has membership based on location.</p>
+</li>
+<li>
+<p>Create a new security group in Azure AD or use an existent one that covers all the members in the desired location</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/AzureTeamsCallerID.png"
+        data-srcset="/blog/images/AzureTeamsCallerID.png, /blog/images/AzureTeamsCallerID.png 1.5x, /blog/images/AzureTeamsCallerID.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/AzureTeamsCallerID.png"
+        title="/blog/images/AzureTeamsCallerID.png" width="1032" height="675" /></p>
+<ul>
+<li>Assign the policy to the group just created:
+<ul>
+<li>Grab the group id through the group properties in Azure AD or powershell</li>
+<li>The rank is important for which policy takes precendence if the account is part of several group policies</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"> <span class="nb">New-CsGroupPolicyAssignment</span> <span class="n">-GroupId</span> <span class="nb">xxxxxxxx-xxxx</span><span class="n">-xxxx-xxxx-xxxxxxxxxxxx</span> <span class="n">-PolicyType</span> <span class="n">CallingLineIdentity</span> <span class="n">-PolicyName</span> <span class="s2">&#34;OfficeCallerID&#34;</span> <span class="n">-rank</span> <span class="mf">1</span>
+</span></span></code></pre></div><p>The policy now is assigned to a group and the hierarchy of assignment is direct-&gt;group-&gt;global</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/CallerIDPolicyGroup.png"
+        data-srcset="/blog/images/CallerIDPolicyGroup.png, /blog/images/CallerIDPolicyGroup.png 1.5x, /blog/images/CallerIDPolicyGroup.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/CallerIDPolicyGroup.png"
+        title="/blog/images/CallerIDPolicyGroup.png" width="1009" height="980" /></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This solution works great if the onboarding process takes care of adding new hires to the proper security group in AD based on their location and no need to worry about Teams&rsquo; policies.</p>
+<p>One scenario that we did not touch is to apply this to all company wide and while the previous steps work well there is a possibility to do it at the SBC gateway level by masking every source number for outbound routing or setting the global caller ID policy with a Microsoft service number and translating that number to company wide main number at the SBC.Possibly requires less maintenance and configuration but less control if the company is leveraging direct routing as a service with a third party provider.</p>
+<p>What about e911 implications ?. According to Microsoft&rsquo;s documentation, all emergency calls will always send the user&rsquo;s telephone number (caller ID). When dialing 933, I can confirm that I&rsquo;m hearing back my emergency location but I&rsquo;m not using any third party solution. Always conduct your own tests and reach out accordingly if it&rsquo;s not the case for your solution.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-05-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" data-title="Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )" data-via="@DpdLeon" data-hashtags="Teams Policy,PSTN"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/" data-hashtag="Teams Policy"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams-policy/">Teams Policy</a>,&nbsp;<a href="/blog/tags/pstn/">PSTN</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" class="prev" rel="prev" title="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate</a>
+            <a href="/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/" class="next" rel="next" title="Microsoft Teams IP Phones Endpoint Manager Android Complaince Exclusion">Microsoft Teams IP Phones Endpoint Manager Android Complaince Exclusion<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

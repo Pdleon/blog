@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SBC - Tag - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/tags/sbc/</link>
+        <description>SBC - Tag - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 28 Jul 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/sbc/" rel="self" type="application/rss+xml" /><item>
+    <title>Teams Telephony - Block Inbound Number</title>
+    <link>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</link>
+    <pubDate>Wed, 28 Jul 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</guid>
+    <description><![CDATA[Request To block an inbound (External PSTN) number.
+Pre-requisites If applicable
+Administrator access to the SBC Tenant Teams Administrator Procedure Audiocodes SBC IP to IP Routing The two key settings to determine is the Source Username Pattern ( number to be blocked ) and the destination type and set the destination addressit to 0.0.0.0
+Classification This option we have an actual action type to deny this number. Probably the one that will terminate the call faster without going first through all the routing and manipulation rules.]]></description>
+</item>
+</channel>
+</rss>

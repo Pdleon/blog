@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Teams Telephony - Block Inbound Number - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Teams Telephony - Block Inbound Number" />
+<meta property="og:description" content="Request To block an inbound (External PSTN) number.
+Pre-requisites If applicable
+Administrator access to the SBC Tenant Teams Administrator Procedure Audiocodes SBC IP to IP Routing The two key settings to determine is the Source Username Pattern ( number to be blocked ) and the destination type and set the destination addressit to 0.0.0.0
+Classification This option we have an actual action type to deny this number. Probably the one that will terminate the call faster without going first through all the routing and manipulation rules." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-28T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Teams Telephony - Block Inbound Number"/>
+<meta name="twitter:description" content="Request To block an inbound (External PSTN) number.
+Pre-requisites If applicable
+Administrator access to the SBC Tenant Teams Administrator Procedure Audiocodes SBC IP to IP Routing The two key settings to determine is the Source Username Pattern ( number to be blocked ) and the destination type and set the destination addressit to 0.0.0.0
+Classification This option we have an actual action type to deny this number. Probably the one that will terminate the call faster without going first through all the routing and manipulation rules."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Teams Telephony - Block Inbound Number",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2021-07-28-block-inbound-number\/"
+        },"genre": "posts","keywords": "Teams, Telephony, SBC","wordcount":  837 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2021-07-28-block-inbound-number\/","datePublished": "2021-07-28T00:00:00+00:00","dateModified": "2021-07-28T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Teams Telephony - Block Inbound Number</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-07-28">2021-07-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;837 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#request">Request</a></li>
+    <li><a href="#pre-requisites">Pre-requisites</a></li>
+    <li><a href="#procedure">Procedure</a>
+      <ul>
+        <li><a href="#audiocodes-sbc">Audiocodes SBC</a></li>
+        <li><a href="#ribbon-edge-sbc">Ribbon Edge SBC</a></li>
+        <li><a href="#teams-tenant-block-inbound-number">Teams Tenant Block Inbound Number</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="request">Request</h2>
+<p>To block an inbound (External PSTN) number.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<blockquote>
+<p>If applicable</p>
+</blockquote>
+<ul>
+<li>Administrator access to the SBC</li>
+<li>Tenant Teams Administrator</li>
+</ul>
+<h2 id="procedure">Procedure</h2>
+<h3 id="audiocodes-sbc">Audiocodes SBC</h3>
+<h4 id="ip-to-ip-routing">IP to IP Routing</h4>
+<p>The two key settings to determine is the <strong>Source Username Pattern</strong> ( number to be blocked ) and the <strong>destination type</strong> and set the <strong>destination address</strong>it to 0.0.0.0</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/ACIPtoIPRouting.png"
+        data-srcset="/blog/images/ACIPtoIPRouting.png, /blog/images/ACIPtoIPRouting.png 1.5x, /blog/images/ACIPtoIPRouting.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/ACIPtoIPRouting.png"
+        title="/blog/images/ACIPtoIPRouting.png" width="1811" height="627" /></p>
+<h4 id="classification">Classification</h4>
+<p>This option we have an actual action type to deny this number. Probably the one that will terminate the call faster without going first through all the routing and manipulation rules.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/ACClassification.png"
+        data-srcset="/blog/images/ACClassification.png, /blog/images/ACClassification.png 1.5x, /blog/images/ACClassification.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/ACClassification.png"
+        title="/blog/images/ACClassification.png" width="1761" height="628" /></p>
+<h4 id="inbound-manipulation">Inbound Manipulation</h4>
+<p>This option works great if for some reason you want to translate and route this call to a security office or another number. Like the other two, we have control on source and destination depending on requirements.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/ACManipulationRuleExample1.png"
+        data-srcset="/blog/images/ACManipulationRuleExample1.png, /blog/images/ACManipulationRuleExample1.png 1.5x, /blog/images/ACManipulationRuleExample1.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/ACManipulationRuleExample1.png"
+        title="/blog/images/ACManipulationRuleExample1.png" width="1302" height="772" /></p>
+<p>The next example manipulates specific source and destination and sends it to a non existent number. It works but you can adpat it to your needs.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/ACManipulationRuleExample2.png"
+        data-srcset="/blog/images/ACManipulationRuleExample2.png, /blog/images/ACManipulationRuleExample2.png 1.5x, /blog/images/ACManipulationRuleExample2.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/ACManipulationRuleExample2.png"
+        title="/blog/images/ACManipulationRuleExample2.png" width="954" height="456" /></p>
+<h3 id="ribbon-edge-sbc">Ribbon Edge SBC</h3>
+<h4 id="transformation-and-call-routing-table">Transformation and Call Routing Table</h4>
+<p>Before Protect Bad Actors was introduced, like in other SBCs, the easiest way is to have a table to normalize numbers and set the table precendece at the top to reject this call based on the source and destination signaling trunk</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/RibbonInboundTransformationTable.png"
+        data-srcset="/blog/images/RibbonInboundTransformationTable.png, /blog/images/RibbonInboundTransformationTable.png 1.5x, /blog/images/RibbonInboundTransformationTable.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/RibbonInboundTransformationTable.png"
+        title="/blog/images/RibbonInboundTransformationTable.png" width="1196" height="634" />
+<img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/RibbonInboundCallRoutingTable.png"
+        data-srcset="/blog/images/RibbonInboundCallRoutingTable.png, /blog/images/RibbonInboundCallRoutingTable.png 1.5x, /blog/images/RibbonInboundCallRoutingTable.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/RibbonInboundCallRoutingTable.png"
+        title="/blog/images/RibbonInboundCallRoutingTable.png" width="1213" height="663" /></p>
+<h4 id="protect-bad-actors">Protect Bad Actors</h4>
+<p>Ribbon introduced this feature in version 8.xx and above.</p>
+<p>In order to add a new entry to the bad actors table, we need to leverage the SBC API. Ribbon recommends curl and has great documentation but if Powershell is your preference like mine, Posh-Ribbon is a fantastic module and kudos to the members of this script.
+You can find this module here with usage and description</p>
+<blockquote>
+<p><a href="https://github.com/EgoManiac/Posh-Ribbon" target="_blank" rel="noopener noreffer">https://github.com/EgoManiac/Posh-Ribbon</a>
+</p>
+</blockquote>
+<p>The schema for the rest API of this resource has three required fields. For our purposes of blocking a calling number, the precedence value is not applicable but required to complete successfully</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/RibbonBlockBadActorsSchema.png"
+        data-srcset="/blog/images/RibbonBlockBadActorsSchema.png, /blog/images/RibbonBlockBadActorsSchema.png 1.5x, /blog/images/RibbonBlockBadActorsSchema.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/RibbonBlockBadActorsSchema.png"
+        title="/blog/images/RibbonBlockBadActorsSchema.png" width="1367" height="667" /></p>
+<ul>
+<li>Pre-requisites :
+<ul>
+<li>Create a REST account</li>
+<li>Connect-UxGateway ( See script description and Ribbon documentation to enter your own credentials )</li>
+<li>Identify the next available id ( In this case I did not have any entry so I start with 1). Use function Get-UxResoruce to determine the id list or look in the SBC table for Bad Actors under the system settings.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-UxResource</span> <span class="n">-args</span> <span class="s2">&#34;ActorType=0&amp;ActorData=+1925xxxxxxx&amp;Precedence=0&#34;</span> <span class="n">-resource</span> <span class="n">ribbonprotectbadactors</span><span class="p">/</span><span class="mf">1</span>
+</span></span></code></pre></div><p>Notice that there is a single string required and all values are separated by the character &ldquo;&amp;&rdquo;</p>
+<p>For additional entries and schemas, look into the ribbon documentation.</p>
+<p>Now that we entered a new resource, we can see in the table that X number is being considered a bad actor. This in combination with the Country Level Setting determines the normalization of this number. In our case is set to United States to normalize this number.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/RibbonBlockBadActors.png"
+        data-srcset="/blog/images/RibbonBlockBadActors.png, /blog/images/RibbonBlockBadActors.png 1.5x, /blog/images/RibbonBlockBadActors.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/RibbonBlockBadActors.png"
+        title="/blog/images/RibbonBlockBadActors.png" width="1427" height="597" /></p>
+<h3 id="teams-tenant-block-inbound-number">Teams Tenant Block Inbound Number</h3>
+<p>This is very straight forward, you can block a single number or insert a regex pattern to block a did range of numbers.
+Notice that this may take a few minutes to hours to work. In my experience, about two hours and the source will just get a busy tone when dialing any number in the tenant.</p>
+<p>For exemptions to this pattern, please see documentation on <strong>New-CsInboundExemptNumberPattern</strong></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsBlockInboundNumber.png"
+        data-srcset="/blog/images/TeamsBlockInboundNumber.png, /blog/images/TeamsBlockInboundNumber.png 1.5x, /blog/images/TeamsBlockInboundNumber.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsBlockInboundNumber.png"
+        title="/blog/images/TeamsBlockInboundNumber.png" width="1103" height="372" /></p>
+<p>If you are using Microsoft dial plans, then this is a quick and fast way to block a single number but it&rsquo;s not applicable to direct routing or DRAS. It would be great to have a global option to disable this on the client and not make it available by policy if this is your case. If I&rsquo;m wrong and anyone validates that blocking a number still passes through ignoring the client blocked number table when using direct routing or DRAS, please feel free to shoot me a comment.
+If that is your case, you have to reach out to your Teams Admin to enter this number at the tenant level.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsClientBlockNumber.png"
+        data-srcset="/blog/images/TeamsClientBlockNumber.png, /blog/images/TeamsClientBlockNumber.png 1.5x, /blog/images/TeamsClientBlockNumber.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsClientBlockNumber.png"
+        title="/blog/images/TeamsClientBlockNumber.png" width="1102" height="601" /></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>There are multiple ways to achieve the same result and depending on the requirements and need for scaling, one option will fit better. My preference would be to keep everything in one place and at the SBC level if applicable for management, scalability and troubleshooting efforts. An SBC solution is more robust and has more options for routing and manipulations.
+If the environment is Direct Routing as a Service, the provider may have a unique or similar way to accomplish this. Requests and results may vary per provider but if you want to have control and not depend on the provider, then adding a new pattern at the tenant level will work just fine.</p>
+<p>Regardless of choice, gather all requirements, test, capture traces and then implement to find out the actual user experience on source and destination end to end and make sure it will work the way designed, desired and can scale up for a team of admins to manage this feature. Never leave it to a single admin to know what is going on when blocking numbers.</p>
+<p>There may be other ways to achieve the same result and other SBC vendors in the mix but these are the ones I have had a chance to play with.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-07-28</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" data-title="Teams Telephony - Block Inbound Number" data-via="@DpdLeon" data-hashtags="Teams,Telephony,SBC"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/telephony/">Telephony</a>,&nbsp;<a href="/blog/tags/sbc/">SBC</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" class="prev" rel="prev" title="Teams Device Monitoring and Alerting Offline Status"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Teams Device Monitoring and Alerting Offline Status</a>
+            <a href="/blog/posts/2021-08-19-poly-lens/" class="next" rel="next" title="Poly Lens - Getting Started">Poly Lens - Getting Started<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

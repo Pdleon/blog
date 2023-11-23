@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Polycom - Tag - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/tags/polycom/</link>
+        <description>Polycom - Tag - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/polycom/" rel="self" type="application/rss+xml" /><item>
+    <title>Teams SIP Gateway - Enable and Provision Polycom VVX 500</title>
+    <link>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</link>
+    <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</guid>
+    <description><![CDATA[Introduction When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.
+The official Microsoft documentation for all the pre-requisites and supported devices can be found here:
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts.]]></description>
+</item>
+<item>
+    <title>Poly Lens - Getting Started</title>
+    <link>https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/</link>
+    <pubDate>Thu, 19 Aug 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/</guid>
+    <description><![CDATA[Introduction Managing phones through Teams Admin Center has been challenging at times especially when staying up to date with firmware and application updates. Part of the challenge is that the phones at time do not register correctly, do not reflect immediate changes, do not appear in the dashboard at times, and fail to update when pushing the update. These challenges can be prevented or minimized by having correct compliance policies, accurate configuration and solid network connectivity.]]></description>
+</item>
+</channel>
+</rss>

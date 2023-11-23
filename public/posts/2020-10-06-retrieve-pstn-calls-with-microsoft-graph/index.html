@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph" />
+<meta property="og:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-06T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph"/>
+<meta name="twitter:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable"/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/"
+        },"genre": "posts","keywords": "Teams, MS Graph","wordcount":  782 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/","datePublished": "2020-10-06T00:00:00+00:00","dateModified": "2020-10-06T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;782 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#getting-the-reports">Getting the Reports</a></li>
+    <li><a href="#from-the-microsoft-official-documentation">From the Microsoft official Documentation</a>
+      <ul>
+        <li><a href="#call-record-permissions">Call Record Permissions</a></li>
+        <li><a href="#application-permissions-vs-delegated-permissions">Application permissions vs Delegated permissions</a></li>
+        <li><a href="#remarks">Remarks</a></li>
+        <li><a href="#example-usage">Example usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#microsoft-graph-explorer">Microsoft Graph Explorer</a></li>
+    <li><a href="#azure-application-registration">Azure Application Registration</a></li>
+    <li><a href="#creating---editing-the-script">Creating - Editing the Script</a></li>
+    <li><a href="#testing-the-script">Testing the Script</a></li>
+    <li><a href="#final-thoughts">Final thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>This post is an exercise and all credit goes to this blog - script on Github by  <a href="https://github.com/leeford/Get-TeamsPSTNCallRecords" target="_blank" rel="noopener noreffer">leeford-Get-TeamsPSTNCallRecords</a>
+</p>
+</blockquote>
+<h2 id="getting-the-reports">Getting the Reports</h2>
+<p>There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsAdminCenterAnalytics-Reports.png"
+        data-srcset="/blog/images/TeamsAdminCenterAnalytics-Reports.png, /blog/images/TeamsAdminCenterAnalytics-Reports.png 1.5x, /blog/images/TeamsAdminCenterAnalytics-Reports.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsAdminCenterAnalytics-Reports.png"
+        title="/blog/images/TeamsAdminCenterAnalytics-Reports.png" width="1070" height="515" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/UsagePSTNReport.png"
+        data-srcset="/blog/images/UsagePSTNReport.png, /blog/images/UsagePSTNReport.png 1.5x, /blog/images/UsagePSTNReport.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/UsagePSTNReport.png"
+        title="/blog/images/UsagePSTNReport.png" width="999" height="505" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/UsageMetrics2.png"
+        data-srcset="/blog/images/UsageMetrics2.png, /blog/images/UsageMetrics2.png 1.5x, /blog/images/UsageMetrics2.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/UsageMetrics2.png"
+        title="/blog/images/UsageMetrics2.png" width="881" height="187" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/UsageMetrics3.png"
+        data-srcset="/blog/images/UsageMetrics3.png, /blog/images/UsageMetrics3.png 1.5x, /blog/images/UsageMetrics3.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/UsageMetrics3.png"
+        title="/blog/images/UsageMetrics3.png" width="1002" height="181" /></p>
+<ul>
+<li>
+<p>We can see some basic PSTN call information like <em><strong>time, caller, type of call, destination, duration</strong>,</em> etc but the interface is small and having to navigate up and down and left - right can be  less desirable</p>
+</li>
+<li>
+<p>Other options to obtain this data include : Export to Excel which can be useful for some with some additional filters and search capabilities.</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/Export-Filter.png"
+        data-srcset="/blog/images/Export-Filter.png, /blog/images/Export-Filter.png 1.5x, /blog/images/Export-Filter.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/Export-Filter.png"
+        title="/blog/images/Export-Filter.png" width="147" height="52" /></p>
+<p>Now, if you prefer to have more control, automate or speed up your work flow during troubleshooting or report gathering, well Microsoft Graph API is the preferred way to connect and gather this information.</p>
+<p>Some background to make all this happen:</p>
+<h2 id="from-the-microsoft-official-documentation">From the Microsoft official Documentation</h2>
+<h3 id="call-record-permissions">Call Record Permissions</h3>
+<p>One of the following permissions is required to call this API. To learn more, including how to choose permissions, see <a href="https://docs.microsoft.com/en-us/graph/permissions-reference" target="_blank" rel="noopener noreffer">Permissions</a>
+.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Permission type</th>
+<th style="text-align:left">Permissions (from least to most privileged)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Delegated (work or school account)</td>
+<td style="text-align:left">Not supported.</td>
+</tr>
+<tr>
+<td style="text-align:left">Delegated (personal Microsoft account)</td>
+<td style="text-align:left">Not supported.</td>
+</tr>
+<tr>
+<td style="text-align:left">Application</td>
+<td style="text-align:left">CallRecords.Read.All</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-permissions-vs-delegated-permissions">Application permissions vs Delegated permissions</h3>
+<p>This is important to understand because when using the graph explorer you may encounter consent permissions warnings|errors to execute the query as the <em>CallRecords.Read.All</em> is specific to an application and not user scope.</p>
+<ul>
+<li><strong>Application permissions</strong> allow an application in Azure Active Directory to act as it’s own entity, rather than on behalf of a specific user.</li>
+<li><strong>Delegated permissions</strong> allow an application in Azure Active Directory to perform actions on behalf of a particular user.</li>
+</ul>
+<h4 id="application-permissions">Application permissions</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Permission</th>
+<th style="text-align:left">Display String</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Admin Consent Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>CallRecords.Read.All</em></td>
+<td style="text-align:left">Read all call records</td>
+<td style="text-align:left">Allows the app to read call records for all calls and online meetings without a signed-in user.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>The <em>CallRecords.Read.All</em> permission grants an <strong>application</strong> privileged access to <a href="https://docs.microsoft.com/en-us/graph/api/resources/callrecords-callrecord" target="_blank" rel="noopener noreffer">callRecords</a>
+ for every call and online meeting within your organization, including calls to and from external phone numbers. This includes potentially sensitive details about who participated in the call, as well as technical information pertaining to these calls and meetings that can be used for network troubleshooting, such as IP addresses, device details, and other network information.</p>
+<h3 id="example-usage">Example usage</h3>
+<h4 id="application">Application</h4>
+<ul>
+<li><em>CallRecords.Read.All</em>: Retrieve a call record (<code>GET /v1.0/communications/callRecords/{id}</code>).</li>
+<li><em>CallRecords.Read.All</em>: Subscribe to new call records (<code>POST /v1.0/subscriptions</code>).</li>
+<li><em>CallRecords.Read.All</em>: Retrieve direct routing call records within the specified time range (<code>GET /v1.0/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime={start date and time),toDateTime={end date and time))</code>)</li>
+</ul>
+<h2 id="microsoft-graph-explorer">Microsoft Graph Explorer</h2>
+<blockquote>
+<p>Microsoft provides the ability to test and validate your query through graph explorer but since this is an application specific resource/permission, we get a 403 requesting for consent of an application or in this case not supported</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png"
+        data-srcset="/blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png, /blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png 1.5x, /blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png"
+        title="/blog/images/2020-10-06-Graph%20Explorer%20-CallRecords.png" width="1251" height="758" /></p>
+<h2 id="azure-application-registration">Azure Application Registration</h2>
+<ul>
+<li>
+<p>Back to the original blog/source: We have to register a new application</p>
+</li>
+<li>
+<p>Create permissions for an application in Azure -&gt; App Registration -&gt; +New Registration -&gt; Name it however you want it</p>
+</li>
+<li>
+<p>Copy the application ID and Directory ID</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/Azure-NewAppRegistration.png"
+        data-srcset="/blog/images/Azure-NewAppRegistration.png, /blog/images/Azure-NewAppRegistration.png 1.5x, /blog/images/Azure-NewAppRegistration.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/Azure-NewAppRegistration.png"
+        title="/blog/images/Azure-NewAppRegistration.png" width="716" height="447" /></p>
+<ul>
+<li>
+<p>Create a new client secret and copy your string</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/Azure-AppCertificateandSecrets.png"
+        data-srcset="/blog/images/Azure-AppCertificateandSecrets.png, /blog/images/Azure-AppCertificateandSecrets.png 1.5x, /blog/images/Azure-AppCertificateandSecrets.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/Azure-AppCertificateandSecrets.png"
+        title="/blog/images/Azure-AppCertificateandSecrets.png" width="976" height="619" /></p>
+</li>
+<li>
+<p>Back to Azure Active Directory -&gt; Enterprise applications -&gt;%Your App Name% -&gt; Permissions</p>
+<ul>
+<li>Make sure that you have the necessary permissions for either your domain or the user to run this application. In this case I am consenting permissions to all users in my organization for test purposes. You can review  and modify the permissions for your application.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/Azure-AppPermissions.png"
+        data-srcset="/blog/images/Azure-AppPermissions.png, /blog/images/Azure-AppPermissions.png 1.5x, /blog/images/Azure-AppPermissions.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/Azure-AppPermissions.png"
+        title="/blog/images/Azure-AppPermissions.png" width="1385" height="619" /></p>
+</li>
+</ul>
+<h2 id="creating---editing-the-script">Creating - Editing the Script</h2>
+<ul>
+<li>
+<p>Back to the github script link below, click on Raw and copy the script to your preferred editor and modify your <strong>applicationid(client), directoryid(tenant), and clientsecret</strong> string as illustrated on his blog.</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/Github-RawScript.png"
+        data-srcset="/blog/images/Github-RawScript.png, /blog/images/Github-RawScript.png 1.5x, /blog/images/Github-RawScript.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/Github-RawScript.png"
+        title="/blog/images/Github-RawScript.png" width="782" height="341" /></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/GetPSTNAdaptedScript.png"
+        data-srcset="/blog/images/GetPSTNAdaptedScript.png, /blog/images/GetPSTNAdaptedScript.png 1.5x, /blog/images/GetPSTNAdaptedScript.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/GetPSTNAdaptedScript.png"
+        title="/blog/images/GetPSTNAdaptedScript.png" width="797" height="307" /></p>
+<h2 id="testing-the-script">Testing the Script</h2>
+<ul>
+<li>Let&rsquo;s run and test the script -&gt; currently running on Powershell 7.0.3 but also ran in Powershell 5.1 with success</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/GetPSTNRunningScript.png"
+        data-srcset="/blog/images/GetPSTNRunningScript.png, /blog/images/GetPSTNRunningScript.png 1.5x, /blog/images/GetPSTNRunningScript.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/GetPSTNRunningScript.png"
+        title="/blog/images/GetPSTNRunningScript.png" width="1001" height="527" /></p>
+<ul>
+<li>Everyone has a preference on the output format but I find it&rsquo;s easy to read and follow a json file. Here is a sample of the output:</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/OutputJson.png"
+        data-srcset="/blog/images/OutputJson.png, /blog/images/OutputJson.png 1.5x, /blog/images/OutputJson.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/OutputJson.png"
+        title="/blog/images/OutputJson.png" width="531" height="862" /></p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<ul>
+<li>Thank you to Lee for this script , great work</li>
+<li>Where do we go from here ? Since Microsoft only stores  this information up to 1 year, perhaps there is a need to move this data to another repository whether is a SharePoint List or  the new kid on the block: Microsoft Lists, an external/internal database or simply leave it on a json or csv file for archiving purposes.</li>
+<li>What do we do with all this data, we can leverage PowerBi to populate areas of interest or call volume per service/account, trends within your environment but also this could serve to your helpdesk or admin to troubleshoot PSTN calls or to comply with your company governance.</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-10-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-title="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph" data-via="@DpdLeon" data-hashtags="Teams,MS Graph"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/ms-graph/">MS Graph</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" class="prev" rel="prev" title="Auto Attendant Toll Fraud Call"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Auto Attendant Toll Fraud Call</a>
+            <a href="/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" class="next" rel="next" title="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate">Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Teams SIP Gateway - Enable and Provision Polycom VVX 500 - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Teams SIP Gateway - Enable and Provision Polycom VVX 500" />
+<meta property="og:description" content="Introduction When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.
+The official Microsoft documentation for all the pre-requisites and supported devices can be found here:
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-07T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Teams SIP Gateway - Enable and Provision Polycom VVX 500"/>
+<meta name="twitter:description" content="Introduction When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.
+The official Microsoft documentation for all the pre-requisites and supported devices can be found here:
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2023-11-20-this-blog-is-alive/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Teams SIP Gateway - Enable and Provision Polycom VVX 500",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2021-12-07-sip-gateway\/"
+        },"genre": "posts","keywords": "Teams, Telephony, Phones, Polycom","wordcount":  442 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2021-12-07-sip-gateway\/","datePublished": "2021-12-07T00:00:00+00:00","dateModified": "2021-12-07T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Teams SIP Gateway - Enable and Provision Polycom VVX 500</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a>&nbsp;<a href="/blog/categories/devices/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Devices</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-12-07">2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;442 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.</p>
+<p>The official Microsoft documentation for all the pre-requisites and supported devices can be found here:</p>
+<ul>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan" target="_blank" rel="noopener noreffer">https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan</a>
+</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure" target="_blank" rel="noopener noreffer">https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure</a>
+</p>
+</li>
+</ul>
+<h2 id="procedure">Procedure</h2>
+<ul>
+<li>Enable your custom or global policy to enable SIP devices can be used for calls</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png"
+        data-srcset="/blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png, /blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png 1.5x, /blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png"
+        title="/blog/images/SIPGateway03a-EnableCallPolicySIPDevice.png" width="1022" height="1021" /></p>
+<ul>
+<li>I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts. Go ahead and reset your phone to factory defaults.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway01-RestoretoDefaults.png"
+        data-srcset="/blog/images/SIPGateway01-RestoretoDefaults.png, /blog/images/SIPGateway01-RestoretoDefaults.png 1.5x, /blog/images/SIPGateway01-RestoretoDefaults.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway01-RestoretoDefaults.png"
+        title="/blog/images/SIPGateway01-RestoretoDefaults.png" width="802" height="497" /></p>
+<ul>
+<li>Set your clock, time zone and profile and change the default admin password</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway02-SetupTimeandProfile.png"
+        data-srcset="/blog/images/SIPGateway02-SetupTimeandProfile.png, /blog/images/SIPGateway02-SetupTimeandProfile.png 1.5x, /blog/images/SIPGateway02-SetupTimeandProfile.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway02-SetupTimeandProfile.png"
+        title="/blog/images/SIPGateway02-SetupTimeandProfile.png" width="800" height="603" /></p>
+<ul>
+<li>Set your provisioning server URL based on your location</li>
+</ul>
+<blockquote>
+<p>Americas: <a href="http://noam.ipp.sdg.teams.microsoft.com" target="_blank" rel="noopener noreffer">http://noam.ipp.sdg.teams.microsoft.com</a>
+</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway03-ProvisioningServerURL.png"
+        data-srcset="/blog/images/SIPGateway03-ProvisioningServerURL.png, /blog/images/SIPGateway03-ProvisioningServerURL.png 1.5x, /blog/images/SIPGateway03-ProvisioningServerURL.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway03-ProvisioningServerURL.png"
+        title="/blog/images/SIPGateway03-ProvisioningServerURL.png" width="791" height="492" /></p>
+<ul>
+<li>
+<p>If all the network ports and firewall pre-requisites are met, let the magic take place automatically. The phone will reboot a couple of times perhaps downgrading or upgrading the firmware in my scenario to the approved VVX500 firmware 5.9.6.2327</p>
+</li>
+<li>
+<p>Reaching the provisioning server</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway04-ContactingProvisioningServer.png"
+        data-srcset="/blog/images/SIPGateway04-ContactingProvisioningServer.png, /blog/images/SIPGateway04-ContactingProvisioningServer.png 1.5x, /blog/images/SIPGateway04-ContactingProvisioningServer.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway04-ContactingProvisioningServer.png"
+        title="/blog/images/SIPGateway04-ContactingProvisioningServer.png" width="854" height="650" /></p>
+<ul>
+<li>Phone restarting</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway05-RestartingPhone.png"
+        data-srcset="/blog/images/SIPGateway05-RestartingPhone.png, /blog/images/SIPGateway05-RestartingPhone.png 1.5x, /blog/images/SIPGateway05-RestartingPhone.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway05-RestartingPhone.png"
+        title="/blog/images/SIPGateway05-RestartingPhone.png" width="848" height="639" /></p>
+<ul>
+<li>Initializing and setting the firmware to the approved version</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway06-WelcomeBoot.png"
+        data-srcset="/blog/images/SIPGateway06-WelcomeBoot.png, /blog/images/SIPGateway06-WelcomeBoot.png 1.5x, /blog/images/SIPGateway06-WelcomeBoot.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway06-WelcomeBoot.png"
+        title="/blog/images/SIPGateway06-WelcomeBoot.png" width="847" height="637" /></p>
+<ul>
+<li>Network initializing</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway07-InitialNetwork.png"
+        data-srcset="/blog/images/SIPGateway07-InitialNetwork.png, /blog/images/SIPGateway07-InitialNetwork.png 1.5x, /blog/images/SIPGateway07-InitialNetwork.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway07-InitialNetwork.png"
+        title="/blog/images/SIPGateway07-InitialNetwork.png" width="845" height="641" /></p>
+<ul>
+<li>Provisioning successful</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway08-ProvisionSuccessFul.png"
+        data-srcset="/blog/images/SIPGateway08-ProvisionSuccessFul.png, /blog/images/SIPGateway08-ProvisionSuccessFul.png 1.5x, /blog/images/SIPGateway08-ProvisionSuccessFul.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway08-ProvisionSuccessFul.png"
+        title="/blog/images/SIPGateway08-ProvisionSuccessFul.png" width="852" height="635" /></p>
+<ul>
+<li>Press on the phone sign in button and the following screen will appear</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway09-DeviceLogin01.png"
+        data-srcset="/blog/images/SIPGateway09-DeviceLogin01.png, /blog/images/SIPGateway09-DeviceLogin01.png 1.5x, /blog/images/SIPGateway09-DeviceLogin01.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway09-DeviceLogin01.png"
+        title="/blog/images/SIPGateway09-DeviceLogin01.png" width="856" height="637" /></p>
+<ul>
+<li>On your computer or mobile device, go to <a href="https://microsoft.com/devicelogin" target="_blank" rel="noopener noreffer">https://microsoft.com/devicelogin</a>
+ and enter the code that appears on the phone, authenticate if required</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway10-Devicelogin02.png"
+        data-srcset="/blog/images/SIPGateway10-Devicelogin02.png, /blog/images/SIPGateway10-Devicelogin02.png 1.5x, /blog/images/SIPGateway10-Devicelogin02.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway10-Devicelogin02.png"
+        title="/blog/images/SIPGateway10-Devicelogin02.png" width="442" height="333" /></p>
+<ul>
+<li>You are now signed in</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway11-DeviceLogin03.png"
+        data-srcset="/blog/images/SIPGateway11-DeviceLogin03.png, /blog/images/SIPGateway11-DeviceLogin03.png 1.5x, /blog/images/SIPGateway11-DeviceLogin03.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway11-DeviceLogin03.png"
+        title="/blog/images/SIPGateway11-DeviceLogin03.png" width="436" height="337" /></p>
+<ul>
+<li>Phone is now ready for inbound and outbound calls</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway12-PhoneSignedin.png"
+        data-srcset="/blog/images/SIPGateway12-PhoneSignedin.png, /blog/images/SIPGateway12-PhoneSignedin.png 1.5x, /blog/images/SIPGateway12-PhoneSignedin.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway12-PhoneSignedin.png"
+        title="/blog/images/SIPGateway12-PhoneSignedin.png" width="847" height="641" /></p>
+<ul>
+<li>The phone now appears registered in the tenant. As you can see, there are two objects due my previous attempt that did not work as I did not reset the phone to factory defaults, leaving a ghost object. As of today, I cannot delete this object nor I can find this device in Azure AD or Intune. Until I figure this one out, this can be an administrative hassle.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway13-PhoneRegistered.png"
+        data-srcset="/blog/images/SIPGateway13-PhoneRegistered.png, /blog/images/SIPGateway13-PhoneRegistered.png 1.5x, /blog/images/SIPGateway13-PhoneRegistered.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway13-PhoneRegistered.png"
+        title="/blog/images/SIPGateway13-PhoneRegistered.png" width="1486" height="728" /></p>
+<p>In Azure AD, I can trace my failed and successful attempts to sign in but I cannot find this object yet.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGateway14-AzureSignDetails.png"
+        data-srcset="/blog/images/SIPGateway14-AzureSignDetails.png, /blog/images/SIPGateway14-AzureSignDetails.png 1.5x, /blog/images/SIPGateway14-AzureSignDetails.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGateway14-AzureSignDetails.png"
+        title="/blog/images/SIPGateway14-AzureSignDetails.png" width="832" height="928" /></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Process was straight forward and a nice to have feature in case you have an old supported phone around and want to register for basic Teams&rsquo; meetings and PSTN functionality.</p>
+<p>This process may not scale well for a large corporation with large volume of older phones and do not want to invest in new devices or my preferred choice of a certified headset. For C level, admins or the average user, I do not recommend as a primary device but evaluate as last resource or a specific use scenario.</p>
+<p>Read the official documentation for all the working functionality and the current limitations.</p>
+<p>Still need to evaluate this process and functionality further, as a common area device and test it with conditional access so I don&rsquo;t have any notes or thoughts yet.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-12-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/" data-title="Teams SIP Gateway - Enable and Provision Polycom VVX 500" data-via="@DpdLeon" data-hashtags="Teams,Telephony,Phones,Polycom"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/telephony/">Telephony</a>,&nbsp;<a href="/blog/tags/phones/">Phones</a>,&nbsp;<a href="/blog/tags/polycom/">Polycom</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2021-08-19-poly-lens/" class="prev" rel="prev" title="Poly Lens - Getting Started"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Poly Lens - Getting Started</a>
+            <a href="/blog/posts/2023-11-20-this-blog-is-alive/" class="next" rel="next" title="This blog is alive">This blog is alive<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

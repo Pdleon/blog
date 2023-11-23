@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PSTN - Tag - Pdleon Blog</title>
+        <link>https://pdleon.github.io/blog/tags/pstn/</link>
+        <description>PSTN - Tag - Pdleon Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 May 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/pstn/" rel="self" type="application/rss+xml" /><item>
+    <title>Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )</title>
+    <link>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</link>
+    <pubDate>Wed, 12 May 2021 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</guid>
+    <description><![CDATA[Request To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.
+Procedure We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:
+Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case Assign the proper license to the Resource Account Assign desired number to the Resource Account through powershell only Set-CsOnlineApplicationInstance -Identity ResourceAccountAA@domain.]]></description>
+</item>
+</channel>
+</rss>

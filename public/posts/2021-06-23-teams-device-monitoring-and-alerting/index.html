@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Teams Device Monitoring and Alerting Offline Status - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Teams Device Monitoring and Alerting Offline Status" />
+<meta property="og:description" content="Initial Thoughts This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.
+A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.
+Configuration Validate permissions to create a Team/Channel" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-23T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Teams Device Monitoring and Alerting Offline Status"/>
+<meta name="twitter:description" content="Initial Thoughts This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.
+A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.
+Configuration Validate permissions to create a Team/Channel"/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2021-06-08-teams-webinar/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Teams Device Monitoring and Alerting Offline Status",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2021-06-23-teams-device-monitoring-and-alerting\/"
+        },"genre": "posts","keywords": "Teams, Device, Monitor, Alert","wordcount":  606 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2021-06-23-teams-device-monitoring-and-alerting\/","datePublished": "2021-06-23T00:00:00+00:00","dateModified": "2021-06-23T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Teams Device Monitoring and Alerting Offline Status</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/devices/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Devices</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-06-23">2021-06-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;606 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#initial-thoughts">Initial Thoughts</a></li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#add-device-users">Add Device Users</a></li>
+        <li><a href="#configure-actions-for-channel-alert-or-webhook">Configure Actions for Channel Alert or Webhook</a></li>
+        <li><a href="#webhook-configuration">Webhook Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#alert-notifications">Alert Notifications</a>
+      <ul>
+        <li><a href="#teams-channel-notification-view">Teams Channel Notification View</a></li>
+      </ul>
+    </li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="initial-thoughts">Initial Thoughts</h2>
+<p>This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.</p>
+<p>A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.</p>
+<h2 id="configuration">Configuration</h2>
+<ul>
+<li>
+<p>Validate permissions to create a Team/Channel</p>
+</li>
+<li>
+<p>Navigate to Teams Admin Center | Notifications and Alerts | Rules</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TeamsAdminCenterNotificationandAlerts.png"
+        data-srcset="/blog/images/TeamsAdminCenterNotificationandAlerts.png, /blog/images/TeamsAdminCenterNotificationandAlerts.png 1.5x, /blog/images/TeamsAdminCenterNotificationandAlerts.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TeamsAdminCenterNotificationandAlerts.png"
+        title="/blog/images/TeamsAdminCenterNotificationandAlerts.png" width="1305" height="894" /></p>
+<ul>
+<li>Rule Type, Condition and Scope settings are greyed out and cannot be configured.</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/DeviceStateRule.png"
+        data-srcset="/blog/images/DeviceStateRule.png, /blog/images/DeviceStateRule.png 1.5x, /blog/images/DeviceStateRule.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/DeviceStateRule.png"
+        title="/blog/images/DeviceStateRule.png" width="1047" height="786" /></p>
+<h3 id="add-device-users">Add Device Users</h3>
+<p>My account is logged in to a couple of devices. For a few users, this is not a problem but you can imagine doing this for 500 +</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/DeviceStateRuleAddUsers.png"
+        data-srcset="/blog/images/DeviceStateRuleAddUsers.png, /blog/images/DeviceStateRuleAddUsers.png 1.5x, /blog/images/DeviceStateRuleAddUsers.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/DeviceStateRuleAddUsers.png"
+        title="/blog/images/DeviceStateRuleAddUsers.png" width="1046" height="842" /></p>
+<h3 id="configure-actions-for-channel-alert-or-webhook">Configure Actions for Channel Alert or Webhook</h3>
+<p>Use your custom channel or leave the default channel alert. Initial configuration will create this for you.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/DeviceStateRuleActions.png"
+        data-srcset="/blog/images/DeviceStateRuleActions.png, /blog/images/DeviceStateRuleActions.png 1.5x, /blog/images/DeviceStateRuleActions.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/DeviceStateRuleActions.png"
+        title="/blog/images/DeviceStateRuleActions.png" width="1028" height="848" /></p>
+<h3 id="webhook-configuration">Webhook Configuration</h3>
+<p>Initially I tested with a standard M365 email connector webhook but that didn&rsquo;t work probably due to mismatch of the json payload. Looking at the documentation, it has a custom payload schema and just for testing purposes decided to use a power automate flow inbound webhook that will send an email alert.
+This is a premium feature but you can enable a 90 day trial for testing purposes and integrate it to another third party solution or adapt it to your needs.
+During this test, I dit not obtain the user and device GUID so it requires additional work as the schema will not correlate the user and device GUID displayname.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/DeviceOfflineAlertWebhookFlow.png"
+        data-srcset="/blog/images/DeviceOfflineAlertWebhookFlow.png, /blog/images/DeviceOfflineAlertWebhookFlow.png 1.5x, /blog/images/DeviceOfflineAlertWebhookFlow.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/DeviceOfflineAlertWebhookFlow.png"
+        title="/blog/images/DeviceOfflineAlertWebhookFlow.png" width="889" height="926" /></p>
+<h2 id="alert-notifications">Alert Notifications</h2>
+<h3 id="teams-channel-notification-view">Teams Channel Notification View</h3>
+<p>Basic view but works well, from there you can either automate your own logic to this notification or just leave it in the channel. One thing that wasn&rsquo;t accurate for me was the alert time, the documentation says the json schema is in UTC but the alert time did not match neither my time zone nor UTC time. I will continue to test on this.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/AlertinTeamsChannel.png"
+        data-srcset="/blog/images/AlertinTeamsChannel.png, /blog/images/AlertinTeamsChannel.png 1.5x, /blog/images/AlertinTeamsChannel.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/AlertinTeamsChannel.png"
+        title="/blog/images/AlertinTeamsChannel.png" width="1122" height="677" /></p>
+<p>The webhook email alert may not be very helpful due to the user and device GUID but is an option. One thing that does match is the UTC time of the alert compared to the team channel alert.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/DeviceOfflineWebhookEmailAlert.png"
+        data-srcset="/blog/images/DeviceOfflineWebhookEmailAlert.png, /blog/images/DeviceOfflineWebhookEmailAlert.png 1.5x, /blog/images/DeviceOfflineWebhookEmailAlert.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/DeviceOfflineWebhookEmailAlert.png"
+        title="/blog/images/DeviceOfflineWebhookEmailAlert.png" width="933" height="357" /></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This is possibly a first of many to be added rules in the Admin Center and while is a good initial attempt, I feel it needs to allow Admins for more configuration. Curious when and how this will be developed into a more robust reactive alerting process or to allow Admins to generate more rules. This is just complementary alerting and anoter tool in the arsenal.</p>
+<p>As of today, I didn&rsquo;t find a powershell command to generate a new rule or customize it to other scenarios.</p>
+<p>The Scope section, Frequency of Evaluation &ldquo;Real Time&rdquo; will depend on the heartbeat accuracy of the device back to Microsoft. During my test, my phones were completely unplugged and took about 30 minutes to report that they were offline on the dashboard. Once device status is offline, the team channel alert was instant along with my webhook rule.</p>
+<p>The Webhook alert is great option but needs additional work to retrieve User and Device GUID, otherwise would take time to correlate against a script or database or any spreadsheet containing all these values and determine which device went offline. For a single device, this is easy but think of a company with 500 + devices.</p>
+<p>One scenario I did not test is during a firmware or app upgrade but I&rsquo;m guessing depending on how fast the phone reboots reports a heartbeat, may or may not trigger this alert.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-06-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" data-title="Teams Device Monitoring and Alerting Offline Status" data-via="@DpdLeon" data-hashtags="Teams,Device,Monitor,Alert"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/device/">Device</a>,&nbsp;<a href="/blog/tags/monitor/">Monitor</a>,&nbsp;<a href="/blog/tags/alert/">Alert</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2021-06-08-teams-webinar/" class="prev" rel="prev" title="Quick Guide Teams Webinar - Registration and Flow"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Quick Guide Teams Webinar - Registration and Flow</a>
+            <a href="/blog/posts/2021-07-28-block-inbound-number/" class="next" rel="next" title="Teams Telephony - Block Inbound Number">Teams Telephony - Block Inbound Number<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

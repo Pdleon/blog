@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Auto Attendant Toll Fraud Call - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Auto Attendant Toll Fraud Call" />
+<meta property="og:description" content="Problem Customer received an email from SIP provider advising of a possible fraud occurrence. [Source Number] has alarmed for a growing volume of calls to [&#43;1264xxxxxxx], please verify that destination number is authorized for business.
+Troubleshooting Search for the source number to identify the user/object assigned to that number. Rely on the user activity report under Skype monitoring reports to retrieve more information on the number[s] called. We can see that there is a large volume of calls (275) to this number located in Anguilla which the business has no need to interact with." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-17T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Auto Attendant Toll Fraud Call"/>
+<meta name="twitter:description" content="Problem Customer received an email from SIP provider advising of a possible fraud occurrence. [Source Number] has alarmed for a growing volume of calls to [&#43;1264xxxxxxx], please verify that destination number is authorized for business.
+Troubleshooting Search for the source number to identify the user/object assigned to that number. Rely on the user activity report under Skype monitoring reports to retrieve more information on the number[s] called. We can see that there is a large volume of calls (275) to this number located in Anguilla which the business has no need to interact with."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Auto Attendant Toll Fraud Call",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2017-03-17-autoattendant-toll-fraud-call\/"
+        },"genre": "posts","keywords": "Sonus, Auto Attendant","wordcount":  773 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2017-03-17-autoattendant-toll-fraud-call\/","datePublished": "2017-03-17T00:00:00+00:00","dateModified": "2017-03-17T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Auto Attendant Toll Fraud Call</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a>&nbsp;<a href="/blog/categories/ivr/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>IVR</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2017-03-17">2017-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;773 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#steps">Steps</a></li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="problem">Problem</h2>
+<p>Customer  received an email from SIP provider advising of a possible fraud  occurrence. [Source Number] has alarmed for a growing volume of calls to  [+1264xxxxxxx], please verify that destination number is authorized for  business.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/nf6tWexCKykmxDbX0BW-IuIlumIADMfWuo9rvHbTiSC1-0_fMfxVeHhIfmBfYEp7HGBk8yezgPJn1JBKrO7zJo_EukedV2m4hmL-pCK9JM-W8GvLNzp9CxWB0U9FDt74aRdXsOBeo95I0Eow1vHOV9PZhlPSS3udcxU0MbQukflVYnlrSBTFcE5xGWrFbD1G_Y0v7Ag7kIAFbUtBP6M3sSo4WCMDmLJZY0DDUqYsP_qZCJ0ONkuIl0q4S5y-T7VEo_NRxXThD25jp5TRhkwf6T0p3ZmBO53ybMQKcVGMVXyAP2WFCiiL1EXCSbhmFgCnhdW5uyG-w2FEFdqXG0d25yj96saiJD80iYrKkZqFU_z4CXJoaXEcCO41bBEj8gXxU-mhCdgCGF4l1rkLklbsi5UCPjpyyztaLtVP191cMJavD9JZ7m4PXXWOPR2jIkDkoVyPqA0shT2Q5bAKyOeiZau9P0amkhgyickjVyBtoaXzASLG1vaYy13JJY_vwDUELohQCICHyPY8h-zEKc6dURcvlkCBNrjTPrsj2uI7lCWPcnxILWmbLOHt1PSv-ZEqh7FX7XW9kc-XUBVfXx5p2f_Tg8qaluQVuZkrEENlWmRyIX9ocKVFU3LMFwlUutIuR8K8fw7EZsfEPsXaw01w_iuqed1DBOPoT6yU24D7=w259-h194-no"
+        data-srcset="https://lh3.googleusercontent.com/nf6tWexCKykmxDbX0BW-IuIlumIADMfWuo9rvHbTiSC1-0_fMfxVeHhIfmBfYEp7HGBk8yezgPJn1JBKrO7zJo_EukedV2m4hmL-pCK9JM-W8GvLNzp9CxWB0U9FDt74aRdXsOBeo95I0Eow1vHOV9PZhlPSS3udcxU0MbQukflVYnlrSBTFcE5xGWrFbD1G_Y0v7Ag7kIAFbUtBP6M3sSo4WCMDmLJZY0DDUqYsP_qZCJ0ONkuIl0q4S5y-T7VEo_NRxXThD25jp5TRhkwf6T0p3ZmBO53ybMQKcVGMVXyAP2WFCiiL1EXCSbhmFgCnhdW5uyG-w2FEFdqXG0d25yj96saiJD80iYrKkZqFU_z4CXJoaXEcCO41bBEj8gXxU-mhCdgCGF4l1rkLklbsi5UCPjpyyztaLtVP191cMJavD9JZ7m4PXXWOPR2jIkDkoVyPqA0shT2Q5bAKyOeiZau9P0amkhgyickjVyBtoaXzASLG1vaYy13JJY_vwDUELohQCICHyPY8h-zEKc6dURcvlkCBNrjTPrsj2uI7lCWPcnxILWmbLOHt1PSv-ZEqh7FX7XW9kc-XUBVfXx5p2f_Tg8qaluQVuZkrEENlWmRyIX9ocKVFU3LMFwlUutIuR8K8fw7EZsfEPsXaw01w_iuqed1DBOPoT6yU24D7=w259-h194-no, https://lh3.googleusercontent.com/nf6tWexCKykmxDbX0BW-IuIlumIADMfWuo9rvHbTiSC1-0_fMfxVeHhIfmBfYEp7HGBk8yezgPJn1JBKrO7zJo_EukedV2m4hmL-pCK9JM-W8GvLNzp9CxWB0U9FDt74aRdXsOBeo95I0Eow1vHOV9PZhlPSS3udcxU0MbQukflVYnlrSBTFcE5xGWrFbD1G_Y0v7Ag7kIAFbUtBP6M3sSo4WCMDmLJZY0DDUqYsP_qZCJ0ONkuIl0q4S5y-T7VEo_NRxXThD25jp5TRhkwf6T0p3ZmBO53ybMQKcVGMVXyAP2WFCiiL1EXCSbhmFgCnhdW5uyG-w2FEFdqXG0d25yj96saiJD80iYrKkZqFU_z4CXJoaXEcCO41bBEj8gXxU-mhCdgCGF4l1rkLklbsi5UCPjpyyztaLtVP191cMJavD9JZ7m4PXXWOPR2jIkDkoVyPqA0shT2Q5bAKyOeiZau9P0amkhgyickjVyBtoaXzASLG1vaYy13JJY_vwDUELohQCICHyPY8h-zEKc6dURcvlkCBNrjTPrsj2uI7lCWPcnxILWmbLOHt1PSv-ZEqh7FX7XW9kc-XUBVfXx5p2f_Tg8qaluQVuZkrEENlWmRyIX9ocKVFU3LMFwlUutIuR8K8fw7EZsfEPsXaw01w_iuqed1DBOPoT6yU24D7=w259-h194-no 1.5x, https://lh3.googleusercontent.com/nf6tWexCKykmxDbX0BW-IuIlumIADMfWuo9rvHbTiSC1-0_fMfxVeHhIfmBfYEp7HGBk8yezgPJn1JBKrO7zJo_EukedV2m4hmL-pCK9JM-W8GvLNzp9CxWB0U9FDt74aRdXsOBeo95I0Eow1vHOV9PZhlPSS3udcxU0MbQukflVYnlrSBTFcE5xGWrFbD1G_Y0v7Ag7kIAFbUtBP6M3sSo4WCMDmLJZY0DDUqYsP_qZCJ0ONkuIl0q4S5y-T7VEo_NRxXThD25jp5TRhkwf6T0p3ZmBO53ybMQKcVGMVXyAP2WFCiiL1EXCSbhmFgCnhdW5uyG-w2FEFdqXG0d25yj96saiJD80iYrKkZqFU_z4CXJoaXEcCO41bBEj8gXxU-mhCdgCGF4l1rkLklbsi5UCPjpyyztaLtVP191cMJavD9JZ7m4PXXWOPR2jIkDkoVyPqA0shT2Q5bAKyOeiZau9P0amkhgyickjVyBtoaXzASLG1vaYy13JJY_vwDUELohQCICHyPY8h-zEKc6dURcvlkCBNrjTPrsj2uI7lCWPcnxILWmbLOHt1PSv-ZEqh7FX7XW9kc-XUBVfXx5p2f_Tg8qaluQVuZkrEENlWmRyIX9ocKVFU3LMFwlUutIuR8K8fw7EZsfEPsXaw01w_iuqed1DBOPoT6yU24D7=w259-h194-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/nf6tWexCKykmxDbX0BW-IuIlumIADMfWuo9rvHbTiSC1-0_fMfxVeHhIfmBfYEp7HGBk8yezgPJn1JBKrO7zJo_EukedV2m4hmL-pCK9JM-W8GvLNzp9CxWB0U9FDt74aRdXsOBeo95I0Eow1vHOV9PZhlPSS3udcxU0MbQukflVYnlrSBTFcE5xGWrFbD1G_Y0v7Ag7kIAFbUtBP6M3sSo4WCMDmLJZY0DDUqYsP_qZCJ0ONkuIl0q4S5y-T7VEo_NRxXThD25jp5TRhkwf6T0p3ZmBO53ybMQKcVGMVXyAP2WFCiiL1EXCSbhmFgCnhdW5uyG-w2FEFdqXG0d25yj96saiJD80iYrKkZqFU_z4CXJoaXEcCO41bBEj8gXxU-mhCdgCGF4l1rkLklbsi5UCPjpyyztaLtVP191cMJavD9JZ7m4PXXWOPR2jIkDkoVyPqA0shT2Q5bAKyOeiZau9P0amkhgyickjVyBtoaXzASLG1vaYy13JJY_vwDUELohQCICHyPY8h-zEKc6dURcvlkCBNrjTPrsj2uI7lCWPcnxILWmbLOHt1PSv-ZEqh7FX7XW9kc-XUBVfXx5p2f_Tg8qaluQVuZkrEENlWmRyIX9ocKVFU3LMFwlUutIuR8K8fw7EZsfEPsXaw01w_iuqed1DBOPoT6yU24D7=w259-h194-no"
+        title="img" /></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>Search for the source number to identify the user/object assigned to that number.</li>
+<li>Rely on the user activity report under Skype monitoring reports to retrieve more information on the number[s] called.
+<ul>
+<li>We  can see that there is a large volume of calls (275) to this number  located in Anguilla which the business has no need to interact with.</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/j33qYL1Mn5yruwfQv-zWocY7yJuPfuxKYj_ZBQYukaf9NDUGXu2co2L4IGTR4x84nvy23PDqIpJ6kALp5nA6570p52SWniA45Sxru50TnitoPE2ZdI9JC-kG8qj49kOfETJEu7l2F0NcAP29e6AaOQZhhnySoxzlaIGuST06BnAf_22_gygm4pJZluLU2OwFJUA7Iq4ljauRY9RSLObbJNeyOP9PJbsDQvtOa6efFdHRx9Dbcm-W3nDZb_NdjdhG91-r_yUeVp6LReh8AuMqvaniMo95MXVJjXWGNDZZc28lK92xqi5CYhWuTlw2Z3qrV9TQWyxLacFabJ3H819joDndtCeaz5xiY1FpUZ6QY4KbFr1KwY-ksdDeK5RF5_ThPtjbt-Gu8aDYA5VInOxLVZdt5iZ5p2_kvQo9C2VOUkfkt6HGDKKcNC4yY00v-QOCbf87NWhvWchVCBkmldirCvGily3eNxskl4tIv-8oIe6RdP4IQaqQGQCjYgeFV7wLxffctr9F8RrHTT47iGmhvu1-grRddfHguxDumFTcRE3WlY4LoJGy0Ep5fWSYUBYAc6G8c-dMB-tT9sKBlP7CxmESS7AkKqurpJv1thbEXZCRoaM6njtwhP-_GxK8zDmkANxe-O4SSHgWNlJwlOO43NTpSVnJBjNhY8JQaXAf=w1183-h810-no"
+        data-srcset="https://lh3.googleusercontent.com/j33qYL1Mn5yruwfQv-zWocY7yJuPfuxKYj_ZBQYukaf9NDUGXu2co2L4IGTR4x84nvy23PDqIpJ6kALp5nA6570p52SWniA45Sxru50TnitoPE2ZdI9JC-kG8qj49kOfETJEu7l2F0NcAP29e6AaOQZhhnySoxzlaIGuST06BnAf_22_gygm4pJZluLU2OwFJUA7Iq4ljauRY9RSLObbJNeyOP9PJbsDQvtOa6efFdHRx9Dbcm-W3nDZb_NdjdhG91-r_yUeVp6LReh8AuMqvaniMo95MXVJjXWGNDZZc28lK92xqi5CYhWuTlw2Z3qrV9TQWyxLacFabJ3H819joDndtCeaz5xiY1FpUZ6QY4KbFr1KwY-ksdDeK5RF5_ThPtjbt-Gu8aDYA5VInOxLVZdt5iZ5p2_kvQo9C2VOUkfkt6HGDKKcNC4yY00v-QOCbf87NWhvWchVCBkmldirCvGily3eNxskl4tIv-8oIe6RdP4IQaqQGQCjYgeFV7wLxffctr9F8RrHTT47iGmhvu1-grRddfHguxDumFTcRE3WlY4LoJGy0Ep5fWSYUBYAc6G8c-dMB-tT9sKBlP7CxmESS7AkKqurpJv1thbEXZCRoaM6njtwhP-_GxK8zDmkANxe-O4SSHgWNlJwlOO43NTpSVnJBjNhY8JQaXAf=w1183-h810-no, https://lh3.googleusercontent.com/j33qYL1Mn5yruwfQv-zWocY7yJuPfuxKYj_ZBQYukaf9NDUGXu2co2L4IGTR4x84nvy23PDqIpJ6kALp5nA6570p52SWniA45Sxru50TnitoPE2ZdI9JC-kG8qj49kOfETJEu7l2F0NcAP29e6AaOQZhhnySoxzlaIGuST06BnAf_22_gygm4pJZluLU2OwFJUA7Iq4ljauRY9RSLObbJNeyOP9PJbsDQvtOa6efFdHRx9Dbcm-W3nDZb_NdjdhG91-r_yUeVp6LReh8AuMqvaniMo95MXVJjXWGNDZZc28lK92xqi5CYhWuTlw2Z3qrV9TQWyxLacFabJ3H819joDndtCeaz5xiY1FpUZ6QY4KbFr1KwY-ksdDeK5RF5_ThPtjbt-Gu8aDYA5VInOxLVZdt5iZ5p2_kvQo9C2VOUkfkt6HGDKKcNC4yY00v-QOCbf87NWhvWchVCBkmldirCvGily3eNxskl4tIv-8oIe6RdP4IQaqQGQCjYgeFV7wLxffctr9F8RrHTT47iGmhvu1-grRddfHguxDumFTcRE3WlY4LoJGy0Ep5fWSYUBYAc6G8c-dMB-tT9sKBlP7CxmESS7AkKqurpJv1thbEXZCRoaM6njtwhP-_GxK8zDmkANxe-O4SSHgWNlJwlOO43NTpSVnJBjNhY8JQaXAf=w1183-h810-no 1.5x, https://lh3.googleusercontent.com/j33qYL1Mn5yruwfQv-zWocY7yJuPfuxKYj_ZBQYukaf9NDUGXu2co2L4IGTR4x84nvy23PDqIpJ6kALp5nA6570p52SWniA45Sxru50TnitoPE2ZdI9JC-kG8qj49kOfETJEu7l2F0NcAP29e6AaOQZhhnySoxzlaIGuST06BnAf_22_gygm4pJZluLU2OwFJUA7Iq4ljauRY9RSLObbJNeyOP9PJbsDQvtOa6efFdHRx9Dbcm-W3nDZb_NdjdhG91-r_yUeVp6LReh8AuMqvaniMo95MXVJjXWGNDZZc28lK92xqi5CYhWuTlw2Z3qrV9TQWyxLacFabJ3H819joDndtCeaz5xiY1FpUZ6QY4KbFr1KwY-ksdDeK5RF5_ThPtjbt-Gu8aDYA5VInOxLVZdt5iZ5p2_kvQo9C2VOUkfkt6HGDKKcNC4yY00v-QOCbf87NWhvWchVCBkmldirCvGily3eNxskl4tIv-8oIe6RdP4IQaqQGQCjYgeFV7wLxffctr9F8RrHTT47iGmhvu1-grRddfHguxDumFTcRE3WlY4LoJGy0Ep5fWSYUBYAc6G8c-dMB-tT9sKBlP7CxmESS7AkKqurpJv1thbEXZCRoaM6njtwhP-_GxK8zDmkANxe-O4SSHgWNlJwlOO43NTpSVnJBjNhY8JQaXAf=w1183-h810-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/j33qYL1Mn5yruwfQv-zWocY7yJuPfuxKYj_ZBQYukaf9NDUGXu2co2L4IGTR4x84nvy23PDqIpJ6kALp5nA6570p52SWniA45Sxru50TnitoPE2ZdI9JC-kG8qj49kOfETJEu7l2F0NcAP29e6AaOQZhhnySoxzlaIGuST06BnAf_22_gygm4pJZluLU2OwFJUA7Iq4ljauRY9RSLObbJNeyOP9PJbsDQvtOa6efFdHRx9Dbcm-W3nDZb_NdjdhG91-r_yUeVp6LReh8AuMqvaniMo95MXVJjXWGNDZZc28lK92xqi5CYhWuTlw2Z3qrV9TQWyxLacFabJ3H819joDndtCeaz5xiY1FpUZ6QY4KbFr1KwY-ksdDeK5RF5_ThPtjbt-Gu8aDYA5VInOxLVZdt5iZ5p2_kvQo9C2VOUkfkt6HGDKKcNC4yY00v-QOCbf87NWhvWchVCBkmldirCvGily3eNxskl4tIv-8oIe6RdP4IQaqQGQCjYgeFV7wLxffctr9F8RrHTT47iGmhvu1-grRddfHguxDumFTcRE3WlY4LoJGy0Ep5fWSYUBYAc6G8c-dMB-tT9sKBlP7CxmESS7AkKqurpJv1thbEXZCRoaM6njtwhP-_GxK8zDmkANxe-O4SSHgWNlJwlOO43NTpSVnJBjNhY8JQaXAf=w1183-h810-no"
+        title="img" /></p>
+<p>When  we dig into the details of this call, the most important detail is the  “Referred by” field which will point you out the object that is placing  the calls from  and in our case it was an auto attendant hosted in O365  which its dial plan and voice policy allows to dial out 11 digit number  with the country code of North America +1</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/saX3d-whMAmk2BUYZqJ6OAvdE-jDQLXIKUuO0dmijjy5FdTcbv6yOZNlDUvQVPyHZXmQdYTD57fjbH26b1DjQq6Wp9YrzDwZoOggkCdU6eBOy_-k_bXbGXDHCnGlrf_wQ6qlbGug3N1B87gmfKAO--bSyq8q2YVjDFy0SpJkfF7VhX6sjrKGlBcVkorCqBSX-JMQhnT9h9lnlPrHCPppkWudOwRsVasj9iotDgcH9WlcUIYGc_RB_swzzcvhvCj3Pxw1AQM39cb4NAu13jocHtjvNXKfoCzVwxSmZ5AMrx4BBZvjY3LgyFdc_w6YdvtZ37h0ePW001M92UKppKD96zdJnzVKf4lXw4SRQGIM2tBfhXxbA_eTuKrS5k0aw9u57iJJ92Bx4qRnKeGWvEMdWjSJ5Pl1wEhCHCitXEDXYGkMwHcG4MLo-5I8Znb5KNeTXzlXc3V76EKwmywoxmXHawE2faXfqFNdnjVvNFKm5hQQ_vVnZCzu-KsnpPNAHf4aKJdsJaiEO33361MR1KWFMZIW9Hs4eOatKkrO872gKr-fxPh69ptUZxL279r2uwyvOMm3bCTO5vvDQCWvSG0ptSfHIioibzt0MM96iXcaBq-puDvbAFQtQp5HALtHv5b5z_uN6KbrbHFA6TJtDVbnAH3LYt2e_AKrvZ-k4I01=w998-h547-no"
+        data-srcset="https://lh3.googleusercontent.com/saX3d-whMAmk2BUYZqJ6OAvdE-jDQLXIKUuO0dmijjy5FdTcbv6yOZNlDUvQVPyHZXmQdYTD57fjbH26b1DjQq6Wp9YrzDwZoOggkCdU6eBOy_-k_bXbGXDHCnGlrf_wQ6qlbGug3N1B87gmfKAO--bSyq8q2YVjDFy0SpJkfF7VhX6sjrKGlBcVkorCqBSX-JMQhnT9h9lnlPrHCPppkWudOwRsVasj9iotDgcH9WlcUIYGc_RB_swzzcvhvCj3Pxw1AQM39cb4NAu13jocHtjvNXKfoCzVwxSmZ5AMrx4BBZvjY3LgyFdc_w6YdvtZ37h0ePW001M92UKppKD96zdJnzVKf4lXw4SRQGIM2tBfhXxbA_eTuKrS5k0aw9u57iJJ92Bx4qRnKeGWvEMdWjSJ5Pl1wEhCHCitXEDXYGkMwHcG4MLo-5I8Znb5KNeTXzlXc3V76EKwmywoxmXHawE2faXfqFNdnjVvNFKm5hQQ_vVnZCzu-KsnpPNAHf4aKJdsJaiEO33361MR1KWFMZIW9Hs4eOatKkrO872gKr-fxPh69ptUZxL279r2uwyvOMm3bCTO5vvDQCWvSG0ptSfHIioibzt0MM96iXcaBq-puDvbAFQtQp5HALtHv5b5z_uN6KbrbHFA6TJtDVbnAH3LYt2e_AKrvZ-k4I01=w998-h547-no, https://lh3.googleusercontent.com/saX3d-whMAmk2BUYZqJ6OAvdE-jDQLXIKUuO0dmijjy5FdTcbv6yOZNlDUvQVPyHZXmQdYTD57fjbH26b1DjQq6Wp9YrzDwZoOggkCdU6eBOy_-k_bXbGXDHCnGlrf_wQ6qlbGug3N1B87gmfKAO--bSyq8q2YVjDFy0SpJkfF7VhX6sjrKGlBcVkorCqBSX-JMQhnT9h9lnlPrHCPppkWudOwRsVasj9iotDgcH9WlcUIYGc_RB_swzzcvhvCj3Pxw1AQM39cb4NAu13jocHtjvNXKfoCzVwxSmZ5AMrx4BBZvjY3LgyFdc_w6YdvtZ37h0ePW001M92UKppKD96zdJnzVKf4lXw4SRQGIM2tBfhXxbA_eTuKrS5k0aw9u57iJJ92Bx4qRnKeGWvEMdWjSJ5Pl1wEhCHCitXEDXYGkMwHcG4MLo-5I8Znb5KNeTXzlXc3V76EKwmywoxmXHawE2faXfqFNdnjVvNFKm5hQQ_vVnZCzu-KsnpPNAHf4aKJdsJaiEO33361MR1KWFMZIW9Hs4eOatKkrO872gKr-fxPh69ptUZxL279r2uwyvOMm3bCTO5vvDQCWvSG0ptSfHIioibzt0MM96iXcaBq-puDvbAFQtQp5HALtHv5b5z_uN6KbrbHFA6TJtDVbnAH3LYt2e_AKrvZ-k4I01=w998-h547-no 1.5x, https://lh3.googleusercontent.com/saX3d-whMAmk2BUYZqJ6OAvdE-jDQLXIKUuO0dmijjy5FdTcbv6yOZNlDUvQVPyHZXmQdYTD57fjbH26b1DjQq6Wp9YrzDwZoOggkCdU6eBOy_-k_bXbGXDHCnGlrf_wQ6qlbGug3N1B87gmfKAO--bSyq8q2YVjDFy0SpJkfF7VhX6sjrKGlBcVkorCqBSX-JMQhnT9h9lnlPrHCPppkWudOwRsVasj9iotDgcH9WlcUIYGc_RB_swzzcvhvCj3Pxw1AQM39cb4NAu13jocHtjvNXKfoCzVwxSmZ5AMrx4BBZvjY3LgyFdc_w6YdvtZ37h0ePW001M92UKppKD96zdJnzVKf4lXw4SRQGIM2tBfhXxbA_eTuKrS5k0aw9u57iJJ92Bx4qRnKeGWvEMdWjSJ5Pl1wEhCHCitXEDXYGkMwHcG4MLo-5I8Znb5KNeTXzlXc3V76EKwmywoxmXHawE2faXfqFNdnjVvNFKm5hQQ_vVnZCzu-KsnpPNAHf4aKJdsJaiEO33361MR1KWFMZIW9Hs4eOatKkrO872gKr-fxPh69ptUZxL279r2uwyvOMm3bCTO5vvDQCWvSG0ptSfHIioibzt0MM96iXcaBq-puDvbAFQtQp5HALtHv5b5z_uN6KbrbHFA6TJtDVbnAH3LYt2e_AKrvZ-k4I01=w998-h547-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/saX3d-whMAmk2BUYZqJ6OAvdE-jDQLXIKUuO0dmijjy5FdTcbv6yOZNlDUvQVPyHZXmQdYTD57fjbH26b1DjQq6Wp9YrzDwZoOggkCdU6eBOy_-k_bXbGXDHCnGlrf_wQ6qlbGug3N1B87gmfKAO--bSyq8q2YVjDFy0SpJkfF7VhX6sjrKGlBcVkorCqBSX-JMQhnT9h9lnlPrHCPppkWudOwRsVasj9iotDgcH9WlcUIYGc_RB_swzzcvhvCj3Pxw1AQM39cb4NAu13jocHtjvNXKfoCzVwxSmZ5AMrx4BBZvjY3LgyFdc_w6YdvtZ37h0ePW001M92UKppKD96zdJnzVKf4lXw4SRQGIM2tBfhXxbA_eTuKrS5k0aw9u57iJJ92Bx4qRnKeGWvEMdWjSJ5Pl1wEhCHCitXEDXYGkMwHcG4MLo-5I8Znb5KNeTXzlXc3V76EKwmywoxmXHawE2faXfqFNdnjVvNFKm5hQQ_vVnZCzu-KsnpPNAHf4aKJdsJaiEO33361MR1KWFMZIW9Hs4eOatKkrO872gKr-fxPh69ptUZxL279r2uwyvOMm3bCTO5vvDQCWvSG0ptSfHIioibzt0MM96iXcaBq-puDvbAFQtQp5HALtHv5b5z_uN6KbrbHFA6TJtDVbnAH3LYt2e_AKrvZ-k4I01=w998-h547-no"
+        title="img" /></p>
+<h2 id="solution">Solution</h2>
+<p>There  are multiple ways to address this issue, each solution should be  applied to whatever fits your environment best. In no particular order:</p>
+<ul>
+<li>
+<ul>
+<li>Restrict the auto attendant and create dialing rules.</li>
+<li>Create an outbound trunk configuration rule to manipulate all these area codes and terminate the call.</li>
+<li>Create  a dial plan and voice policy in Skype that allows/restricts numbers  according to the business requirements and apply it to the Exchange UM  object in Skype.</li>
+<li>Terminate  [ reject ] the call at the gateway level,  depending on your  environment, this could be done for the calling number [ source ] or  your called number [ destination ].</li>
+<li>Create  an unassigned number range in Skype, include all the area codes to  block and send that to a recorded announcement. This solution adds  flexibility if for some reason a legit business call gets trapped in the  rule. It can be easily traced, diagnosed, and could politely warn the  caller  to stop such activities.</li>
+</ul>
+</li>
+</ul>
+<p>We  needed to put a plan in place and the easiest and fastest way to  address this was to terminate the call at the gateway level and then  figure it out another solution that fits the environment best.</p>
+<p>Here is the list of countries that are part of this loop hole:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Area</th>
+<th style="text-align:center">Destination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">242</td>
+<td style="text-align:center">Bahamas</td>
+</tr>
+<tr>
+<td style="text-align:center">246</td>
+<td style="text-align:center">Barbados</td>
+</tr>
+<tr>
+<td style="text-align:center">264</td>
+<td style="text-align:center">Anguilla (split from 809)</td>
+</tr>
+<tr>
+<td style="text-align:center">268</td>
+<td style="text-align:center">Antigua and Barbuda</td>
+</tr>
+<tr>
+<td style="text-align:center">284</td>
+<td style="text-align:center">British Virgin Islands</td>
+</tr>
+<tr>
+<td style="text-align:center">340</td>
+<td style="text-align:center">US Virgin Islands: St Thomas. St John</td>
+</tr>
+<tr>
+<td style="text-align:center">345</td>
+<td style="text-align:center">Cayman Islands</td>
+</tr>
+<tr>
+<td style="text-align:center">441</td>
+<td style="text-align:center">Bermuda</td>
+</tr>
+<tr>
+<td style="text-align:center">473</td>
+<td style="text-align:center">Grenada</td>
+</tr>
+<tr>
+<td style="text-align:center">649</td>
+<td style="text-align:center">Turks and Caicos Islands</td>
+</tr>
+<tr>
+<td style="text-align:center">664</td>
+<td style="text-align:center">Montserrat</td>
+</tr>
+<tr>
+<td style="text-align:center">670</td>
+<td style="text-align:center">Northern Mariana Islands</td>
+</tr>
+<tr>
+<td style="text-align:center">671</td>
+<td style="text-align:center">Guam</td>
+</tr>
+<tr>
+<td style="text-align:center">758</td>
+<td style="text-align:center">St Lucia</td>
+</tr>
+<tr>
+<td style="text-align:center">767</td>
+<td style="text-align:center">Dominica</td>
+</tr>
+<tr>
+<td style="text-align:center">784</td>
+<td style="text-align:center">St. Vincent and Grenada</td>
+</tr>
+<tr>
+<td style="text-align:center">787</td>
+<td style="text-align:center">Puerto Rico</td>
+</tr>
+<tr>
+<td style="text-align:center">809</td>
+<td style="text-align:center">Caribbean. Bermuda. Puerto Rico. Virgin Islands</td>
+</tr>
+<tr>
+<td style="text-align:center">868</td>
+<td style="text-align:center">Trinidad and Tobago</td>
+</tr>
+<tr>
+<td style="text-align:center">869</td>
+<td style="text-align:center">St Kitts/Nevis</td>
+</tr>
+<tr>
+<td style="text-align:center">876</td>
+<td style="text-align:center">Jamaica</td>
+</tr>
+<tr>
+<td style="text-align:center">900</td>
+<td style="text-align:center">Pay_Per_Call Numbers</td>
+</tr>
+<tr>
+<td style="text-align:center">939</td>
+<td style="text-align:center">Puerto Rico</td>
+</tr>
+<tr>
+<td style="text-align:center">976</td>
+<td style="text-align:center">Pay_Per_Call Numbers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>In our Sonus SBC 2000 we first create a new transformation table and we call it Block Outbound Calls.
+<ul>
+<li>Add  a new rule, the input field type should be Called Address/Number and  add your regex condition that blocks all numbers destined to the area  codes listed above with any remaining 7 digits.</li>
+</ul>
+</li>
+</ul>
+<p><strong>^(+1(242|246|264|268|284|340|345|441|473|649|664|670|671|758|767|784|787|809|855|868|869|876|900|939|976)\d{7})</strong></p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/q6xqGZhZKBLTmoqlwU3OaCLcS8zewVjcirTF24RPpPMyA7nxnNZJo2SLsnx1mYTdY2pTyIXgShJy0cDkfLQtvmySNrK4DpvZI8o3d9PfA7gSy7Nzp-hfgIsKJ9t4Yk98Nle7LDaB-EDNXOEYMTUWLTnK8gvOvRAj5_qZg3tcA18gKvumHgJH8qVw91xayXOtIKnOHnL95f-_lsANSPMJjCFoMeyW2cDl7Dx9KGg5SU85AKHbpCs1NHdJHooJX3JEI7vPSFVHMd7ly57NL5kw8HrAGyCCs9WQK6wVzxeEZB9SO9po-NwARf6le1EQy8xsu3HMH7inQzimGB-DYcZWJbMymxZGFB8TMZ5gJh_pDxj0SCSQiC0jENL0kJGZFscX3J6voerZqvN4DkEM5VyBJf1I5Yp-UzYyOOjf1mpGXtPhw3aplnBq2DNKfwyzRdK6TmbZiwTotPrHgLY4M9thDlkQGrXP6Cipzx_eg5FaebTPnspVyFsOWEBRnuE4g7MIN8Il7nNKblHOovbOdxdZMU0UsRRreaOLJCfk6PY4eXlBf1gWtpZh9WO9gRBR73U9ZpVY766AcNmyXmm23uUrqNMaExG6EII87TesPQvh0A07dxWkFKu4mt2EeQSliA7ucZyQpz5fp-hk_G2omnv-Sh3VSNOSVZofYNoDkug0=w1235-h577-no"
+        data-srcset="https://lh3.googleusercontent.com/q6xqGZhZKBLTmoqlwU3OaCLcS8zewVjcirTF24RPpPMyA7nxnNZJo2SLsnx1mYTdY2pTyIXgShJy0cDkfLQtvmySNrK4DpvZI8o3d9PfA7gSy7Nzp-hfgIsKJ9t4Yk98Nle7LDaB-EDNXOEYMTUWLTnK8gvOvRAj5_qZg3tcA18gKvumHgJH8qVw91xayXOtIKnOHnL95f-_lsANSPMJjCFoMeyW2cDl7Dx9KGg5SU85AKHbpCs1NHdJHooJX3JEI7vPSFVHMd7ly57NL5kw8HrAGyCCs9WQK6wVzxeEZB9SO9po-NwARf6le1EQy8xsu3HMH7inQzimGB-DYcZWJbMymxZGFB8TMZ5gJh_pDxj0SCSQiC0jENL0kJGZFscX3J6voerZqvN4DkEM5VyBJf1I5Yp-UzYyOOjf1mpGXtPhw3aplnBq2DNKfwyzRdK6TmbZiwTotPrHgLY4M9thDlkQGrXP6Cipzx_eg5FaebTPnspVyFsOWEBRnuE4g7MIN8Il7nNKblHOovbOdxdZMU0UsRRreaOLJCfk6PY4eXlBf1gWtpZh9WO9gRBR73U9ZpVY766AcNmyXmm23uUrqNMaExG6EII87TesPQvh0A07dxWkFKu4mt2EeQSliA7ucZyQpz5fp-hk_G2omnv-Sh3VSNOSVZofYNoDkug0=w1235-h577-no, https://lh3.googleusercontent.com/q6xqGZhZKBLTmoqlwU3OaCLcS8zewVjcirTF24RPpPMyA7nxnNZJo2SLsnx1mYTdY2pTyIXgShJy0cDkfLQtvmySNrK4DpvZI8o3d9PfA7gSy7Nzp-hfgIsKJ9t4Yk98Nle7LDaB-EDNXOEYMTUWLTnK8gvOvRAj5_qZg3tcA18gKvumHgJH8qVw91xayXOtIKnOHnL95f-_lsANSPMJjCFoMeyW2cDl7Dx9KGg5SU85AKHbpCs1NHdJHooJX3JEI7vPSFVHMd7ly57NL5kw8HrAGyCCs9WQK6wVzxeEZB9SO9po-NwARf6le1EQy8xsu3HMH7inQzimGB-DYcZWJbMymxZGFB8TMZ5gJh_pDxj0SCSQiC0jENL0kJGZFscX3J6voerZqvN4DkEM5VyBJf1I5Yp-UzYyOOjf1mpGXtPhw3aplnBq2DNKfwyzRdK6TmbZiwTotPrHgLY4M9thDlkQGrXP6Cipzx_eg5FaebTPnspVyFsOWEBRnuE4g7MIN8Il7nNKblHOovbOdxdZMU0UsRRreaOLJCfk6PY4eXlBf1gWtpZh9WO9gRBR73U9ZpVY766AcNmyXmm23uUrqNMaExG6EII87TesPQvh0A07dxWkFKu4mt2EeQSliA7ucZyQpz5fp-hk_G2omnv-Sh3VSNOSVZofYNoDkug0=w1235-h577-no 1.5x, https://lh3.googleusercontent.com/q6xqGZhZKBLTmoqlwU3OaCLcS8zewVjcirTF24RPpPMyA7nxnNZJo2SLsnx1mYTdY2pTyIXgShJy0cDkfLQtvmySNrK4DpvZI8o3d9PfA7gSy7Nzp-hfgIsKJ9t4Yk98Nle7LDaB-EDNXOEYMTUWLTnK8gvOvRAj5_qZg3tcA18gKvumHgJH8qVw91xayXOtIKnOHnL95f-_lsANSPMJjCFoMeyW2cDl7Dx9KGg5SU85AKHbpCs1NHdJHooJX3JEI7vPSFVHMd7ly57NL5kw8HrAGyCCs9WQK6wVzxeEZB9SO9po-NwARf6le1EQy8xsu3HMH7inQzimGB-DYcZWJbMymxZGFB8TMZ5gJh_pDxj0SCSQiC0jENL0kJGZFscX3J6voerZqvN4DkEM5VyBJf1I5Yp-UzYyOOjf1mpGXtPhw3aplnBq2DNKfwyzRdK6TmbZiwTotPrHgLY4M9thDlkQGrXP6Cipzx_eg5FaebTPnspVyFsOWEBRnuE4g7MIN8Il7nNKblHOovbOdxdZMU0UsRRreaOLJCfk6PY4eXlBf1gWtpZh9WO9gRBR73U9ZpVY766AcNmyXmm23uUrqNMaExG6EII87TesPQvh0A07dxWkFKu4mt2EeQSliA7ucZyQpz5fp-hk_G2omnv-Sh3VSNOSVZofYNoDkug0=w1235-h577-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/q6xqGZhZKBLTmoqlwU3OaCLcS8zewVjcirTF24RPpPMyA7nxnNZJo2SLsnx1mYTdY2pTyIXgShJy0cDkfLQtvmySNrK4DpvZI8o3d9PfA7gSy7Nzp-hfgIsKJ9t4Yk98Nle7LDaB-EDNXOEYMTUWLTnK8gvOvRAj5_qZg3tcA18gKvumHgJH8qVw91xayXOtIKnOHnL95f-_lsANSPMJjCFoMeyW2cDl7Dx9KGg5SU85AKHbpCs1NHdJHooJX3JEI7vPSFVHMd7ly57NL5kw8HrAGyCCs9WQK6wVzxeEZB9SO9po-NwARf6le1EQy8xsu3HMH7inQzimGB-DYcZWJbMymxZGFB8TMZ5gJh_pDxj0SCSQiC0jENL0kJGZFscX3J6voerZqvN4DkEM5VyBJf1I5Yp-UzYyOOjf1mpGXtPhw3aplnBq2DNKfwyzRdK6TmbZiwTotPrHgLY4M9thDlkQGrXP6Cipzx_eg5FaebTPnspVyFsOWEBRnuE4g7MIN8Il7nNKblHOovbOdxdZMU0UsRRreaOLJCfk6PY4eXlBf1gWtpZh9WO9gRBR73U9ZpVY766AcNmyXmm23uUrqNMaExG6EII87TesPQvh0A07dxWkFKu4mt2EeQSliA7ucZyQpz5fp-hk_G2omnv-Sh3VSNOSVZofYNoDkug0=w1235-h577-no"
+        title="img" /></p>
+<ul>
+<li>Add  this transformation rule to your call routing table that handles calls  from Skype to SIP provider and move it all the way to the top to be the  first rule processed in the route.
+<ul>
+<li>Number/Name Transformation Table : Block Outbound Calls</li>
+<li>Destination Type : Deny</li>
+<li>Deny Q.850 Cause Code : 21 Call Rejected</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/uZqDeYRKbpaYZsoAEqgbL4XKnsVxNjETEfKL9uIpc9NTJMq1POSisemzIo52Bcs5dfa42P_F_DkEKA6XVDq52x1yjZ29Z8tTcTo8w4iWZVw4x2GNLBKzIWQnyvGiKOz87UVTANKw6-2wRTsCbFlG2cX7OdXAYMn_m8Q0q9pJze6GudAN32R4xeNmZohBaGaqXeXemwKO5Q1uSwppszWK37caQIA_1qzSbuUz5-RSoRbp9e1qR42XTkCfOhGmA1Yj7t6ykRkKOHrrRE0O0tD_v-2I0A2r7uE3qzQhR3pq0VnwV2JZwurujTMDTb2ofqi2QdlNveNHbuI94lr-acgG---zeUjI_Jhh6TqcbOn373DEDklULDsTDbpxXinFzcvy1quX0O40P8D4E25Zt3AutSWbk1HCOfcwYmJljkEzY_I6MFOwC1bF-uC0b6geviLQBQ7wtCUZbWFDdlEq4gTTsA_ROEOMqjYhcfedHrCDdHx0EbPICEdx2PNuOrjZgUO4qGJIn14sz5lVp9ZV8oFbEGz9o0eReN37th5n_JbjG77gmQ74om-rzsaeGUy5c9u_9_Z_MnKwaXlUDW2xzCGlADIJAgqZ5vZuT9AGr7nIu5QRK_NomU2gtc2tVaMqkLVUlEGs4sgBkyVvly8z7885iki0Fk2G0t06dz_4IjbN=w1031-h606-no"
+        data-srcset="https://lh3.googleusercontent.com/uZqDeYRKbpaYZsoAEqgbL4XKnsVxNjETEfKL9uIpc9NTJMq1POSisemzIo52Bcs5dfa42P_F_DkEKA6XVDq52x1yjZ29Z8tTcTo8w4iWZVw4x2GNLBKzIWQnyvGiKOz87UVTANKw6-2wRTsCbFlG2cX7OdXAYMn_m8Q0q9pJze6GudAN32R4xeNmZohBaGaqXeXemwKO5Q1uSwppszWK37caQIA_1qzSbuUz5-RSoRbp9e1qR42XTkCfOhGmA1Yj7t6ykRkKOHrrRE0O0tD_v-2I0A2r7uE3qzQhR3pq0VnwV2JZwurujTMDTb2ofqi2QdlNveNHbuI94lr-acgG---zeUjI_Jhh6TqcbOn373DEDklULDsTDbpxXinFzcvy1quX0O40P8D4E25Zt3AutSWbk1HCOfcwYmJljkEzY_I6MFOwC1bF-uC0b6geviLQBQ7wtCUZbWFDdlEq4gTTsA_ROEOMqjYhcfedHrCDdHx0EbPICEdx2PNuOrjZgUO4qGJIn14sz5lVp9ZV8oFbEGz9o0eReN37th5n_JbjG77gmQ74om-rzsaeGUy5c9u_9_Z_MnKwaXlUDW2xzCGlADIJAgqZ5vZuT9AGr7nIu5QRK_NomU2gtc2tVaMqkLVUlEGs4sgBkyVvly8z7885iki0Fk2G0t06dz_4IjbN=w1031-h606-no, https://lh3.googleusercontent.com/uZqDeYRKbpaYZsoAEqgbL4XKnsVxNjETEfKL9uIpc9NTJMq1POSisemzIo52Bcs5dfa42P_F_DkEKA6XVDq52x1yjZ29Z8tTcTo8w4iWZVw4x2GNLBKzIWQnyvGiKOz87UVTANKw6-2wRTsCbFlG2cX7OdXAYMn_m8Q0q9pJze6GudAN32R4xeNmZohBaGaqXeXemwKO5Q1uSwppszWK37caQIA_1qzSbuUz5-RSoRbp9e1qR42XTkCfOhGmA1Yj7t6ykRkKOHrrRE0O0tD_v-2I0A2r7uE3qzQhR3pq0VnwV2JZwurujTMDTb2ofqi2QdlNveNHbuI94lr-acgG---zeUjI_Jhh6TqcbOn373DEDklULDsTDbpxXinFzcvy1quX0O40P8D4E25Zt3AutSWbk1HCOfcwYmJljkEzY_I6MFOwC1bF-uC0b6geviLQBQ7wtCUZbWFDdlEq4gTTsA_ROEOMqjYhcfedHrCDdHx0EbPICEdx2PNuOrjZgUO4qGJIn14sz5lVp9ZV8oFbEGz9o0eReN37th5n_JbjG77gmQ74om-rzsaeGUy5c9u_9_Z_MnKwaXlUDW2xzCGlADIJAgqZ5vZuT9AGr7nIu5QRK_NomU2gtc2tVaMqkLVUlEGs4sgBkyVvly8z7885iki0Fk2G0t06dz_4IjbN=w1031-h606-no 1.5x, https://lh3.googleusercontent.com/uZqDeYRKbpaYZsoAEqgbL4XKnsVxNjETEfKL9uIpc9NTJMq1POSisemzIo52Bcs5dfa42P_F_DkEKA6XVDq52x1yjZ29Z8tTcTo8w4iWZVw4x2GNLBKzIWQnyvGiKOz87UVTANKw6-2wRTsCbFlG2cX7OdXAYMn_m8Q0q9pJze6GudAN32R4xeNmZohBaGaqXeXemwKO5Q1uSwppszWK37caQIA_1qzSbuUz5-RSoRbp9e1qR42XTkCfOhGmA1Yj7t6ykRkKOHrrRE0O0tD_v-2I0A2r7uE3qzQhR3pq0VnwV2JZwurujTMDTb2ofqi2QdlNveNHbuI94lr-acgG---zeUjI_Jhh6TqcbOn373DEDklULDsTDbpxXinFzcvy1quX0O40P8D4E25Zt3AutSWbk1HCOfcwYmJljkEzY_I6MFOwC1bF-uC0b6geviLQBQ7wtCUZbWFDdlEq4gTTsA_ROEOMqjYhcfedHrCDdHx0EbPICEdx2PNuOrjZgUO4qGJIn14sz5lVp9ZV8oFbEGz9o0eReN37th5n_JbjG77gmQ74om-rzsaeGUy5c9u_9_Z_MnKwaXlUDW2xzCGlADIJAgqZ5vZuT9AGr7nIu5QRK_NomU2gtc2tVaMqkLVUlEGs4sgBkyVvly8z7885iki0Fk2G0t06dz_4IjbN=w1031-h606-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/uZqDeYRKbpaYZsoAEqgbL4XKnsVxNjETEfKL9uIpc9NTJMq1POSisemzIo52Bcs5dfa42P_F_DkEKA6XVDq52x1yjZ29Z8tTcTo8w4iWZVw4x2GNLBKzIWQnyvGiKOz87UVTANKw6-2wRTsCbFlG2cX7OdXAYMn_m8Q0q9pJze6GudAN32R4xeNmZohBaGaqXeXemwKO5Q1uSwppszWK37caQIA_1qzSbuUz5-RSoRbp9e1qR42XTkCfOhGmA1Yj7t6ykRkKOHrrRE0O0tD_v-2I0A2r7uE3qzQhR3pq0VnwV2JZwurujTMDTb2ofqi2QdlNveNHbuI94lr-acgG---zeUjI_Jhh6TqcbOn373DEDklULDsTDbpxXinFzcvy1quX0O40P8D4E25Zt3AutSWbk1HCOfcwYmJljkEzY_I6MFOwC1bF-uC0b6geviLQBQ7wtCUZbWFDdlEq4gTTsA_ROEOMqjYhcfedHrCDdHx0EbPICEdx2PNuOrjZgUO4qGJIn14sz5lVp9ZV8oFbEGz9o0eReN37th5n_JbjG77gmQ74om-rzsaeGUy5c9u_9_Z_MnKwaXlUDW2xzCGlADIJAgqZ5vZuT9AGr7nIu5QRK_NomU2gtc2tVaMqkLVUlEGs4sgBkyVvly8z7885iki0Fk2G0t06dz_4IjbN=w1031-h606-no"
+        title="img" /></p>
+<ul>
+<li>Apply these rules to all the necessary gateways in your environment based on all your internal routing rules.</li>
+<li>Ready to test, start capturing from your LX tool.
+<ul>
+<li>Place  a call from your client to any number in the list [ search for hotel  numbers ] or call your auto attendant and dial the number when you get  to the option of dial by extension.</li>
+<li>In your LX tool, do an advanced search and look for the number called, in our case we see a successful 603 decline code.</li>
+</ul>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/hSf-zkiGrXYMH265zCp12btTk74encuUmeXs86W54NQnoCsEVG2_KE0SLMUxmGpVXguddQ-MKacnoDprYngcSuE3NI4ya9yDU5g5fBbWr3lJzCgd1rSRTdzlxkzBPCzjd8nyjT3WPbaf8ik4IpluOhT9k6QOiNq04q8VaZDz5Mq_fY8AUO5zaCQOanVzRptt89UbPGGptlm5fF00GeMt1qNSusF-JEtlQ6Z2r0RYNGT5R04q09l8eDX68UWj9p_k_8azSA81LW2J7jhjKA4_XzvXDZGl6E7wCfxDyr00D9TE6x3kI4h-ExbZPbR2VvJ-fiX6wzQyZzNVqFjelrmR-hwjvKXamuopBGUYJgzniM2qHkH1BVR9JQyhKt-BMYtCLPDUYQuVvNgUMj0oajpvPA0_Innqcbv7G3tVOcfCrJWO5SbDJj-G8_TqDZYIe7ioXYMbZmNSJ42bCmkMCQLeh3OO_feTlGw7WKW2lg1iYecXfsYMiSV_wPUsLk-z8SrpeiKl-Z-JC2Zx8-kuFQJmcEkSf_y80L1rw-LLyUnPl8zsiebJQSQMVGuIoYJXpq7rhQmxkPuDV5yo8vKwYUle4URuf8d5tBmHtmMyErdLy26Hj2WQlKGyC62AbY6RPQG-ZI4u3t8-_IDja4cajOH1PIDn-nvUeRnrHh7_0RHb=w1124-h295-no"
+        data-srcset="https://lh3.googleusercontent.com/hSf-zkiGrXYMH265zCp12btTk74encuUmeXs86W54NQnoCsEVG2_KE0SLMUxmGpVXguddQ-MKacnoDprYngcSuE3NI4ya9yDU5g5fBbWr3lJzCgd1rSRTdzlxkzBPCzjd8nyjT3WPbaf8ik4IpluOhT9k6QOiNq04q8VaZDz5Mq_fY8AUO5zaCQOanVzRptt89UbPGGptlm5fF00GeMt1qNSusF-JEtlQ6Z2r0RYNGT5R04q09l8eDX68UWj9p_k_8azSA81LW2J7jhjKA4_XzvXDZGl6E7wCfxDyr00D9TE6x3kI4h-ExbZPbR2VvJ-fiX6wzQyZzNVqFjelrmR-hwjvKXamuopBGUYJgzniM2qHkH1BVR9JQyhKt-BMYtCLPDUYQuVvNgUMj0oajpvPA0_Innqcbv7G3tVOcfCrJWO5SbDJj-G8_TqDZYIe7ioXYMbZmNSJ42bCmkMCQLeh3OO_feTlGw7WKW2lg1iYecXfsYMiSV_wPUsLk-z8SrpeiKl-Z-JC2Zx8-kuFQJmcEkSf_y80L1rw-LLyUnPl8zsiebJQSQMVGuIoYJXpq7rhQmxkPuDV5yo8vKwYUle4URuf8d5tBmHtmMyErdLy26Hj2WQlKGyC62AbY6RPQG-ZI4u3t8-_IDja4cajOH1PIDn-nvUeRnrHh7_0RHb=w1124-h295-no, https://lh3.googleusercontent.com/hSf-zkiGrXYMH265zCp12btTk74encuUmeXs86W54NQnoCsEVG2_KE0SLMUxmGpVXguddQ-MKacnoDprYngcSuE3NI4ya9yDU5g5fBbWr3lJzCgd1rSRTdzlxkzBPCzjd8nyjT3WPbaf8ik4IpluOhT9k6QOiNq04q8VaZDz5Mq_fY8AUO5zaCQOanVzRptt89UbPGGptlm5fF00GeMt1qNSusF-JEtlQ6Z2r0RYNGT5R04q09l8eDX68UWj9p_k_8azSA81LW2J7jhjKA4_XzvXDZGl6E7wCfxDyr00D9TE6x3kI4h-ExbZPbR2VvJ-fiX6wzQyZzNVqFjelrmR-hwjvKXamuopBGUYJgzniM2qHkH1BVR9JQyhKt-BMYtCLPDUYQuVvNgUMj0oajpvPA0_Innqcbv7G3tVOcfCrJWO5SbDJj-G8_TqDZYIe7ioXYMbZmNSJ42bCmkMCQLeh3OO_feTlGw7WKW2lg1iYecXfsYMiSV_wPUsLk-z8SrpeiKl-Z-JC2Zx8-kuFQJmcEkSf_y80L1rw-LLyUnPl8zsiebJQSQMVGuIoYJXpq7rhQmxkPuDV5yo8vKwYUle4URuf8d5tBmHtmMyErdLy26Hj2WQlKGyC62AbY6RPQG-ZI4u3t8-_IDja4cajOH1PIDn-nvUeRnrHh7_0RHb=w1124-h295-no 1.5x, https://lh3.googleusercontent.com/hSf-zkiGrXYMH265zCp12btTk74encuUmeXs86W54NQnoCsEVG2_KE0SLMUxmGpVXguddQ-MKacnoDprYngcSuE3NI4ya9yDU5g5fBbWr3lJzCgd1rSRTdzlxkzBPCzjd8nyjT3WPbaf8ik4IpluOhT9k6QOiNq04q8VaZDz5Mq_fY8AUO5zaCQOanVzRptt89UbPGGptlm5fF00GeMt1qNSusF-JEtlQ6Z2r0RYNGT5R04q09l8eDX68UWj9p_k_8azSA81LW2J7jhjKA4_XzvXDZGl6E7wCfxDyr00D9TE6x3kI4h-ExbZPbR2VvJ-fiX6wzQyZzNVqFjelrmR-hwjvKXamuopBGUYJgzniM2qHkH1BVR9JQyhKt-BMYtCLPDUYQuVvNgUMj0oajpvPA0_Innqcbv7G3tVOcfCrJWO5SbDJj-G8_TqDZYIe7ioXYMbZmNSJ42bCmkMCQLeh3OO_feTlGw7WKW2lg1iYecXfsYMiSV_wPUsLk-z8SrpeiKl-Z-JC2Zx8-kuFQJmcEkSf_y80L1rw-LLyUnPl8zsiebJQSQMVGuIoYJXpq7rhQmxkPuDV5yo8vKwYUle4URuf8d5tBmHtmMyErdLy26Hj2WQlKGyC62AbY6RPQG-ZI4u3t8-_IDja4cajOH1PIDn-nvUeRnrHh7_0RHb=w1124-h295-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/hSf-zkiGrXYMH265zCp12btTk74encuUmeXs86W54NQnoCsEVG2_KE0SLMUxmGpVXguddQ-MKacnoDprYngcSuE3NI4ya9yDU5g5fBbWr3lJzCgd1rSRTdzlxkzBPCzjd8nyjT3WPbaf8ik4IpluOhT9k6QOiNq04q8VaZDz5Mq_fY8AUO5zaCQOanVzRptt89UbPGGptlm5fF00GeMt1qNSusF-JEtlQ6Z2r0RYNGT5R04q09l8eDX68UWj9p_k_8azSA81LW2J7jhjKA4_XzvXDZGl6E7wCfxDyr00D9TE6x3kI4h-ExbZPbR2VvJ-fiX6wzQyZzNVqFjelrmR-hwjvKXamuopBGUYJgzniM2qHkH1BVR9JQyhKt-BMYtCLPDUYQuVvNgUMj0oajpvPA0_Innqcbv7G3tVOcfCrJWO5SbDJj-G8_TqDZYIe7ioXYMbZmNSJ42bCmkMCQLeh3OO_feTlGw7WKW2lg1iYecXfsYMiSV_wPUsLk-z8SrpeiKl-Z-JC2Zx8-kuFQJmcEkSf_y80L1rw-LLyUnPl8zsiebJQSQMVGuIoYJXpq7rhQmxkPuDV5yo8vKwYUle4URuf8d5tBmHtmMyErdLy26Hj2WQlKGyC62AbY6RPQG-ZI4u3t8-_IDja4cajOH1PIDn-nvUeRnrHh7_0RHb=w1124-h295-no"
+        title="img" /></p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Code</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q.850</td>
+<td><strong>21</strong></td>
+<td>Call Rejected</td>
+</tr>
+<tr>
+<td>SIP</td>
+<td><strong>603</strong></td>
+<td>Decline</td>
+</tr>
+</tbody>
+</table>
+<p>If we look at that call, we get the proper response code.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/lh2LTcYzMcicygeyMbL99HEX_S9vc3huzgyQWgAcL-EaxSF84p1n_rRSpbLTgohj4bHvfYvT6zBrSRT5pcHGHVaCKNBssru1hdo3Q2edHZ5H77v-Ra11w9lqU_uyGI49A6k-TOa41g_saDOwbP67vqAppza-q_WmGeUafs8-uU7vvoN9ljgPSl9ACyB9AznRiP8ZglCvldOoVXnubw4qShkAOQbxeyYmP67NwmLd77i-79G5viGCRdKEiKMlDLxq4h2sHIe5yqZ3U7v184LVhvBgvdygi0ihH-L56jbw2GhXoR3RAk4j0H5bYFLBEf5NfiI5v5wjzxv4RaKz8OkaUNCa-F9NJsVtadWN2zRmlZfVgtxQTHPEhSuluFtMEdYnJfn3_XL9uGwsK-gKOe9tCELAdMd6idKtBI5sTtWuq1Z8SBziaeBDem-g1MnC09PD5aJVxXb_tA_WwiyoHr0Kl5o2UT6csa7hjpDRzz-ApgLsh7OVAgdDi7V8THoJWBGc3v9fFIlU6IOA4N2Z4L7tlKb4Z0jrur8G7oBXCg8BlTSjM6VlQy4FUDujVX-cFB_NMbG5fpD4g75CKre65ezHz5G86vtcXNrCRcRdDt6IIOnS3s3RzNswy3NLuRAlBUXGfopDJnc6zPRgMRUXranyna22LSDb1-9rm6fqDZUK=w1151-h382-no"
+        data-srcset="https://lh3.googleusercontent.com/lh2LTcYzMcicygeyMbL99HEX_S9vc3huzgyQWgAcL-EaxSF84p1n_rRSpbLTgohj4bHvfYvT6zBrSRT5pcHGHVaCKNBssru1hdo3Q2edHZ5H77v-Ra11w9lqU_uyGI49A6k-TOa41g_saDOwbP67vqAppza-q_WmGeUafs8-uU7vvoN9ljgPSl9ACyB9AznRiP8ZglCvldOoVXnubw4qShkAOQbxeyYmP67NwmLd77i-79G5viGCRdKEiKMlDLxq4h2sHIe5yqZ3U7v184LVhvBgvdygi0ihH-L56jbw2GhXoR3RAk4j0H5bYFLBEf5NfiI5v5wjzxv4RaKz8OkaUNCa-F9NJsVtadWN2zRmlZfVgtxQTHPEhSuluFtMEdYnJfn3_XL9uGwsK-gKOe9tCELAdMd6idKtBI5sTtWuq1Z8SBziaeBDem-g1MnC09PD5aJVxXb_tA_WwiyoHr0Kl5o2UT6csa7hjpDRzz-ApgLsh7OVAgdDi7V8THoJWBGc3v9fFIlU6IOA4N2Z4L7tlKb4Z0jrur8G7oBXCg8BlTSjM6VlQy4FUDujVX-cFB_NMbG5fpD4g75CKre65ezHz5G86vtcXNrCRcRdDt6IIOnS3s3RzNswy3NLuRAlBUXGfopDJnc6zPRgMRUXranyna22LSDb1-9rm6fqDZUK=w1151-h382-no, https://lh3.googleusercontent.com/lh2LTcYzMcicygeyMbL99HEX_S9vc3huzgyQWgAcL-EaxSF84p1n_rRSpbLTgohj4bHvfYvT6zBrSRT5pcHGHVaCKNBssru1hdo3Q2edHZ5H77v-Ra11w9lqU_uyGI49A6k-TOa41g_saDOwbP67vqAppza-q_WmGeUafs8-uU7vvoN9ljgPSl9ACyB9AznRiP8ZglCvldOoVXnubw4qShkAOQbxeyYmP67NwmLd77i-79G5viGCRdKEiKMlDLxq4h2sHIe5yqZ3U7v184LVhvBgvdygi0ihH-L56jbw2GhXoR3RAk4j0H5bYFLBEf5NfiI5v5wjzxv4RaKz8OkaUNCa-F9NJsVtadWN2zRmlZfVgtxQTHPEhSuluFtMEdYnJfn3_XL9uGwsK-gKOe9tCELAdMd6idKtBI5sTtWuq1Z8SBziaeBDem-g1MnC09PD5aJVxXb_tA_WwiyoHr0Kl5o2UT6csa7hjpDRzz-ApgLsh7OVAgdDi7V8THoJWBGc3v9fFIlU6IOA4N2Z4L7tlKb4Z0jrur8G7oBXCg8BlTSjM6VlQy4FUDujVX-cFB_NMbG5fpD4g75CKre65ezHz5G86vtcXNrCRcRdDt6IIOnS3s3RzNswy3NLuRAlBUXGfopDJnc6zPRgMRUXranyna22LSDb1-9rm6fqDZUK=w1151-h382-no 1.5x, https://lh3.googleusercontent.com/lh2LTcYzMcicygeyMbL99HEX_S9vc3huzgyQWgAcL-EaxSF84p1n_rRSpbLTgohj4bHvfYvT6zBrSRT5pcHGHVaCKNBssru1hdo3Q2edHZ5H77v-Ra11w9lqU_uyGI49A6k-TOa41g_saDOwbP67vqAppza-q_WmGeUafs8-uU7vvoN9ljgPSl9ACyB9AznRiP8ZglCvldOoVXnubw4qShkAOQbxeyYmP67NwmLd77i-79G5viGCRdKEiKMlDLxq4h2sHIe5yqZ3U7v184LVhvBgvdygi0ihH-L56jbw2GhXoR3RAk4j0H5bYFLBEf5NfiI5v5wjzxv4RaKz8OkaUNCa-F9NJsVtadWN2zRmlZfVgtxQTHPEhSuluFtMEdYnJfn3_XL9uGwsK-gKOe9tCELAdMd6idKtBI5sTtWuq1Z8SBziaeBDem-g1MnC09PD5aJVxXb_tA_WwiyoHr0Kl5o2UT6csa7hjpDRzz-ApgLsh7OVAgdDi7V8THoJWBGc3v9fFIlU6IOA4N2Z4L7tlKb4Z0jrur8G7oBXCg8BlTSjM6VlQy4FUDujVX-cFB_NMbG5fpD4g75CKre65ezHz5G86vtcXNrCRcRdDt6IIOnS3s3RzNswy3NLuRAlBUXGfopDJnc6zPRgMRUXranyna22LSDb1-9rm6fqDZUK=w1151-h382-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/lh2LTcYzMcicygeyMbL99HEX_S9vc3huzgyQWgAcL-EaxSF84p1n_rRSpbLTgohj4bHvfYvT6zBrSRT5pcHGHVaCKNBssru1hdo3Q2edHZ5H77v-Ra11w9lqU_uyGI49A6k-TOa41g_saDOwbP67vqAppza-q_WmGeUafs8-uU7vvoN9ljgPSl9ACyB9AznRiP8ZglCvldOoVXnubw4qShkAOQbxeyYmP67NwmLd77i-79G5viGCRdKEiKMlDLxq4h2sHIe5yqZ3U7v184LVhvBgvdygi0ihH-L56jbw2GhXoR3RAk4j0H5bYFLBEf5NfiI5v5wjzxv4RaKz8OkaUNCa-F9NJsVtadWN2zRmlZfVgtxQTHPEhSuluFtMEdYnJfn3_XL9uGwsK-gKOe9tCELAdMd6idKtBI5sTtWuq1Z8SBziaeBDem-g1MnC09PD5aJVxXb_tA_WwiyoHr0Kl5o2UT6csa7hjpDRzz-ApgLsh7OVAgdDi7V8THoJWBGc3v9fFIlU6IOA4N2Z4L7tlKb4Z0jrur8G7oBXCg8BlTSjM6VlQy4FUDujVX-cFB_NMbG5fpD4g75CKre65ezHz5G86vtcXNrCRcRdDt6IIOnS3s3RzNswy3NLuRAlBUXGfopDJnc6zPRgMRUXranyna22LSDb1-9rm6fqDZUK=w1151-h382-no"
+        title="img" /></p>
+<p>We can also look into the log transcript and follow the call route</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="https://lh3.googleusercontent.com/-iGwuDKdJr_U2Pda27Uizel2VZGYpzdpcGqsa6e3dE9c3KLqE9v0uI7WZRXz_d_uY3YVwQS4Oa5c7Ft0WpyFbnZOHRi2HTv4PeteNFOc9EcIkjPVcBKy0WQ-hzmWD-AMwoM6gKmLLnb7yTsdUOWOqSrFCk8y5RfSYmXDRj6yj-SqWSY6yVGUhoiEegdUsA0GVfVR_P6cC6_673jXDSaqJzx2A77Fl9KI6YVs59llY7KFDn-zMLReEDjGE1gD9jnRzlQAXbnIEPL-d993D7RqqfyMlxhRD5bYzNCprKpz6-fLChbQd0KzS7VDcSBq7QMYdK5fCZKEFGNW6kXODJBtZ3C0Ekk5fPEqvG9iL82rI65Eo4xlI1E5WRm0Y9GDMMDFmvA3hk0hJA4Ik0okfJjsBTzYXWe3NZm7frNiZudBR1G1er1pIJZEI3L8W-q1XEt52I4xQyBYh69Vo0dDSJdJeSCxiCyw65Ck1sxZq1JYTTjAWfIlHsCt45ElJ3JzGDoMWFb8aDXI-BP2f_ocjunRkBvUEFDzRYcd7s_f-Wf3nElSNJwch4U5ogFhUvndyMAbriXXL9Uwq5gk6x1V6GqHXZAebb-yFF_vyOuyXHoWWmvdu6MGw8NYaw-Wus9RH_160u07JC_8NE0RHK8rX7yl_K9S5FmLU-_rGDlZmH_I=w953-h326-no"
+        data-srcset="https://lh3.googleusercontent.com/-iGwuDKdJr_U2Pda27Uizel2VZGYpzdpcGqsa6e3dE9c3KLqE9v0uI7WZRXz_d_uY3YVwQS4Oa5c7Ft0WpyFbnZOHRi2HTv4PeteNFOc9EcIkjPVcBKy0WQ-hzmWD-AMwoM6gKmLLnb7yTsdUOWOqSrFCk8y5RfSYmXDRj6yj-SqWSY6yVGUhoiEegdUsA0GVfVR_P6cC6_673jXDSaqJzx2A77Fl9KI6YVs59llY7KFDn-zMLReEDjGE1gD9jnRzlQAXbnIEPL-d993D7RqqfyMlxhRD5bYzNCprKpz6-fLChbQd0KzS7VDcSBq7QMYdK5fCZKEFGNW6kXODJBtZ3C0Ekk5fPEqvG9iL82rI65Eo4xlI1E5WRm0Y9GDMMDFmvA3hk0hJA4Ik0okfJjsBTzYXWe3NZm7frNiZudBR1G1er1pIJZEI3L8W-q1XEt52I4xQyBYh69Vo0dDSJdJeSCxiCyw65Ck1sxZq1JYTTjAWfIlHsCt45ElJ3JzGDoMWFb8aDXI-BP2f_ocjunRkBvUEFDzRYcd7s_f-Wf3nElSNJwch4U5ogFhUvndyMAbriXXL9Uwq5gk6x1V6GqHXZAebb-yFF_vyOuyXHoWWmvdu6MGw8NYaw-Wus9RH_160u07JC_8NE0RHK8rX7yl_K9S5FmLU-_rGDlZmH_I=w953-h326-no, https://lh3.googleusercontent.com/-iGwuDKdJr_U2Pda27Uizel2VZGYpzdpcGqsa6e3dE9c3KLqE9v0uI7WZRXz_d_uY3YVwQS4Oa5c7Ft0WpyFbnZOHRi2HTv4PeteNFOc9EcIkjPVcBKy0WQ-hzmWD-AMwoM6gKmLLnb7yTsdUOWOqSrFCk8y5RfSYmXDRj6yj-SqWSY6yVGUhoiEegdUsA0GVfVR_P6cC6_673jXDSaqJzx2A77Fl9KI6YVs59llY7KFDn-zMLReEDjGE1gD9jnRzlQAXbnIEPL-d993D7RqqfyMlxhRD5bYzNCprKpz6-fLChbQd0KzS7VDcSBq7QMYdK5fCZKEFGNW6kXODJBtZ3C0Ekk5fPEqvG9iL82rI65Eo4xlI1E5WRm0Y9GDMMDFmvA3hk0hJA4Ik0okfJjsBTzYXWe3NZm7frNiZudBR1G1er1pIJZEI3L8W-q1XEt52I4xQyBYh69Vo0dDSJdJeSCxiCyw65Ck1sxZq1JYTTjAWfIlHsCt45ElJ3JzGDoMWFb8aDXI-BP2f_ocjunRkBvUEFDzRYcd7s_f-Wf3nElSNJwch4U5ogFhUvndyMAbriXXL9Uwq5gk6x1V6GqHXZAebb-yFF_vyOuyXHoWWmvdu6MGw8NYaw-Wus9RH_160u07JC_8NE0RHK8rX7yl_K9S5FmLU-_rGDlZmH_I=w953-h326-no 1.5x, https://lh3.googleusercontent.com/-iGwuDKdJr_U2Pda27Uizel2VZGYpzdpcGqsa6e3dE9c3KLqE9v0uI7WZRXz_d_uY3YVwQS4Oa5c7Ft0WpyFbnZOHRi2HTv4PeteNFOc9EcIkjPVcBKy0WQ-hzmWD-AMwoM6gKmLLnb7yTsdUOWOqSrFCk8y5RfSYmXDRj6yj-SqWSY6yVGUhoiEegdUsA0GVfVR_P6cC6_673jXDSaqJzx2A77Fl9KI6YVs59llY7KFDn-zMLReEDjGE1gD9jnRzlQAXbnIEPL-d993D7RqqfyMlxhRD5bYzNCprKpz6-fLChbQd0KzS7VDcSBq7QMYdK5fCZKEFGNW6kXODJBtZ3C0Ekk5fPEqvG9iL82rI65Eo4xlI1E5WRm0Y9GDMMDFmvA3hk0hJA4Ik0okfJjsBTzYXWe3NZm7frNiZudBR1G1er1pIJZEI3L8W-q1XEt52I4xQyBYh69Vo0dDSJdJeSCxiCyw65Ck1sxZq1JYTTjAWfIlHsCt45ElJ3JzGDoMWFb8aDXI-BP2f_ocjunRkBvUEFDzRYcd7s_f-Wf3nElSNJwch4U5ogFhUvndyMAbriXXL9Uwq5gk6x1V6GqHXZAebb-yFF_vyOuyXHoWWmvdu6MGw8NYaw-Wus9RH_160u07JC_8NE0RHK8rX7yl_K9S5FmLU-_rGDlZmH_I=w953-h326-no 2x"
+        data-sizes="auto"
+        alt="https://lh3.googleusercontent.com/-iGwuDKdJr_U2Pda27Uizel2VZGYpzdpcGqsa6e3dE9c3KLqE9v0uI7WZRXz_d_uY3YVwQS4Oa5c7Ft0WpyFbnZOHRi2HTv4PeteNFOc9EcIkjPVcBKy0WQ-hzmWD-AMwoM6gKmLLnb7yTsdUOWOqSrFCk8y5RfSYmXDRj6yj-SqWSY6yVGUhoiEegdUsA0GVfVR_P6cC6_673jXDSaqJzx2A77Fl9KI6YVs59llY7KFDn-zMLReEDjGE1gD9jnRzlQAXbnIEPL-d993D7RqqfyMlxhRD5bYzNCprKpz6-fLChbQd0KzS7VDcSBq7QMYdK5fCZKEFGNW6kXODJBtZ3C0Ekk5fPEqvG9iL82rI65Eo4xlI1E5WRm0Y9GDMMDFmvA3hk0hJA4Ik0okfJjsBTzYXWe3NZm7frNiZudBR1G1er1pIJZEI3L8W-q1XEt52I4xQyBYh69Vo0dDSJdJeSCxiCyw65Ck1sxZq1JYTTjAWfIlHsCt45ElJ3JzGDoMWFb8aDXI-BP2f_ocjunRkBvUEFDzRYcd7s_f-Wf3nElSNJwch4U5ogFhUvndyMAbriXXL9Uwq5gk6x1V6GqHXZAebb-yFF_vyOuyXHoWWmvdu6MGw8NYaw-Wus9RH_160u07JC_8NE0RHK8rX7yl_K9S5FmLU-_rGDlZmH_I=w953-h326-no"
+        title="img" /></p>
+<h2 id="notes">Notes</h2>
+<p>For  now, this solution addresses the issue but will be looking into  implementing other solutions and keep everything contained in the skype  environment, perhaps a dial plan and voice policy applied to the  exchange object is preferable for this specific scenario.</p>
+<p>Stay  tuned for an update and feel free to suggest any other possible  solution if you have experienced the same in your environment.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://support.sonus.net/display/UXAPIDOC/SIP&#43;Response&#43;Codes&#43;-&#43;Reference" target="_blank" rel="noopener noreffer">SIP Code Response @ Sonus</a>
+</li>
+<li><a href="https://support.sonus.net/display/UXAPIDOC/Q.850&#43;Cause&#43;Codes&#43;-&#43;Reference" target="_blank" rel="noopener noreffer">Q.850 Code Response @ Sonus</a>
+</li>
+<li><a href="https://technet.microsoft.com/en-us/library/cc526581.aspx" target="_blank" rel="noopener noreffer">About Auto Attendant @ MS</a>
+</li>
+<li><a href="https://technet.microsoft.com/en-us/library/cc526590.aspx" target="_blank" rel="noopener noreffer">Unified Messaging @ MS TechNet</a>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2017-03-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" data-title="Auto Attendant Toll Fraud Call" data-via="@DpdLeon" data-hashtags="Sonus,Auto Attendant"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" data-hashtag="Sonus"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/sonus/">Sonus</a>,&nbsp;<a href="/blog/tags/auto-attendant/">Auto Attendant</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" class="next" rel="next" title="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph">Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>

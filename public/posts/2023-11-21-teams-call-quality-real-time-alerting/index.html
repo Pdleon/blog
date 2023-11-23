@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses" />
+<meta property="og:description" content="Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
+Audio quality for in-progress meetings Video quality for in-progress meetings Screen sharing quality for in-progress meetings This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-21T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses"/>
+<meta name="twitter:description" content="Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
+Audio quality for in-progress meetings Video quality for in-progress meetings Screen sharing quality for in-progress meetings This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations."/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2023-11-20-this-blog-is-alive/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2023-11-21-teams-call-quality-real-time-alerting\/"
+        },"genre": "posts","keywords": "Teams, Monitor, Alert, MTR","wordcount":  750 ,
+        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2023-11-21-teams-call-quality-real-time-alerting\/","datePublished": "2023-11-21T00:00:00+00:00","dateModified": "2023-11-21T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
+</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/mtr/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>MTR</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-21">2023-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;750 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#setup--activation">Setup &amp; Activation</a></li>
+    <li><a href="#conclusions">Conclusions</a>
+      <ul>
+        <li><a href="#considerations">Considerations</a></li>
+        <li><a href="#reasons-why-monitoring-feature-might-not-be-prioritized">Reasons Why Monitoring Feature Might Not Be Prioritized</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="overview">Overview</h2>
+<p>A few things have changed since I wrote on Teams rules to monitor for offline devices. <a href="https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/" rel="">Reference Article</a>
+</p>
+<p>In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:</p>
+<ul>
+<li>Audio quality for in-progress meetings</li>
+<li>Video quality for in-progress meetings</li>
+<li>Screen sharing quality for in-progress meetings</li>
+</ul>
+<p>This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations. This limitation becomes evident, particularly concerning accounts linked with devices such as common area or shared devices. These specific devices lack inherent capabilities for real-time call quality monitoring without the addition of an extra premium license or assigning an MTR Pro license to a shared device which might be hard to justify. The justification for this necessity demands a thorough evaluation based on diverse and practical use cases and showcases gaps where the licensing framework might not be aligned with customer expectations, licensing complexity and budget.</p>
+<p><strong>Update:</strong> Initially, Microsoft offered this service exclusively to premium licenses. However, as of the time of writing, there has been a highly appreciated change. This license is now included as part of the MTR Pro License. It’s worth noting that the official Microsoft documentation, as well as TAC, have not yet been updated to reflect this change.</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TAC_AlertRules_03.png"
+        data-srcset="/blog/images/TAC_AlertRules_03.png, /blog/images/TAC_AlertRules_03.png 1.5x, /blog/images/TAC_AlertRules_03.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TAC_AlertRules_03.png"
+        title="/blog/images/TAC_AlertRules_03.png" width="1779" height="1000" /></p>
+<hr>
+<h2 id="setup--activation">Setup &amp; Activation</h2>
+<p>Configure either an individual alert or all the premium alerts:</p>
+<ul>
+<li>TAC &gt; Notifications &amp; Alerts &gt; Rules</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TAC_AlertRules_01.png"
+        data-srcset="/blog/images/TAC_AlertRules_01.png, /blog/images/TAC_AlertRules_01.png 1.5x, /blog/images/TAC_AlertRules_01.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TAC_AlertRules_01.png"
+        title="/blog/images/TAC_AlertRules_01.png" width="1793" height="775" /></p>
+<p>Focusing in the Audio rule only:</p>
+<ul>
+<li>Configure all conditions, paremeters and values accordingly</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TAC_AlertRules_02.png"
+        data-srcset="/blog/images/TAC_AlertRules_02.png, /blog/images/TAC_AlertRules_02.png 1.5x, /blog/images/TAC_AlertRules_02.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TAC_AlertRules_02.png"
+        title="/blog/images/TAC_AlertRules_02.png" width="1823" height="1650" /></p>
+<ul>
+<li>Add users with a premium license or all your resource accounts assigned with the MTR Pro License</li>
+<li>Leave defaults for the channel alerts in a newly created Teams or specify an existing team channel for notifications</li>
+<li>Activate the alarm</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TAC_AlertRules_04.png"
+        data-srcset="/blog/images/TAC_AlertRules_04.png, /blog/images/TAC_AlertRules_04.png 1.5x, /blog/images/TAC_AlertRules_04.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TAC_AlertRules_04.png"
+        title="/blog/images/TAC_AlertRules_04.png" width="1825" height="1526" /></p>
+<p>Alerts would look like this in your teams client</p>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/TAC_AlertRules_05.png"
+        data-srcset="/blog/images/TAC_AlertRules_05.png, /blog/images/TAC_AlertRules_05.png 1.5x, /blog/images/TAC_AlertRules_05.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/TAC_AlertRules_05.png"
+        title="/blog/images/TAC_AlertRules_05.png" width="1953" height="1146" /></p>
+<hr>
+<p>For detailed technical documentation on how to set up and activate it, follow the official Microsoft documentation</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/microsoftteams/alerts/teams-admin-alerts" target="_blank" rel="noopener noreffer">Microsoft Learn - Real-time Telemetry Alerts</a>
+</li>
+</ul>
+<hr>
+<h2 id="conclusions">Conclusions</h2>
+<h3 id="considerations">Considerations</h3>
+<p>The implementation of new monitoring rules serves a critical purpose in ensuring call quality during pivotal meetings for high-priority accounts. A few points to consider with the necessity of teams monitoring rules for call quality alerting:</p>
+<ol>
+<li>
+<p><strong>Proactive Issue Detection:</strong> Monitoring call quality enables swift identification of potential issues before they disrupt crucial meetings. IT support or managed services receive alerts, allowing timely interventions to maintain uninterrupted communication. This is still a reactive process and might not prevent the issue but it gives technical context to an isolated or trendy issue.</p>
+</li>
+<li>
+<p><strong>Enhanced User Experience:</strong> Guaranteeing excellent call quality in high visibility accounts or conference rooms is pivotal for a positive user experience. It prevents disruptions, fostering productive discussions and decision-making.</p>
+</li>
+<li>
+<p><strong>Trend Analysis and Improvement:</strong> While not an immediate resolution for users facing call quality issues, monitoring helps in analyzing trends. It provides insights for system improvements, ensuring a better overall experience in the long term.</p>
+</li>
+<li>
+<p><strong>Complexity in Prioritization:</strong> Balancing the need for monitoring with the rising costs of running a business, like stacking license SKUs, adds complexity to decision-making. Effective resource allocation becomes crucial.</p>
+</li>
+<li>
+<p><strong>License-based Optimization:</strong> Expanding this feature beyond the Premium and MTR Pro license would highlight the benefit for accounts/devices with standard teams user license or shared device license emphasizes the tailored advantages this feature can offer.</p>
+</li>
+<li>
+<p><strong>Business Impact:</strong> Excellent call quality directly impacts business outcomes, securing deals, resolving issues promptly, and maintaining client satisfaction for high-priority accounts.</p>
+</li>
+<li>
+<p><strong>Mitigating Risks:</strong> In industries where communication is mission-critical, monitoring call quality becomes paramount to mitigate risks associated with miscommunications or technical glitches.</p>
+</li>
+</ol>
+<h3 id="reasons-why-monitoring-feature-might-not-be-prioritized">Reasons Why Monitoring Feature Might Not Be Prioritized</h3>
+<ol>
+<li>
+<p><strong>Cost Considerations:</strong> Implementing the monitoring feature may come with additional expenses, especially if it requires stacking license SKUs. For businesses on a tight budget, the added cost might not justify its immediate adoption. Businesses may prioritize allocating their budget towards core functionalities or features that directly impact productivity or revenue generation. If the monitoring feature doesn&rsquo;t offer a significant enough value proposition, it might not make the cut in budget allocations.</p>
+</li>
+<li>
+<p><strong>Comparative Service Offerings:</strong> Other platforms might already include similar monitoring functionalities within their existing license models. For organizations already utilizing these platforms, investing in a separate monitoring feature might seem redundant. Competitors may be including monitoring call quality, without the need for separate add-ons. This integrated approach could be more appealing than investing in standalone monitoring tools.</p>
+</li>
+<li>
+<p><strong>Support and Maintenance Costs:</strong> Consideration of ongoing support and maintenance costs for the monitoring feature might deter adoption, especially if it requires dedicated resources for upkeep.</p>
+</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-11-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" data-title="Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses" data-via="@DpdLeon" data-hashtags="Teams,Monitor,Alert,MTR"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/monitor/">Monitor</a>,&nbsp;<a href="/blog/tags/alert/">Alert</a>,&nbsp;<a href="/blog/tags/mtr/">MTR</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2023-11-20-this-blog-is-alive/" class="prev" rel="prev" title="This blog is alive"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>This blog is alive</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+</html>
