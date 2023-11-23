@@ -468,7 +468,6 @@
 
       [params.page.comment.giscus]
         # You can refer to the official documentation of giscus to use the following configuration.
-     
         enable = true
         repo = "pdleon/blog"
         repoId = "R_kgDOI_YXgA"
