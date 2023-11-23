@@ -1,11 +1,11 @@
 .page {
   position: relative;
-  max-width: 1024px;
-  width: 80%;
+  max-width: 800px;
+  width: 60%;
   margin: 0 auto;
 
   [data-header-desktop] & {
-    padding-top: $header-height;
+    padding-top: var(--header-height);
   }
 
   [data-header-desktop=normal] & {
