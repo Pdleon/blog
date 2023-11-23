@@ -46,7 +46,7 @@ other = "Switch Theme"
 
 # === partials/footer.html ===
 [poweredBySome]
-other = ""
+other = "Powered by {{ .Hugo }} | Theme - {{ .Theme }}"
 # === partials/footer.html ===
 
 # === partials/comment.html ===
@@ -58,6 +58,9 @@ other = "Your comment ..."
 
 [facebookLanguageCode]
 other = "en_US"
+
+[giscusLang]
+other = "en"
 # === partials/comment.html ===
 
 # === partials/assets.html ===
