@@ -22,6 +22,7 @@ This service is limited to accounts assigned with a premium license or MTR Pro L
 ![](images/TAC_AlertRules_03.png)
 
 ---
+
 ## Setup & Activation
 
 Configure either an individual alert or all the premium alerts:
@@ -52,6 +53,7 @@ Alerts would look like this in your teams client
 ![](images/TAC_AlertRules_05.png)
 
 ---
+
 For detailed technical documentation on how to set up and activate it, follow the official Microsoft documentation
 
 - [Microsoft Learn - Real-time Telemetry Alerts](https://learn.microsoft.com/en-us/microsoftteams/alerts/teams-admin-alerts)
