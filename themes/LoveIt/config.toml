@@ -181,7 +181,7 @@
       title = "UC Blog"
       # subtitle shown in home page (HTML format is supported)
 #
-      subtitle = "This is my cool site"
+      subtitle = ""
       # whether to use typeit animation for subtitle
 #
       typeit = true
