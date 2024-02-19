@@ -2,6 +2,7 @@
 title: "Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses"
 date: 2023-11-21
 tags: [Teams, Monitor, Alert, MTR]
+toc: true
 categories: [Teams, MTR]
 ---
 
