@@ -9,9 +9,9 @@ categories: [Teams, Devices]
 
 ## Overview
 
-In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an Audiocodes MP112 as the simpliest and cheapest option.
+In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an AudioCodes MP112 as the simplest and cheapest option.
 
-Audiocodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
+AudioCodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
 
 [Audiocodes ATA MP1xx Teams SIP Gateway Integration](https://www.audiocodes.com/media/pafhki3d/onboarding-audiocodes-ata-to-microsoft-sip-gateway-for-teams.pdf)
 
