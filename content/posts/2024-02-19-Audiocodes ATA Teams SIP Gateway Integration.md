@@ -23,7 +23,7 @@ Audiocodes recently released an onbarding guide as a walkthrough but typically t
 - Device Firmware:
   - Microsoft supported firmware -  6.60A.367.[001-005] (at the time of writing)
 
-Download firmware directly from AC or download from here (at the time of writing) : [MP-11x FXS/FXO](files/MP11x_SIP_F6.60A.367.005.zip)
+Download firmware directly from AC or download from here (at the time of writing) : [MP-11x FXS/FXO 6.60A.367.005](files/MP11x_SIP_F6.60A.367.005.zip)
 
 ## Setup & Activation
 
