@@ -1,15 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MTR - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/mtr/</link>
+        <link>http://localhost:1313/blog/tags/mtr/</link>
         <description>MTR - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/mtr/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/mtr/" rel="self" type="application/rss+xml" /><item>
     <title>Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses</title>
-    <link>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</link>
+    <link>http://localhost:1313/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</link>
     <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</guid>
-    <description><![CDATA[Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
+    <guid>http://localhost:1313/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</guid>
+    <description><![CDATA[Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article
+In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
 Audio quality for in-progress meetings Video quality for in-progress meetings Screen sharing quality for in-progress meetings This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations.]]></description>
 </item>
 </channel>

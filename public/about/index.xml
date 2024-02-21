@@ -2,19 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Pdleon Blog</title>
-    <link>https://pdleon.github.io/blog/about/</link>
+    <link>http://localhost:1313/blog/about/</link>
     <description>Recent content in Abouts on Pdleon Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://pdleon.github.io/blog/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://pdleon.github.io/blog/about/about/</link>
+      <link>http://localhost:1313/blog/about/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://pdleon.github.io/blog/about/about/</guid>
-      <description>Welcome to my blog! This is a space where I&amp;rsquo;ll be sharing my personal journey, experiences, and insights.
-Please note that all opinions and views expressed here are solely my own. They do not reflect the views of any organization or entity I may be affiliated with. This blog is a personal endeavor, a place where I express my thoughts and ideas.
-This blog will serve as a platform to document my journey.</description>
+      <guid>http://localhost:1313/blog/about/about/</guid>
+      <description>Welcome to my blog! This is a space where I&amp;rsquo;ll be sharing my personal journey, experiences, and insights.&#xA;Please note that all opinions and views expressed here are solely my own. They do not reflect the views of any organization or entity I may be affiliated with. This blog is a personal endeavor, a place where I express my thoughts and ideas.&#xA;This blog will serve as a platform to document my journey.</description>
     </item>
   </channel>
 </rss>

@@ -1,49 +1,63 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/posts/</link>
+        <link>http://localhost:1313/blog/posts/</link>
         <description>All Posts | Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>AudioCodes ATA Teams SIP Gateway Integration</title>
+    <link>http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/</link>
+    <pubDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/</guid>
+    <description><![CDATA[Overview In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an Audiocodes MP112 as the simpliest and cheapest option.
+Audiocodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
+Audiocodes ATA MP1xx Teams SIP Gateway Integration
+Requirements MP1xx Crossover cable Analog endpoint Device Firmware Microsoft supported firmware - 6.60A.367.[001-005] (At the time of writing)]]></description>
+</item>
+<item>
     <title>Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses</title>
-    <link>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</link>
+    <link>http://localhost:1313/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</link>
     <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</guid>
-    <description><![CDATA[Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
+    <guid>http://localhost:1313/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/</guid>
+    <description><![CDATA[Overview A few things have changed since I wrote on Teams rules to monitor for offline devices. Reference Article
+In response to the growing importance of real-time call quality monitoring, a set of new rules have been added:
 Audio quality for in-progress meetings Video quality for in-progress meetings Screen sharing quality for in-progress meetings This service is limited to accounts assigned with a premium license or MTR Pro License, a restriction that presents a challenge for many organizations.]]></description>
 </item>
 <item>
     <title>This blog is alive</title>
-    <link>https://pdleon.github.io/blog/posts/2023-11-20-this-blog-is-alive/</link>
+    <link>http://localhost:1313/blog/posts/2023-11-20-this-blog-is-alive/</link>
     <pubDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2023-11-20-this-blog-is-alive/</guid>
+    <guid>http://localhost:1313/blog/posts/2023-11-20-this-blog-is-alive/</guid>
     <description><![CDATA[Since my last post, a multitude of events have unfolded. This post will serve as a catalyst to rekindle my professional journey, revisiting all the knowledge I’ve acquired and experiences I’ve had in the realm of unified communications and cloud technologies. The rise of AI brings innovation and rapid changes transforming how we approach and think of work, enhancing our capabilities in our respective fields and learning new areas of expertise.]]></description>
 </item>
 <item>
     <title>Teams SIP Gateway - Enable and Provision Polycom VVX 500</title>
-    <link>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</link>
+    <link>http://localhost:1313/blog/posts/2021-12-07-sip-gateway/</link>
     <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-12-07-sip-gateway/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-12-07-sip-gateway/</guid>
     <description><![CDATA[Introduction When this new feature was released, it was time to dust my old Polycom VVX 500 phone and provision it for Teams basic call functionality.
 The official Microsoft documentation for all the pre-requisites and supported devices can be found here:
-https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts.]]></description>
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-plan
+https://docs.microsoft.com/en-us/microsoftteams/sip-gateway-configure
+Procedure Enable your custom or global policy to enable SIP devices can be used for calls I went deep dive immediately and ignored a very important step which caused me some wasted time and some troubleshooting efforts.]]></description>
 </item>
 <item>
     <title>Poly Lens - Getting Started</title>
-    <link>https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/</link>
+    <link>http://localhost:1313/blog/posts/2021-08-19-poly-lens/</link>
     <pubDate>Thu, 19 Aug 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-08-19-poly-lens/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-08-19-poly-lens/</guid>
     <description><![CDATA[Introduction Managing phones through Teams Admin Center has been challenging at times especially when staying up to date with firmware and application updates. Part of the challenge is that the phones at time do not register correctly, do not reflect immediate changes, do not appear in the dashboard at times, and fail to update when pushing the update. These challenges can be prevented or minimized by having correct compliance policies, accurate configuration and solid network connectivity.]]></description>
 </item>
 <item>
     <title>Teams Telephony - Block Inbound Number</title>
-    <link>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</link>
+    <link>http://localhost:1313/blog/posts/2021-07-28-block-inbound-number/</link>
     <pubDate>Wed, 28 Jul 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-07-28-block-inbound-number/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-07-28-block-inbound-number/</guid>
     <description><![CDATA[Request To block an inbound (External PSTN) number.
 Pre-requisites If applicable
 Administrator access to the SBC Tenant Teams Administrator Procedure Audiocodes SBC IP to IP Routing The two key settings to determine is the Source Username Pattern ( number to be blocked ) and the destination type and set the destination addressit to 0.0.0.0
@@ -51,52 +65,42 @@ Classification This option we have an actual action type to deny this number. Pr
 </item>
 <item>
     <title>Teams Device Monitoring and Alerting Offline Status</title>
-    <link>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</link>
+    <link>http://localhost:1313/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</link>
     <pubDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</guid>
     <description><![CDATA[Initial Thoughts This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.
 A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.
 Configuration Validate permissions to create a Team/Channel]]></description>
 </item>
 <item>
     <title>Quick Guide Teams Webinar - Registration and Flow</title>
-    <link>https://pdleon.github.io/blog/posts/2021-06-08-teams-webinar/</link>
+    <link>http://localhost:1313/blog/posts/2021-06-08-teams-webinar/</link>
     <pubDate>Tue, 08 Jun 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-06-08-teams-webinar/</guid>
-    <description><![CDATA[Introduction Webinar is a new feature in Teams designed for up to 1,000 attendees with the ability to use a registration form, all the built in meeting features and a hidden feature of a Microsoft list where automation could be leverage for added control. I discovered this feature from Steven Collier Youtube&rsquo;s channel here -&gt; https://youtu.be/0NAxfP6gulw Two quick guides from Microsoft with all the features and usage.
+    <guid>http://localhost:1313/blog/posts/2021-06-08-teams-webinar/</guid>
+    <description><![CDATA[Introduction Webinar is a new feature in Teams designed for up to 1,000 attendees with the ability to use a registration form, all the built in meeting features and a hidden feature of a Microsoft list where automation could be leverage for added control. I discovered this feature from Steven Collier Youtube&rsquo;s channel here -&gt; https://youtu.be/0NAxfP6gulw
+Two quick guides from Microsoft with all the features and usage.
 https://www.microsoft.com/en-us/microsoft-365/blog/2021/05/11/introducing-webinars-in-microsoft-teams-easy-professional-webinars-to-engage-customers/ https://teamworktools.azurewebsites.net/assets/TeamsWebinarsGetStartedGuide.pdf Step by Step:]]></description>
 </item>
 <item>
     <title>Microsoft Teams IP Phones Endpoint Manager Android Complaince Exclusion</title>
-    <link>https://pdleon.github.io/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</link>
+    <link>http://localhost:1313/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</link>
     <pubDate>Thu, 13 May 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-05-13-teams-ip-phones-endpoint-manager-android-compliance-exclusion/</guid>
     <description><![CDATA[Issue Recently encountered an issue where IP Phones (Polycom CCX) were unable to register to Azure AD and would not appear in the Microsoft Teams Admin Center list of IP Phone devices. Most times this should not be an issue except if the company has Intune enabled and endpoint manager resctricting devices from registering due to compliance policies.
 Solution I knew there were some recommendations to exclude these phones from any device compliance as it could create more harm than good and not gaining a full set of features for these devices since all software and firmware can be pushed through the teams admin center.]]></description>
 </item>
 <item>
     <title>Microsoft Teams PSTN Outbound Caller ID Mask with a Service Number or Resource Account Number ( Direct Routing DID )</title>
-    <link>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</link>
+    <link>http://localhost:1313/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</link>
     <pubDate>Wed, 12 May 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-05-12-teams-outbound-caller-id-mask-with-a-resource-account/</guid>
     <description><![CDATA[Request To mask outbound caller ID by location with the corresponding office number DID which is owned by their direct routing solution and assigned to an AutoAttendant Resource Account.
 Procedure We are not going to cover in detail how to assign a Direct Routing DID to a Resource Account but high level steps:
 Create new Resource Account through Admin Portal or through Powershell ( AutoAttendant or CallQueue ); Autoattendant in our case Assign the proper license to the Resource Account Assign desired number to the Resource Account through powershell only Set-CsOnlineApplicationInstance -Identity ResourceAccountAA@domain.]]></description>
-</item>
-<item>
-    <title>Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate</title>
-    <link>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</link>
-    <pubDate>Thu, 08 Oct 2020 00:00:00 &#43;0000</pubDate>
-    <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</guid>
-    <description><![CDATA[Introduction After my final thoughts on my article PSTN call records with Microsoft Graph I wanted to move this data to Microsoft Lists with Power Automate
-The benefits are quite a few as expressed before :
-More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.
-This process allows to run as a scheduled task or even as an Azure function.]]></description>
 </item>
 </channel>
 </rss>

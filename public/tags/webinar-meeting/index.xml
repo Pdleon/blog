@@ -1,15 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Webinar Meeting - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/webinar-meeting/</link>
+        <link>http://localhost:1313/blog/tags/webinar-meeting/</link>
         <description>Webinar Meeting - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 08 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/webinar-meeting/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 08 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/webinar-meeting/" rel="self" type="application/rss+xml" /><item>
     <title>Quick Guide Teams Webinar - Registration and Flow</title>
-    <link>https://pdleon.github.io/blog/posts/2021-06-08-teams-webinar/</link>
+    <link>http://localhost:1313/blog/posts/2021-06-08-teams-webinar/</link>
     <pubDate>Tue, 08 Jun 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-06-08-teams-webinar/</guid>
-    <description><![CDATA[Introduction Webinar is a new feature in Teams designed for up to 1,000 attendees with the ability to use a registration form, all the built in meeting features and a hidden feature of a Microsoft list where automation could be leverage for added control. I discovered this feature from Steven Collier Youtube&rsquo;s channel here -&gt; https://youtu.be/0NAxfP6gulw Two quick guides from Microsoft with all the features and usage.
+    <guid>http://localhost:1313/blog/posts/2021-06-08-teams-webinar/</guid>
+    <description><![CDATA[Introduction Webinar is a new feature in Teams designed for up to 1,000 attendees with the ability to use a registration form, all the built in meeting features and a hidden feature of a Microsoft list where automation could be leverage for added control. I discovered this feature from Steven Collier Youtube&rsquo;s channel here -&gt; https://youtu.be/0NAxfP6gulw
+Two quick guides from Microsoft with all the features and usage.
 https://www.microsoft.com/en-us/microsoft-365/blog/2021/05/11/introducing-webinars-in-microsoft-teams-easy-professional-webinars-to-engage-customers/ https://teamworktools.azurewebsites.net/assets/TeamsWebinarsGetStartedGuide.pdf Step by Step:]]></description>
 </item>
 </channel>

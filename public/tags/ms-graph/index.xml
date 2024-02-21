@@ -1,15 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MS Graph - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/ms-graph/</link>
+        <link>http://localhost:1313/blog/tags/ms-graph/</link>
         <description>MS Graph - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/ms-graph/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/ms-graph/" rel="self" type="application/rss+xml" /><item>
     <title>Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph</title>
-    <link>https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</link>
+    <link>http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</link>
     <pubDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</guid>
-    <description><![CDATA[This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+    <guid>http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/</guid>
+    <description><![CDATA[This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords
+Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
 We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable]]></description>
 </item>
 </channel>

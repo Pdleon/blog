@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Power Automate - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/power-automate/</link>
+        <link>http://localhost:1313/blog/tags/power-automate/</link>
         <description>Power Automate - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/power-automate/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/power-automate/" rel="self" type="application/rss+xml" /><item>
     <title>Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate</title>
-    <link>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</link>
+    <link>http://localhost:1313/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</link>
     <pubDate>Thu, 08 Oct 2020 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</guid>
+    <guid>http://localhost:1313/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/</guid>
     <description><![CDATA[Introduction After my final thoughts on my article PSTN call records with Microsoft Graph I wanted to move this data to Microsoft Lists with Power Automate
 The benefits are quite a few as expressed before :
 More granular control over how the process is automated via Microsoft Graph Access leveraging all the possible queries and correlating information that Graph offers.

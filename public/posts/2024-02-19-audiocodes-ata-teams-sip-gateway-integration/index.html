@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>AudioCodes ATA Teams SIP Gateway Integration - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="AudioCodes ATA Teams SIP Gateway Integration" />
+<meta property="og:description" content="Overview In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an Audiocodes MP112 as the simpliest and cheapest option.
+Audiocodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
+Audiocodes ATA MP1xx Teams SIP Gateway Integration
+Requirements MP1xx
+Crossover cable
+Analog endpoint
+Device Firmware:
+Microsoft supported firmware - 6.60A.367.[001-005] (at the time of writing) Download firmware directly from AC or download from here (at the time of writing) : MP-11x FXS/FXO" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-19T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="AudioCodes ATA Teams SIP Gateway Integration"/>
+<meta name="twitter:description" content="Overview In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an Audiocodes MP112 as the simpliest and cheapest option.
+Audiocodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
+Audiocodes ATA MP1xx Teams SIP Gateway Integration
+Requirements MP1xx
+Crossover cable
+Analog endpoint
+Device Firmware:
+Microsoft supported firmware - 6.60A.367.[001-005] (at the time of writing) Download firmware directly from AC or download from here (at the time of writing) : MP-11x FXS/FXO"/>
+<meta name="twitter:site" content="@DpdLeon"/>
+<meta name="application-name" content="UC Blog">
+<meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/" /><link rel="prev" href="http://localhost:1313/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" /><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="preload" href="/blog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/blog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AudioCodes ATA Teams SIP Gateway Integration",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/blog\/posts\/2024-02-19-audiocodes-ata-teams-sip-gateway-integration\/"
+        },"genre": "posts","keywords": "Teams, Audiocodes, SIP Gateway","wordcount":  515 ,
+        "url": "http:\/\/localhost:1313\/blog\/posts\/2024-02-19-audiocodes-ata-teams-sip-gateway-integration\/","datePublished": "2024-02-19T00:00:00+00:00","dateModified": "2024-02-19T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "David Ponce de Leon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/blog/posts/"> Posts </a><a class="menu-item" href="/blog/tags/"> Tags </a><a class="menu-item" href="/blog/categories/"> Categories </a><a class="menu-item" href="/blog/about/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/blog/" title="Pdleon Blog">David Ponce de Leon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/blog/posts/" title="">Posts</a><a class="menu-item" href="/blog/tags/" title="">Tags</a><a class="menu-item" href="/blog/categories/" title="">Categories</a><a class="menu-item" href="/blog/about/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AudioCodes ATA Teams SIP Gateway Integration</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a></span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/devices/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Devices</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-19">2024-02-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;515 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a></li>
+      </ul>
+    </li>
+    <li><a href="#setup--activation">Setup &amp; Activation</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="overview">Overview</h2>
+<p>In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an Audiocodes MP112 as the simpliest and cheapest option.</p>
+<p>Audiocodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.</p>
+<p><a href="https://www.audiocodes.com/media/pafhki3d/onboarding-audiocodes-ata-to-microsoft-sip-gateway-for-teams.pdf" target="_blank" rel="noopener noreffer ">Audiocodes ATA MP1xx Teams SIP Gateway Integration</a></p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>
+<p>MP1xx</p>
+</li>
+<li>
+<p>Crossover cable</p>
+</li>
+<li>
+<p>Analog endpoint</p>
+</li>
+<li>
+<p>Device Firmware:</p>
+<ul>
+<li>Microsoft supported firmware -  6.60A.367.[001-005] (at the time of writing)</li>
+</ul>
+</li>
+</ul>
+<p>Download firmware directly from AC or download from here (at the time of writing) : <a href="/blog/files/MP11x_SIP_F6.60A.367.005.zip" rel="">MP-11x FXS/FXO</a></p>
+<h2 id="setup--activation">Setup &amp; Activation</h2>
+<ul>
+<li>Reset the device ( Hardware Reset)</li>
+<li>Run initial setup through a crossover cable
+<ul>
+<li>Change network settings to adjust for Internet access</li>
+<li>If necessary
+<ul>
+<li>Add public DNS</li>
+<li>Add public NTP</li>
+<li>Reset the board ( Software Reset )</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Upgrade firmware to supported version
+<ul>
+<li>6.xxx as the time of writing</li>
+</ul>
+</li>
+<li>Do follow the guide</li>
+</ul>
+<p>According to the guide, the ATA will reboot after applying ini changes but this might not be the case for everyone, at least for me until i reset the board and burn the config.
+The ATA will reboot and the only way to know if it worked is if the .ini config file took the new values and Microsoft .cmp configuration (See your .ini file or reboot the device)
+Keep an eye for the proxyip and trunkgroup in the config file</p>
+<p>Snippets of my config file look like this</p>
+<pre tabindex="0"><code>;**************
+;** Ini File **
+;**************
+
+;Board: MP-112 FXS
+;Board Type: 56
+;Serial Number: 
+;Slot Number: 1
+;Software Version: 6.60A.367.005
+;DSP Software Version: 204IM3=&gt; 660.15
+;Board IP Address: xxx.xxx.xxx.xxx
+;Board Subnet Mask: xxx.xxx.xxx.xxx
+;Board Default Gateway: xxx.xxx.xxx
+;Ram size: 32M   Flash size: 8M 
+;Num of DSP Cores: 1  Num DSP Channels: 3
+;Profile: NONE 
+;License Key limits aren&#39;t active full features capabilities are available !;
+;----------------------------------------------
+
+
+[SYSTEM Params]
+
+DNSPriServerIP = 9.9.9.9
+DNSSecServerIP = 1.1.1.1
+IniFileURL = &#39;https://uswe.dm.sdg.teams.microsoft.com/device/state/OnBoarding/mmiiaacc
+/00908F96C8131708115506mfuhDT85vi6fNBs4U9Cx/lang_en/xxxxxxxxxx.ini&#39;
+CmpFileURL = &#39;http://noam.httpblob.sdg.teams.microsoft.com/firmwares/audiocodes/MP11X.cmp&#39;
+AutoUpdateCmpFile = 1
+;VpFileLastUpdateTime is hidden but has non-default value
+AUPDCheckIfIniChanged = 1
+;AUPDLastIniCRC is hidden but has non-default value
+
+[ ProxyIp ]
+
+FORMAT ProxyIp_Index = ProxyIp_IpAddress, ProxyIp_TransportType, ProxyIp_ProxySetId;
+ProxyIp 0 = &#34;obsbc-uswe.sdg.teams.microsoft.com&#34;, 2, 1;
+ProxyIp 1 = &#34;mainsbc-uswe.sdg.teams.microsoft.com&#34;, 2, 2;
+</code></pre><p>Follow the guide:</p>
+<p>In Teams Admin Center:</p>
+<ul>
+<li>Provision the device</li>
+<li>Generate pairing code</li>
+<li>Dial <strong>55</strong><!-- raw HTML omitted --> | Wait for the tone</li>
+<li>Wait for sign in</li>
+<li>Go to <a href="https://aka.ms/siplogin" target="_blank" rel="noopener noreffer ">https://aka.ms/siplogin</a> and authenticate with the account that is licensed based on your pstn solution</li>
+<li>The ATA will be displayed as the device/user  in the SIP Gateway dashboard</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/blog/svg/loading.min.svg"
+        data-src="/blog/images/SIPGatewayATA.png"
+        data-srcset="/blog/images/SIPGatewayATA.png, /blog/images/SIPGatewayATA.png 1.5x, /blog/images/SIPGatewayATA.png 2x"
+        data-sizes="auto"
+        alt="/blog/images/SIPGatewayATA.png"
+        title="/blog/images/SIPGatewayATA.png" width="1749" height="911" /></p>
+<h2 id="experience">Experience</h2>
+<p>Once the setup and activation is complete, the platform works well, I was able to dial in/out of the analog phone.</p>
+<ul>
+<li>I have not tested additional features like calling policies, e911</li>
+<li>In TAC, there are no capabilities for In-call progress metrics, only completed calls</li>
+<li>There are no actions, just device information.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>There is still more to uncover but so far the integration is complete. Different requirements required custom solutions, setup and configuration
+Troubleshooting might be a problem if this process is not very well documented
+High availability might come as a concern for certain requirements but that would be more on the ATA configuration and setup.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-02-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/" data-title="AudioCodes ATA Teams SIP Gateway Integration" data-via="@DpdLeon" data-hashtags="Teams,Audiocodes,SIP Gateway"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/blog/tags/teams/">Teams</a>,&nbsp;<a href="/blog/tags/audiocodes/">Audiocodes</a>,&nbsp;<a href="/blog/tags/sip-gateway/">SIP Gateway</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blog/posts/2023-11-21-teams-call-quality-real-time-alerting/" class="prev" rel="prev" title="Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Teams Call Quality Real Time Alerting for Premium and MTR Pro Licenses</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.123.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/blog/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/blog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script></body>
+</html>

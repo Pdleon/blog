@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph - Pdleon Blog</title><meta name="Description" content="Pdleon Blog"><meta property="og:title" content="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph" />
-<meta property="og:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+<meta property="og:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords
+Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
 We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-06T00:00:00+00:00" /><meta property="og:site_name" content="Pdleon Blog" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph"/>
-<meta name="twitter:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph"/>
+<meta name="twitter:description" content="This post is an exercise and all credit goes to this blog - script on Github by leeford-Get-TeamsPSTNCallRecords
+Getting the Reports There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.
 We can see some basic PSTN call information like time, caller, type of call, destination, duration, etc but the interface is small and having to navigate up and down and left - right can be less desirable"/>
 <meta name="twitter:site" content="@DpdLeon"/>
 <meta name="application-name" content="UC Blog">
 <meta name="apple-mobile-web-app-title" content="UC Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><link rel="prev" href="https://pdleon.github.io/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" /><link rel="next" href="https://pdleon.github.io/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" /><link rel="prev" href="http://localhost:1313/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" /><link rel="next" href="http://localhost:1313/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" /><link rel="stylesheet" href="/blog/css/style.min.css"><link rel="preload" href="/blog/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/blog/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/blog/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +31,9 @@ We can see some basic PSTN call information like time, caller, type of call, des
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/"
-        },"genre": "posts","keywords": "Teams, MS Graph","wordcount":  782 ,
-        "url": "https:\/\/pdleon.github.io\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/","datePublished": "2020-10-06T00:00:00+00:00","dateModified": "2020-10-06T00:00:00+00:00","publisher": {
+            "@id": "http:\/\/localhost:1313\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/"
+        },"genre": "posts","keywords": "Teams, MS Graph","wordcount":  781 ,
+        "url": "http:\/\/localhost:1313\/blog\/posts\/2020-10-06-retrieve-pstn-calls-with-microsoft-graph\/","datePublished": "2020-10-06T00:00:00+00:00","dateModified": "2020-10-06T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -38,7 +41,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
             },"description": ""
     }
     </script></head>
-    <body data-header-desktop="auto" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -59,8 +62,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </div>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -103,9 +105,8 @@ We can see some basic PSTN call information like time, caller, type of call, des
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a>
-</span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;782 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/blog/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>David Ponce de Leon</a></span>&nbsp;<span class="post-category">included in <a href="/blog/categories/teams/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Teams</a>&nbsp;<a href="/blog/categories/voice/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Voice</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;781 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -131,8 +132,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>This post is an exercise and all credit goes to this blog - script on Github by  <a href="https://github.com/leeford/Get-TeamsPSTNCallRecords" target="_blank" rel="noopener noreffer">leeford-Get-TeamsPSTNCallRecords</a>
-</p>
+<p>This post is an exercise and all credit goes to this blog - script on Github by  <a href="https://github.com/leeford/Get-TeamsPSTNCallRecords" target="_blank" rel="noopener noreffer ">leeford-Get-TeamsPSTNCallRecords</a></p>
 </blockquote>
 <h2 id="getting-the-reports">Getting the Reports</h2>
 <p>There are a couple of ways to retrieve basic information for PSTN calls whether is Microsoft&rsquo;s dial plans or direct routing. The easiest way would be from the Teams&rsquo; Admin Center -&gt; Analytics &amp; Reports -&gt; Usage Report.</p>
@@ -188,8 +188,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
 <p>Some background to make all this happen:</p>
 <h2 id="from-the-microsoft-official-documentation">From the Microsoft official Documentation</h2>
 <h3 id="call-record-permissions">Call Record Permissions</h3>
-<p>One of the following permissions is required to call this API. To learn more, including how to choose permissions, see <a href="https://docs.microsoft.com/en-us/graph/permissions-reference" target="_blank" rel="noopener noreffer">Permissions</a>
-.</p>
+<p>One of the following permissions is required to call this API. To learn more, including how to choose permissions, see <a href="https://docs.microsoft.com/en-us/graph/permissions-reference" target="_blank" rel="noopener noreffer ">Permissions</a>.</p>
 <table>
 <thead>
 <tr>
@@ -238,8 +237,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
 </tbody>
 </table>
 <h3 id="remarks">Remarks</h3>
-<p>The <em>CallRecords.Read.All</em> permission grants an <strong>application</strong> privileged access to <a href="https://docs.microsoft.com/en-us/graph/api/resources/callrecords-callrecord" target="_blank" rel="noopener noreffer">callRecords</a>
- for every call and online meeting within your organization, including calls to and from external phone numbers. This includes potentially sensitive details about who participated in the call, as well as technical information pertaining to these calls and meetings that can be used for network troubleshooting, such as IP addresses, device details, and other network information.</p>
+<p>The <em>CallRecords.Read.All</em> permission grants an <strong>application</strong> privileged access to <a href="https://docs.microsoft.com/en-us/graph/api/resources/callrecords-callrecord" target="_blank" rel="noopener noreffer ">callRecords</a> for every call and online meeting within your organization, including calls to and from external phone numbers. This includes potentially sensitive details about who participated in the call, as well as technical information pertaining to these calls and meetings that can be used for network troubleshooting, such as IP addresses, device details, and other network information.</p>
 <h3 id="example-usage">Example usage</h3>
 <h4 id="application">Application</h4>
 <ul>
@@ -366,7 +364,7 @@ We can see some basic PSTN call information like time, caller, type of call, des
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-title="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph" data-via="@DpdLeon" data-hashtags="Teams,MS Graph"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pdleon.github.io/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-title="Microsoft Teams - Retrieve PSTN Call Records with Microsoft Graph" data-via="@DpdLeon" data-hashtags="Teams,MS Graph"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/" data-hashtag="Teams"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/blog/posts/2020-10-06-retrieve-pstn-calls-with-microsoft-graph/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -381,11 +379,10 @@ We can see some basic PSTN call information like time, caller, type of call, des
     <div class="post-nav"><a href="/blog/posts/2017-03-17-autoattendant-toll-fraud-call/" class="prev" rel="prev" title="Auto Attendant Toll Fraud Call"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Auto Attendant Toll Fraud Call</a>
             <a href="/blog/posts/2020-10-08-pstn-call-records-to-microsoft-lists/" class="next" rel="next" title="Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate">Microsoft Teams PSTN Record Calls to Microsoft Lists with Power Automate<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="giscus" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
-            </noscript></div></article></div>
+</article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.123.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/blog/" target="_blank">David Ponce de Leon</a></span></div>
         </div>
     </footer></div>
 
@@ -394,8 +391,5 @@ We can see some basic PSTN call information like time, caller, type of call, des
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOI_YXgM4CbMwy","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"pdleon/blog","repoId":"R_kgDOI_YXgA"}},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-QCXWGX7LYN', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QCXWGX7LYN" async></script></body>
+        </div><script type="text/javascript" src="/blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/blog/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/blog/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30}};</script><script type="text/javascript" src="/blog/js/theme.min.js"></script></body>
 </html>

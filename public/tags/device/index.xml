@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Device - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/device/</link>
+        <link>http://localhost:1313/blog/tags/device/</link>
         <description>Device - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/device/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/device/" rel="self" type="application/rss+xml" /><item>
     <title>Teams Device Monitoring and Alerting Offline Status</title>
-    <link>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</link>
+    <link>http://localhost:1313/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</link>
     <pubDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</guid>
+    <guid>http://localhost:1313/blog/posts/2021-06-23-teams-device-monitoring-and-alerting/</guid>
     <description><![CDATA[Initial Thoughts This new feature capability offered in the Teams Admin Center is a nice complementary option to monitor devices and alert Admins when they go offline.
 A great use scenario is for Conference Room devices or Executive level phones and while it&rsquo;s not preventative, it does help Admins to react fast when devices go offline whether at a individual or site level.
 Configuration Validate permissions to create a Team/Channel]]></description>

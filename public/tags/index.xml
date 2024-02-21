@@ -1,86 +1,86 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - Pdleon Blog</title>
-        <link>https://pdleon.github.io/blog/tags/</link>
+        <link>http://localhost:1313/blog/tags/</link>
         <description>Tags - Tag - Pdleon Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://pdleon.github.io/blog/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Alert</title>
-    <link>https://pdleon.github.io/blog/tags/alert/</link>
-    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Audiocodes</title>
+    <link>http://localhost:1313/blog/tags/audiocodes/</link>
+    <pubDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/alert/</guid>
+    <guid>http://localhost:1313/blog/tags/audiocodes/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Monitor</title>
-    <link>https://pdleon.github.io/blog/tags/monitor/</link>
-    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <title>SIP Gateway</title>
+    <link>http://localhost:1313/blog/tags/sip-gateway/</link>
+    <pubDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/monitor/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>MTR</title>
-    <link>https://pdleon.github.io/blog/tags/mtr/</link>
-    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/mtr/</guid>
+    <guid>http://localhost:1313/blog/tags/sip-gateway/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Teams</title>
-    <link>https://pdleon.github.io/blog/tags/teams/</link>
+    <link>http://localhost:1313/blog/tags/teams/</link>
+    <pubDate>Mon, 19 Feb 2024 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>http://localhost:1313/blog/tags/teams/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Alert</title>
+    <link>http://localhost:1313/blog/tags/alert/</link>
     <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/teams/</guid>
+    <guid>http://localhost:1313/blog/tags/alert/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Monitor</title>
+    <link>http://localhost:1313/blog/tags/monitor/</link>
+    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>http://localhost:1313/blog/tags/monitor/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MTR</title>
+    <link>http://localhost:1313/blog/tags/mtr/</link>
+    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>David Ponce de Leon</author>
+    <guid>http://localhost:1313/blog/tags/mtr/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Phones</title>
-    <link>https://pdleon.github.io/blog/tags/phones/</link>
+    <link>http://localhost:1313/blog/tags/phones/</link>
     <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/phones/</guid>
+    <guid>http://localhost:1313/blog/tags/phones/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Polycom</title>
-    <link>https://pdleon.github.io/blog/tags/polycom/</link>
+    <link>http://localhost:1313/blog/tags/polycom/</link>
     <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/polycom/</guid>
+    <guid>http://localhost:1313/blog/tags/polycom/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Telephony</title>
-    <link>https://pdleon.github.io/blog/tags/telephony/</link>
+    <link>http://localhost:1313/blog/tags/telephony/</link>
     <pubDate>Tue, 07 Dec 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/telephony/</guid>
+    <guid>http://localhost:1313/blog/tags/telephony/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>SBC</title>
-    <link>https://pdleon.github.io/blog/tags/sbc/</link>
+    <link>http://localhost:1313/blog/tags/sbc/</link>
     <pubDate>Wed, 28 Jul 2021 00:00:00 &#43;0000</pubDate>
     <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/sbc/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Device</title>
-    <link>https://pdleon.github.io/blog/tags/device/</link>
-    <pubDate>Wed, 23 Jun 2021 00:00:00 &#43;0000</pubDate>
-    <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/device/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Webinar Meeting</title>
-    <link>https://pdleon.github.io/blog/tags/webinar-meeting/</link>
-    <pubDate>Tue, 08 Jun 2021 00:00:00 &#43;0000</pubDate>
-    <author>David Ponce de Leon</author>
-    <guid>https://pdleon.github.io/blog/tags/webinar-meeting/</guid>
+    <guid>http://localhost:1313/blog/tags/sbc/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
