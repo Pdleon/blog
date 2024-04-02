@@ -4,7 +4,7 @@ date: 2024-02-19
 toc: true
 tags: [Teams, Audiocodes, SIP Gateway]
 categories: [Teams, Devices]
-featuredimage: images/sipgateway.jpeg
+featuredimage: /blog/images/sipgateway.jpeg
 featuredimagepreview: images/sipgateway.jpeg
 ---
 
