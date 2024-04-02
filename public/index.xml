@@ -12,7 +12,7 @@
     <author>David Ponce de Leon</author>
     <guid>http://localhost:1313/blog/posts/2024-02-19-audiocodes-ata-teams-sip-gateway-integration/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/blog/images/sipgateway.jpeg" referrerpolicy="no-referrer">
+                <img src="/blog/images/ATASipGateway.png" referrerpolicy="no-referrer">
             </div>Overview In an attempt to review the integration of an ATA to the Teams SIP Gateway, purchased an AudioCodes MP112 as the simplest and cheapest option.
 AudioCodes recently released an onbarding guide as a walkthrough but typically there are always hidden assumptions that might stomp the process.
 Audiocodes ATA MP1xx Teams SIP Gateway Integration
